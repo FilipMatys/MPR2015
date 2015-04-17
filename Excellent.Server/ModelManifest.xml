@@ -1,6 +1,16 @@
 <?xml version="1.0"?>
 <ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Documents>
-    <Document FullPath="D:\src\MPR2015\Excellent.Server\Properties\Service.lsml" Checksum="24E704706916D2EBE78C3F40AB237A00BAE0C20E832B7EB0800FA9136DBEC969" />
+    <Document FullPath="C:\Users\w7\Documents\MPR2015\Excellent.Server\Properties\Service.lsml" Checksum="679C78F29C5AF23E9956A773B0E46DF90F7B86CADA0B79571E5896A1C79F5B70" />
+    <Document FullPath="C:\Users\w7\Documents\MPR2015\Excellent.Server\Properties\DataSources\ApplicationData.lsml" Checksum="E6FEEAC3B4A850AAC5F0029259A0B9F8C1BD45F2950D17BD8D6664B9422E6AD6" />
+    <Document FullPath="C:\Users\w7\Documents\MPR2015\Excellent.Server\DataSources\ApplicationData\Companies.lsml" Checksum="F8D24AC996EF94423228DD03165FAA798E8BE255D0366EADAF47272C9DD98B0D" />
+    <Document FullPath="C:\Users\w7\Documents\MPR2015\Excellent.Server\DataSources\ApplicationData\Participations.lsml" Checksum="1B3FD0DF29E63CA1447042DFC11CA5CD8386EC97A0D2853BED0E4F9E7EB9B218" />
+    <Document FullPath="C:\Users\w7\Documents\MPR2015\Excellent.Server\DataSources\ApplicationData\Exceptions.lsml" Checksum="1F3F95A3AB5714E172721C3C5A77979EDC2D8D3E64959808EB4E4549B69CFFB1" />
+    <Document FullPath="C:\Users\w7\Documents\MPR2015\Excellent.Server\DataSources\ApplicationData\Users.lsml" Checksum="7D6921F7A63D99342202C86C40DE2666549B1DC95A802FBA072B57C3D4EB09CD" />
+    <Document FullPath="C:\Users\w7\Documents\MPR2015\Excellent.Server\DataSources\ApplicationData\Notes.lsml" Checksum="FEC01046F795DF20E66FAFAE2750642FFF07CEE56C168EFC1B59375E3334877F" />
+    <Document FullPath="C:\Users\w7\Documents\MPR2015\Excellent.Server\DataSources\ApplicationData\Attachements.lsml" Checksum="F83D7CFC259AFF69EA8DDDC890CE277BC6141ECFB368B10D66357EBD339884B4" />
+    <Document FullPath="C:\Users\w7\Documents\MPR2015\Excellent.Server\DataSources\ApplicationData\Attendees.lsml" Checksum="468645FDF1D6A4952F483860BFCE0D6F29B16AF263C0A812CAA3E08991166780" />
+    <Document FullPath="C:\Users\w7\Documents\MPR2015\Excellent.Server\DataSources\ApplicationData\Conferences.lsml" Checksum="52A6D055DCC50764B4373AB141953DE510FDDE8F91B07B2F1F1857DAFA16ADCC" />
+    <Document FullPath="C:\Users\w7\Documents\MPR2015\Excellent.Server\DataSources\ApplicationData\Deadlines.lsml" Checksum="9B6C8B486DDA8FA4B6D32EED4D5529932062A4AF7A48779AB5776A0AAAEC6D03" />
   </Documents>
 </ModelDocumentManifest>

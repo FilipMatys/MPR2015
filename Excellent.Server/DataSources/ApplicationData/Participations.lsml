@@ -1,0 +1,517 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="Participation">
+    <EntityType.Attributes>
+      <CreatedModifiedPropertiesEnabled />
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="ExpectedPayment"
+        PropertyType=":Decimal">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="NumAttendee"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="State"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+          <SupportedValue
+            DisplayName="Registered"
+            Value="Registered" />
+          <SupportedValue
+            DisplayName="Approved"
+            Value="Approved" />
+          <SupportedValue
+            DisplayName="Contract Signed"
+            Value="ContractSigned" />
+          <SupportedValue
+            DisplayName="Paid"
+            Value="Paid" />
+          <SupportedValue
+            DisplayName="Completed"
+            Value="Completed" />
+          <SupportedValue
+            DisplayName="Cancelled"
+            Value="Cancelled" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="SpecialRequests"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="Attachements"
+        Association="Attachement_Participation"
+        FromEnd="Participation"
+        ToEnd="Attachement" />
+      <NavigationProperty
+        Name="Attendees"
+        Association="Attendee_Participation"
+        FromEnd="Participation"
+        ToEnd="Attendee" />
+      <NavigationProperty
+        Name="Exceptions"
+        Association="Exception_Participation"
+        FromEnd="Participation"
+        ToEnd="Exception" />
+      <NavigationProperty
+        Name="Conference"
+        Association="Participation_Conference"
+        FromEnd="Participation"
+        ToEnd="Conference" />
+      <NavigationProperty
+        Name="Company"
+        Association="Participation_Company"
+        FromEnd="Participation"
+        ToEnd="Company" />
+      <NavigationProperty
+        Name="Notes"
+        Association="Note_Participation"
+        FromEnd="Participation"
+        ToEnd="Note" />
+      <NavigationProperty
+        Name="UserParticipations"
+        Association="UserParticipation_Participation"
+        FromEnd="Participation"
+        ToEnd="UserParticipation" />
+      <EntityProperty
+        Name="CreatedBy"
+        IsReadOnly="True"
+        PropertyType=":Person?">
+        <EntityProperty.Attributes>
+          <Generated />
+          <NotSearchable />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Created"
+        IsReadOnly="True"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <Generated />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ModifiedBy"
+        IsReadOnly="True"
+        PropertyType=":Person?">
+        <EntityProperty.Attributes>
+          <Generated />
+          <NotSearchable />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Modified"
+        IsReadOnly="True"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <Generated />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="RowVersion"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <UseForConcurrency />
+          <Generated />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="ApplicationData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="Participations"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="Participation" />
+    <QueryOperation
+      Name="Participations_Single"
+      ReturnType="Participation">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Participations" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Participations_SingleOrDefault"
+      ReturnType="Participation">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Participations" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <AssociationSet
+      Name="Attachement_Participations"
+      Association="Attachement_Participation">
+      <AssociationSetEnd
+        Name="Attachement"
+        EntitySet="Attachements" />
+      <AssociationSetEnd
+        Name="Participation"
+        EntitySet="Participations" />
+    </AssociationSet>
+    <AssociationSet
+      Name="Attendee_Participations"
+      Association="Attendee_Participation">
+      <AssociationSetEnd
+        Name="Attendee"
+        EntitySet="Attendees" />
+      <AssociationSetEnd
+        Name="Participation"
+        EntitySet="Participations" />
+    </AssociationSet>
+    <AssociationSet
+      Name="Exception_Participations"
+      Association="Exception_Participation">
+      <AssociationSetEnd
+        Name="Exception"
+        EntitySet="Exceptions" />
+      <AssociationSetEnd
+        Name="Participation"
+        EntitySet="Participations" />
+    </AssociationSet>
+    <AssociationSet
+      Name="Note_Participations"
+      Association="Note_Participation">
+      <AssociationSetEnd
+        Name="Note"
+        EntitySet="Notes" />
+      <AssociationSetEnd
+        Name="Participation"
+        EntitySet="Participations" />
+    </AssociationSet>
+    <AssociationSet
+      Name="UserParticipation_Participations"
+      Association="UserParticipation_Participation">
+      <AssociationSetEnd
+        Name="UserParticipation"
+        EntitySet="UserParticipations" />
+      <AssociationSetEnd
+        Name="Participation"
+        EntitySet="Participations" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association
+    Name="Attachement_Participation">
+    <AssociationEnd
+      Name="Attachement"
+      Multiplicity="Many"
+      EntityType="Attachement" />
+    <AssociationEnd
+      Name="Participation"
+      Multiplicity="One"
+      EntityType="Participation">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Cascade" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <DataService
+    Name="ApplicationDataMapping">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <AssociationSetMapping
+      AssociationSet="Attachement_Participations">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Attachement_Participations" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[Attachement_Participations]/Members[Attachement]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Attachement_Participation" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[Attachement_Participations]/Members[Participation]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="Attendee_Participations">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Attendee_Participations" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[Attendee_Participations]/Members[Attendee]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Attendee_Participation" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[Attendee_Participations]/Members[Participation]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="Exception_Participations">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Exception_Participations" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[Exception_Participations]/Members[Exception]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Exception_Participation" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[Exception_Participations]/Members[Participation]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <EntitySetMapping
+      EntitySet="Participations">
+      <EntitySetMapping.Attributes>
+        <SsdlForeignKeyProperty
+          Name="Participation_Conference"
+          Nullable="False"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="Participation_Company"
+          Nullable="False"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="Note_Participations">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Note_Participations" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[Note_Participations]/Members[Note]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Note_Participation" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[Note_Participations]/Members[Participation]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="UserParticipation_Participations">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="UserParticipation_Participations" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[UserParticipation_Participations]/Members[UserParticipation]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="UserParticipation_Participation" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[UserParticipation_Participations]/Members[Participation]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+  <Association
+    Name="Attendee_Participation">
+    <AssociationEnd
+      Name="Attendee"
+      Multiplicity="Many"
+      EntityType="Attendee" />
+    <AssociationEnd
+      Name="Participation"
+      Multiplicity="One"
+      EntityType="Participation">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Cascade" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="Exception_Participation">
+    <AssociationEnd
+      Name="Exception"
+      Multiplicity="Many"
+      EntityType="Exception" />
+    <AssociationEnd
+      Name="Participation"
+      Multiplicity="One"
+      EntityType="Participation">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Cascade" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="Note_Participation">
+    <AssociationEnd
+      Name="Note"
+      Multiplicity="Many"
+      EntityType="Note" />
+    <AssociationEnd
+      Name="Participation"
+      Multiplicity="One"
+      EntityType="Participation">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Cascade" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="UserParticipation_Participation">
+    <AssociationEnd
+      Name="UserParticipation"
+      Multiplicity="Many"
+      EntityType="UserParticipation" />
+    <AssociationEnd
+      Name="Participation"
+      Multiplicity="One"
+      EntityType="Participation">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Cascade" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+</ServiceApplication>

@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Documents>
-    <Document FullPath="D:\src\MPR2015\Excellent.HTMLClient\Properties\Client.lsml" Checksum="BBCF560F214A53A6B28005C0058E8FD88664CD4E1C902962B7B9C10E497F3923" />
-    <Document FullPath="D:\src\MPR2015\Excellent.HTMLClient\Properties\Proxies.lsml" Checksum="7C0B0C796A498724344022768E3684E8607018545DCB917A4E5C1B25958CE59D" />
-    <Document FullPath="D:\src\MPR2015\Excellent.HTMLClient\Screens\Home.lsml" Checksum="07EC9EB03E42B4CE4F7D6B8F1D9217D7A49D4D409646E8808DD83BBD7202745C" />
+    <Document FullPath="C:\Users\w7\Documents\MPR2015\Excellent.HTMLClient\Properties\Client.lsml" Checksum="508454BEF21EB167604CFCA8C7881574B21352F20588375F5F89AD21FBD9531A" />
+    <Document FullPath="C:\Users\w7\Documents\MPR2015\Excellent.HTMLClient\Properties\Proxies.lsml" Checksum="25F28B8672BDFF7A17FA6A3405DD1D521D41E16C46CFB5B4EBDF35117C531485" />
+    <Document FullPath="C:\Users\w7\Documents\MPR2015\Excellent.HTMLClient\Screens\Home.lsml" Checksum="07EC9EB03E42B4CE4F7D6B8F1D9217D7A49D4D409646E8808DD83BBD7202745C" />
   </Documents>
 </ModelDocumentManifest>
