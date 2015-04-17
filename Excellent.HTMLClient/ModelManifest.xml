@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Documents>
-    <Document FullPath="C:\Users\w7\Documents\MPR2015\Excellent.HTMLClient\Properties\Client.lsml" Checksum="508454BEF21EB167604CFCA8C7881574B21352F20588375F5F89AD21FBD9531A" />
-    <Document FullPath="C:\Users\w7\Documents\MPR2015\Excellent.HTMLClient\Properties\Proxies.lsml" Checksum="25F28B8672BDFF7A17FA6A3405DD1D521D41E16C46CFB5B4EBDF35117C531485" />
-    <Document FullPath="C:\Users\w7\Documents\MPR2015\Excellent.HTMLClient\Screens\Home.lsml" Checksum="07EC9EB03E42B4CE4F7D6B8F1D9217D7A49D4D409646E8808DD83BBD7202745C" />
-  </Documents>
-</ModelDocumentManifest>
