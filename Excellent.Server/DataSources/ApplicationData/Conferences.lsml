@@ -53,35 +53,61 @@
       </EntityProperty>
       <EntityProperty
         Name="Description"
-        PropertyType=":String">
+        PropertyType=":String?">
         <EntityProperty.Attributes>
-          <Required />
           <MaxLength
             Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
         Name="GoldMin"
-        PropertyType=":Double">
+        PropertyType="Microsoft.LightSwitch.Extensions:Money">
         <EntityProperty.Attributes>
           <Required />
           <NotSearchable />
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="CurrencySymbol"
+              Value="Kč" />
+          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
         Name="SilverMin"
-        PropertyType=":Double">
+        PropertyType="Microsoft.LightSwitch.Extensions:Money">
         <EntityProperty.Attributes>
           <Required />
           <NotSearchable />
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="CurrencySymbol"
+              Value="Kč" />
+          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
         Name="BronzeMin"
-        PropertyType=":Double">
+        PropertyType="Microsoft.LightSwitch.Extensions:Money">
         <EntityProperty.Attributes>
           <Required />
           <NotSearchable />
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="CurrencySymbol"
+              Value="Kč" />
+          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty

@@ -204,6 +204,17 @@
     <_ServerFile Include="LogOut.aspx" />
     <Content Include="Web.config" />
     <Content Include="packages.config" />
+    <LightSwitchModel Include="Properties\DataSources\ApplicationData.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\Companies.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\Participations.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\Exceptions.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\Users.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\Notes.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\Attachements.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\Attendees.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\Conferences.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\Deadlines.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\UserParticipations.lsml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -219,10 +230,7 @@
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DataSources\" />
-    <Folder Include="Properties\DataSources\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -39,9 +39,8 @@
       </EntityProperty>
       <EntityProperty
         Name="NumAttendee"
-        PropertyType=":Int32">
+        PropertyType=":Int32?">
         <EntityProperty.Attributes>
-          <Required />
           <NotSearchable />
         </EntityProperty.Attributes>
       </EntityProperty>
@@ -74,9 +73,8 @@
       </EntityProperty>
       <EntityProperty
         Name="SpecialRequests"
-        PropertyType=":String">
+        PropertyType=":String?">
         <EntityProperty.Attributes>
-          <Required />
           <MaxLength
             Value="255" />
         </EntityProperty.Attributes>

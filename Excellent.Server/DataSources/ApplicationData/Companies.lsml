@@ -55,18 +55,16 @@
       </EntityProperty>
       <EntityProperty
         Name="Link"
-        PropertyType=":String">
+        PropertyType="Microsoft.LightSwitch.Extensions:WebAddress?">
         <EntityProperty.Attributes>
-          <Required />
           <MaxLength
             Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
         Name="Description"
-        PropertyType=":String">
+        PropertyType=":String?">
         <EntityProperty.Attributes>
-          <Required />
           <MaxLength
             Value="255" />
         </EntityProperty.Attributes>
