@@ -290,7 +290,7 @@
       EntityType="User">
       <AssociationEnd.Attributes>
         <DeleteRule
-          Action="Cascade" />
+          Action="Restrict" />
       </AssociationEnd.Attributes>
     </AssociationEnd>
   </Association>
@@ -390,7 +390,7 @@
       EntityType="User">
       <AssociationEnd.Attributes>
         <DeleteRule
-          Action="Cascade" />
+          Action="Restrict" />
       </AssociationEnd.Attributes>
     </AssociationEnd>
   </Association>
