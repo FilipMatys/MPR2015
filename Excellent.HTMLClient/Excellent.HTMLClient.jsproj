@@ -71,6 +71,9 @@
     <Content Include="Screens\Companies\ViewCompany.lsml.js">
       <DependentUpon>ViewCompany.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\Exceptions\ViewException.lsml.js">
+      <DependentUpon>ViewException.lsml</DependentUpon>
+    </Content>
     <Content Include="Scripts\datajs-1.1.3.js" />
     <Content Include="Scripts\datajs-1.1.3.min.js" />
     <Content Include="Scripts\jquery-1.9.1.intellisense.js" />
@@ -93,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <LightSwitchModel Include="Properties\ApplicationData\Companies.lsml" />
+    <LightSwitchModel Include="Properties\ApplicationData\Exceptions.lsml" />
     <LightSwitchModel Include="Properties\Client.lsml">
       <ProjectCritical>true</ProjectCritical>
     </LightSwitchModel>
@@ -100,6 +104,9 @@
     <LightSwitchModel Include="Screens\Companies\AddEditCompany.lsml" />
     <LightSwitchModel Include="Screens\Companies\BrowseCompanies.lsml" />
     <LightSwitchModel Include="Screens\Companies\ViewCompany.lsml" />
+    <LightSwitchModel Include="Screens\Exceptions\AddEditException.lsml" />
+    <LightSwitchModel Include="Screens\Exceptions\BrowseExceptions.lsml" />
+    <LightSwitchModel Include="Screens\Exceptions\ViewException.lsml" />
     <LightSwitchModel Include="Screens\Home.lsml" />
   </ItemGroup>
   <ItemGroup>

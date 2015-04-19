@@ -40,5 +40,8 @@
     <ApplicationNavigationMethodLink
       Name="link"
       Method="!module/Methods[showBrowseCompanies]" />
+    <ApplicationNavigationMethodLink
+      Name="link1"
+      Method="!module/Methods[showBrowseExceptions]" />
   </Application.NavigationItems>
 </Application>
