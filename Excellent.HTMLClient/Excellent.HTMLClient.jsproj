@@ -74,6 +74,9 @@
     <Content Include="Screens\Exceptions\ViewException.lsml.js">
       <DependentUpon>ViewException.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\Users\AddEditUser.lsml.js">
+      <DependentUpon>AddEditUser.lsml</DependentUpon>
+    </Content>
     <Content Include="Scripts\datajs-1.1.3.js" />
     <Content Include="Scripts\datajs-1.1.3.min.js" />
     <Content Include="Scripts\jquery-1.9.1.intellisense.js" />
@@ -108,6 +111,8 @@
     <LightSwitchModel Include="Screens\Exceptions\BrowseExceptions.lsml" />
     <LightSwitchModel Include="Screens\Exceptions\ViewException.lsml" />
     <LightSwitchModel Include="Screens\Home.lsml" />
+    <LightSwitchModel Include="Screens\Users\AddEditUser.lsml" />
+    <LightSwitchModel Include="Screens\Users\BrowseUsers.lsml" />
   </ItemGroup>
   <ItemGroup>
     <_ClientBuildFile Include="GeneratedArtifacts\model.json">
@@ -125,6 +130,9 @@
     <_ClientBuildFile Include="GeneratedArtifacts\resources.js">
       <SubFolder>Scripts\Generated</SubFolder>
     </_ClientBuildFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\ApplicationData\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\LightSwitch\v4.5\MobileClient\Microsoft.LightSwitch.MobileClient.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\LightSwitch\v4.5\Microsoft.LightSwitch.Build.Tasks.targets" />

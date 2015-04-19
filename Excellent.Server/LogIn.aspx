@@ -145,7 +145,7 @@
         <asp:Login ID="LoginUser" runat="server" EnableViewState="false" RenderOuterTable="false">
             <LayoutTemplate>
                 <div class="accountInfo">
-                    <h1>Log In</h1>
+                    <h1>Excel@FIT IS</h1>
                     <div style="margin-bottom: 10px;">
                         <asp:Label ID="UsernameLabel" runat="server" AssociatedControlID="Username" Text="Username:" CssClass="labelStyle" />
                         <asp:RequiredFieldValidator ID="UsernameRequired" runat="server" ControlToValidate="Username" ValidationGroup="LoginUserValidationGroup" Text="*" ToolTip="Username is required" CssClass="requiredStyle" />

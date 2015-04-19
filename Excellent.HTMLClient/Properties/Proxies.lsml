@@ -19,12 +19,6 @@
   <EntityType>
     <EntityType.Attributes>
       <Proxy
-        Target="ServiceInterface:User" />
-    </EntityType.Attributes>
-  </EntityType>
-  <EntityType>
-    <EntityType.Attributes>
-      <Proxy
         Target="ServiceInterface:Note" />
     </EntityType.Attributes>
   </EntityType>
@@ -124,4 +118,10 @@
         Target="ServiceInterface:UserParticipation_Participation" />
     </Association.Attributes>
   </Association>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:User" />
+    </EntityType.Attributes>
+  </EntityType>
 </Application>
