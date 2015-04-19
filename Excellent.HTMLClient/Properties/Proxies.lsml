@@ -13,12 +13,6 @@
   <EntityType>
     <EntityType.Attributes>
       <Proxy
-        Target="ServiceInterface:Participation" />
-    </EntityType.Attributes>
-  </EntityType>
-  <EntityType>
-    <EntityType.Attributes>
-      <Proxy
         Target="ServiceInterface:Note" />
     </EntityType.Attributes>
   </EntityType>

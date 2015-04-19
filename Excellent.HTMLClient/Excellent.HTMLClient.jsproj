@@ -74,6 +74,9 @@
     <Content Include="Screens\Exceptions\ViewException.lsml.js">
       <DependentUpon>ViewException.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\Participations\ViewParticipation.lsml.js">
+      <DependentUpon>ViewParticipation.lsml</DependentUpon>
+    </Content>
     <Content Include="Screens\Users\AddEditUser.lsml.js">
       <DependentUpon>AddEditUser.lsml</DependentUpon>
     </Content>
@@ -100,6 +103,7 @@
   <ItemGroup>
     <LightSwitchModel Include="Properties\ApplicationData\Companies.lsml" />
     <LightSwitchModel Include="Properties\ApplicationData\Exceptions.lsml" />
+    <LightSwitchModel Include="Properties\ApplicationData\Participations.lsml" />
     <LightSwitchModel Include="Properties\Client.lsml">
       <ProjectCritical>true</ProjectCritical>
     </LightSwitchModel>
@@ -111,6 +115,9 @@
     <LightSwitchModel Include="Screens\Exceptions\BrowseExceptions.lsml" />
     <LightSwitchModel Include="Screens\Exceptions\ViewException.lsml" />
     <LightSwitchModel Include="Screens\Home.lsml" />
+    <LightSwitchModel Include="Screens\Participations\AddEditParticipation.lsml" />
+    <LightSwitchModel Include="Screens\Participations\BrowseParticipations.lsml" />
+    <LightSwitchModel Include="Screens\Participations\ViewParticipation.lsml" />
     <LightSwitchModel Include="Screens\Users\AddEditUser.lsml" />
     <LightSwitchModel Include="Screens\Users\BrowseUsers.lsml" />
   </ItemGroup>
@@ -130,9 +137,6 @@
     <_ClientBuildFile Include="GeneratedArtifacts\resources.js">
       <SubFolder>Scripts\Generated</SubFolder>
     </_ClientBuildFile>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\ApplicationData\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\LightSwitch\v4.5\MobileClient\Microsoft.LightSwitch.MobileClient.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\LightSwitch\v4.5\Microsoft.LightSwitch.Build.Tasks.targets" />
