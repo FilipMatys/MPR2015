@@ -208,6 +208,13 @@
     <Compile Include="Recover.aspx.designer.cs">
       <DependentUpon>Recover.aspx</DependentUpon>
     </Compile>
+    <Compile Include="RecoverFinish.aspx.cs">
+      <DependentUpon>RecoverFinish.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecoverFinish.aspx.designer.cs">
+      <DependentUpon>RecoverFinish.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -225,6 +232,7 @@
     <_ServerFile Include="LogIn.aspx" />
     <_ServerFile Include="LogOut.aspx" />
     <Content Include="Recover.aspx" />
+    <Content Include="RecoverFinish.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Web.config" />
     <Content Include="packages.config" />

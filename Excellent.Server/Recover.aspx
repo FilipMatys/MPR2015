@@ -10,6 +10,9 @@
     <form id="form1" runat="server">
     <div>
     
+        <asp:TextBox ID="Email" runat="server"></asp:TextBox>
+        <asp:Button ID="RecoverButton" runat="server" Text="Recover" OnClick="RecoverButton_Click" />
+    
     </div>
     </form>
 </body>
