@@ -105,6 +105,14 @@
         FromEnd="User"
         ToEnd="UserParticipation" />
       <EntityProperty
+        Name="Specialization"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
         PropertyType=":Person?">
