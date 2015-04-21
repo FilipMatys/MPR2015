@@ -1,6 +1,13 @@
 ﻿<%@ Page Inherits="Microsoft.LightSwitch.Security.ServerGenerated.Implementation.LogInPageBase" %>
 
 <!DOCTYPE HTML>
+<script runat="server">
+
+    Protected Sub RegisterButton_Click(sender As Object, e As EventArgs)
+        Response.Redirect("Register.aspx", True)
+    End Sub
+</script>
+
 <html>
 <head>
     <meta name="HandheldFriendly" content="true" />
@@ -162,6 +169,8 @@
                         </div>
                         <div style="margin-bottom: 10px;" class="logInBtn">
                             <asp:Button ID="LoginButton" runat="server" CommandName="Login" ValidationGroup="LoginUserValidationGroup" Text="LOG IN" Width="112" Height="38" CssClass="buttonStyle" />
+                            <asp:Button ID="RegisterButton" runat="server" Text="Register as sponsor" Height="38" CssClass="buttonStyle" UseSubmitBehavior="False" OnClick="RegisterButton_Click" />
+                            <asp:HyperLink NavigateUrl="~/Recover.aspx" ID="RecoverLink" runat="server">Forgot your password?</asp:HyperLink>
                         </div>
                     </div>
                     <span class="failureNotification">
