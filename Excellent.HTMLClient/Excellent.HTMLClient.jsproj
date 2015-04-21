@@ -80,6 +80,9 @@
     <Content Include="Screens\Users\AddEditUser.lsml.js">
       <DependentUpon>AddEditUser.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\Users\BrowseUsers.lsml.js">
+      <DependentUpon>BrowseUsers.lsml</DependentUpon>
+    </Content>
     <Content Include="Scripts\datajs-1.1.3.js" />
     <Content Include="Scripts\datajs-1.1.3.min.js" />
     <Content Include="Scripts\jquery-1.9.1.intellisense.js" />
