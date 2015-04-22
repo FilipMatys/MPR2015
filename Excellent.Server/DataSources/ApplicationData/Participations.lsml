@@ -28,13 +28,11 @@
       </KeyProperty>
       <EntityProperty
         Name="ExpectedPayment"
-        PropertyType=":Decimal">
+        PropertyType=":String">
         <EntityProperty.Attributes>
           <Required />
-          <NotSearchable />
-          <DecimalConstraint
-            Precision="18"
-            Scale="2" />
+          <MaxLength
+            Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty

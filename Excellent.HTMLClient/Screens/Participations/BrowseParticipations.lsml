@@ -75,25 +75,6 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="Conference_DateFrom"
-                  Kind="Value"
-                  DataType=":Date">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="Conference start" />
-                  </ContentItem.Attributes>
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Participation/Properties[Conference]" />
-                        <MemberExpression
-                          Member="DateFrom" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
                   Name="State"
                   Kind="Value"
                   DataType=":String">
@@ -121,7 +102,7 @@
                 <ContentItem
                   Name="ExpectedPayment"
                   Kind="Value"
-                  DataType=":Decimal">
+                  DataType=":String">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -142,6 +123,61 @@
                       </ScreenExpressionTree>
                     </ControlPropertySource>
                   </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
+                  Name="Company_User_Name"
+                  Kind="Value"
+                  DataType=":String">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Contact Person" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Participation/Properties[Company]" />
+                        <MemberExpression
+                          Member="User" />
+                        <MemberExpression
+                          Member="Name" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Company_User_Email"
+                  Kind="Value"
+                  DataType="Microsoft.LightSwitch.Extensions:EmailAddress">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Participation/Properties[Company]" />
+                        <MemberExpression
+                          Member="User" />
+                        <MemberExpression
+                          Member="Email" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Company_User_Phone"
+                  Kind="Value"
+                  DataType=":String">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Participation/Properties[Company]" />
+                        <MemberExpression
+                          Member="User" />
+                        <MemberExpression
+                          Member="Phone" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem.PropertySources>
                   <ControlPropertySource

@@ -215,12 +215,11 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <CallExpression
-                          Target="!module/Methods[showAddEditCompany]">
+                          Target="!module/Methods[showAddEditUser]">
                           <CallExpression.Attributes>
-                            <AssociatedCollection
-                              Collection="BrowseCompanies/Properties[Companies]" />
                             <CreateNewEntity
-                              TargetParameter="!module/Methods[showAddEditCompany]/Parameters[Company]" />
+                              EntityType="User"
+                              TargetParameter="!module/Methods[showAddEditUser]/Parameters[User]" />
                           </CallExpression.Attributes>
                         </CallExpression>
                       </ChainExpression>
@@ -232,7 +231,7 @@
                       <ChainExpression>
                         <ConstantExpression
                           Value="msls-add"
-                          ResultType="Microsoft.LightSwitch:String" />
+                          ResultType=":String" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>

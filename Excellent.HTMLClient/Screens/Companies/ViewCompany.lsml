@@ -381,7 +381,7 @@
                 <ContentItem
                   Name="ExpectedPayment"
                   Kind="Value"
-                  DataType=":Decimal">
+                  DataType=":String">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>

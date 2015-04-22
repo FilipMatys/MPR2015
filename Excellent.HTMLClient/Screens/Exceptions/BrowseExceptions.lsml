@@ -77,27 +77,6 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="Participation_Conference_DateFrom"
-                  Kind="Value"
-                  DataType=":Date">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="Conference start" />
-                  </ContentItem.Attributes>
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Exception/Properties[Participation]" />
-                        <MemberExpression
-                          Member="Conference" />
-                        <MemberExpression
-                          Member="DateFrom" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
                   Name="Type"
                   Kind="Value"
                   DataType=":String">
