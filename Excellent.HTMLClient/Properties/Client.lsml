@@ -49,5 +49,8 @@
     <ApplicationNavigationMethodLink
       Name="link3"
       Method="!module/Methods[showBrowseParticipations]" />
+    <ApplicationNavigationMethodLink
+      Name="link4"
+      Method="!module/Methods[showBrowseConferences]" />
   </Application.NavigationItems>
 </Application>
