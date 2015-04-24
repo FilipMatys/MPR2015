@@ -1,4 +1,7 @@
-﻿/* Replace user-splash-screen.png with your own splash screen image */
+﻿/* Load ubuntu font */
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700&subset=latin,latin-ext);
+
+/* Replace user-splash-screen.png with your own splash screen image */
 #msls-id-app-loading .msls-app-loading-img {
     background-image: url(Images/user-splash-screen.png);
 }
@@ -6,8 +9,24 @@
 /* Font families for screen and dialog headers.  Font families for content inside a screen 
     or dialog are determined by the theme's global font family setting. */
 .msls-header .ui-title {
-    font-family: 'Segoe Light', 'Segoe UI Light', 'Segoe UI', 'Segoe WP Light', 'Roboto Light','Frutiger','Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: Ubuntu, Helvetica, Arial, sans-serif;
     font-weight: 200;
+}
+
+.ui-bar-a,
+.ui-bar-a input,
+.ui-bar-a select,
+.ui-bar-a textarea,
+.ui-bar-a button,
+.ui-btn-up-a,
+.ui-btn-hover-a,
+.ui-btn-down-a,
+.ui-body-a,
+.ui-body-a input,
+.ui-body-a select,
+.ui-body-a textarea,
+.ui-body-a button  {
+    font-family: Ubuntu, Helvetica, Arial, sans-serif;
 }
 
 /* Customizable font styles for screen controls */
@@ -18,6 +37,10 @@
 }
 
 .msls-font-style-small {
+}
+
+.msls-large-icon .ui-icon-msls-home {
+    width: 6rem;
 }
 
 /* Uncomment the following lines if you want to use certain jQuery Mobile listview features such as 
@@ -35,4 +58,99 @@
 @media 
 screen and (max-width: 400px) and (orientation: portrait), 
 screen and (max-width: 640px) and (max-height: 400px) and (orientation: landscape) {
+}
+
+/* Header */
+.msls-header .msls-header-area    {
+    box-shadow: 0 0 10px #000;
+}
+
+.msls-header .ui-title  {
+    font-size: 2rem;
+    line-height: 4rem;
+    color: #5b5959;
+}
+
+/* Content */
+.msls-content   {
+    padding: 1rem 1rem;
+}
+
+.msls-table-header   {
+    background: #15548C;
+    color: white;
+    font-weight: 200 !important;
+}
+
+.msls-table-header:hover {
+    color: white;
+}
+
+.table-stripe thead th, .table-stripe tbody tr:last-child   {
+    border-bottom: none;
+}
+
+label,
+.msls-label label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: black;
+    opacity: 1;
+}
+
+/* Tabs */
+.msls-screen-tab .ui-btn-text {
+    font-size: 1.25rem;
+    color: #5b5959;
+}
+
+.msls-screen-tab .ui-btn-inner  {
+    border: none;
+}
+
+.msls-screen-tab .ui-btn    {
+    background: white;
+    padding: 0.65rem 0.75rem;
+    opacity: 1;
+}
+
+.msls-screen-tab .ui-btn:hover    {
+    background: #ddd;
+}
+
+.msls-screen-tab.msls-screen-tab-active .ui-btn {
+    background: #f68712;
+}
+
+.msls-screen-tab.msls-screen-tab-active .ui-btn .ui-btn-text    {
+    color: white;
+}
+
+/* Footer */
+.msls-footer    {
+    padding-top: 0.5rem;
+}
+
+.ui-bar-a   {
+    background: #15548c;
+}
+
+.msls-footer .msls-large-icon .ui-icon, .msls-large-icon .ui-icon-searchfield:after  {
+    border-color: white;
+}
+
+.msls-footer .msls-large-icon.ui-btn {
+    color: white;
+}
+
+.msls-footer .msls-large-icon .ui-icon,
+.msls-footer .msls-large-icon,
+.msls-footer .ui-icon-searchfield:after  {
+    background-image: url(images/msls-white-icons-36.png)!important
+}
+
+.msls-footer .msls-large-icon:hover .ui-icon,
+.msls-footer .msls-large-icon:hover,
+.msls-footer .ui-icon-searchfield:after  {
+    background-image: url(images/msls-blue-icons-36.png)!important
 }
