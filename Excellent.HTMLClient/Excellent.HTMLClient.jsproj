@@ -80,6 +80,9 @@
     <Content Include="Screens\Participations\ViewParticipation.lsml.js">
       <DependentUpon>ViewParticipation.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\Settings.lsml.js">
+      <DependentUpon>Settings.lsml</DependentUpon>
+    </Content>
     <Content Include="Screens\Users\AddEditUser.lsml.js">
       <DependentUpon>AddEditUser.lsml</DependentUpon>
     </Content>
@@ -94,6 +97,7 @@
     <Content Include="Scripts\jquery.mobile-1.3.0-vsdoc.js" />
     <Content Include="Scripts\jquery.mobile-1.3.0.js" />
     <Content Include="Scripts\jquery.mobile-1.3.0.min.js" />
+    <Content Include="Scripts\metro-tile.js" />
     <Content Include="Scripts\msls-2.5.2-vsdoc.js" />
     <Content Include="Scripts\msls-2.5.2.js" />
     <Content Include="Scripts\msls-2.5.2.min.js" />
@@ -126,6 +130,7 @@
     <LightSwitchModel Include="Screens\Participations\AddEditParticipation.lsml" />
     <LightSwitchModel Include="Screens\Participations\BrowseParticipations.lsml" />
     <LightSwitchModel Include="Screens\Participations\ViewParticipation.lsml" />
+    <LightSwitchModel Include="Screens\Settings.lsml" />
     <LightSwitchModel Include="Screens\Users\AddEditUser.lsml" />
     <LightSwitchModel Include="Screens\Users\BrowseUsers.lsml" />
   </ItemGroup>

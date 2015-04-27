@@ -44,13 +44,10 @@
       Name="link1"
       Method="!module/Methods[showBrowseExceptions]" />
     <ApplicationNavigationMethodLink
-      Name="link2"
-      Method="!module/Methods[showBrowseUsers]" />
-    <ApplicationNavigationMethodLink
       Name="link3"
       Method="!module/Methods[showBrowseParticipations]" />
     <ApplicationNavigationMethodLink
-      Name="link4"
-      Method="!module/Methods[showBrowseConferences]" />
+      Name="link5"
+      Method="!module/Methods[showSettings]" />
   </Application.NavigationItems>
 </Application>
