@@ -381,7 +381,7 @@
                 <ContentItem
                   Name="ExpectedPayment"
                   Kind="Value"
-                  DataType=":String">
+                  DataType="Microsoft.LightSwitch.Extensions:Money">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
