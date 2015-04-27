@@ -30,7 +30,6 @@
         Name="ExpectedPayment"
         PropertyType="Microsoft.LightSwitch.Extensions:Money">
         <EntityProperty.Attributes>
-          <Required />
           <NotSearchable />
           <DecimalConstraint
             Precision="18"
