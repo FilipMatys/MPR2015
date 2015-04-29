@@ -220,73 +220,6 @@
             </ContentItem>
             <ContentItem.CommandItems>
               <ContentItem
-                Name="AddParticipation"
-                Kind="Command">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="Add" />
-                </ContentItem.Attributes>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <CallExpression
-                          Target="!module/Methods[showAddEditParticipation]">
-                          <CallExpression.Attributes>
-                            <AssociatedCollection
-                              Collection="BrowseParticipations/Properties[Participations]" />
-                            <CreateNewEntity
-                              TargetParameter="!module/Methods[showAddEditParticipation]/Parameters[Participation]" />
-                          </CallExpression.Attributes>
-                        </CallExpression>
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootCommand/Properties[Icon]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <ConstantExpression
-                          Value="msls-add"
-                          ResultType="Microsoft.LightSwitch:String" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
-              </ContentItem>
-              <ContentItem
-                Name="SearchParticipations"
-                Kind="Command">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="Search" />
-                </ContentItem.Attributes>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="BrowseParticipations/Properties[Participations]" />
-                        <CallExpression
-                          Target="showSearch" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootCommand/Properties[Icon]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <ConstantExpression
-                          Value="msls-search"
-                          ResultType="Microsoft.LightSwitch:String" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
-              </ContentItem>
-              <ContentItem
                 Name="ShowFilter"
                 Kind="Command">
                 <ContentItem.Attributes>
@@ -343,7 +276,8 @@
           View="Microsoft.LightSwitch.MobileWeb:DialogPages">
           <ContentItem
             Name="Filter"
-            Kind="Group">
+            Kind="Group"
+            View="Microsoft.LightSwitch.MobileWeb:RowsLayout">
             <ContentItem
               Name="ParticipationCompanyName"
               Kind="Value"
@@ -357,6 +291,91 @@
                   <ChainExpression>
                     <MemberExpression
                       Member="BrowseParticipations/Properties[ParticipationCompanyName]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+            <ContentItem
+              Name="ParticipationMinExpectedPayment"
+              Kind="Value"
+              DataType="Microsoft.LightSwitch.Extensions:Money?">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Minimum expected payment" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="BrowseParticipations/Properties[ParticipationMinExpectedPayment]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+            <ContentItem
+              Name="ParticipationMaxExpectedPayment"
+              Kind="Value"
+              DataType="Microsoft.LightSwitch.Extensions:Money?">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Maximum expected payment" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="BrowseParticipations/Properties[ParticipationMaxExpectedPayment]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+            <ContentItem
+              Name="ParticipationContactPerson"
+              Kind="Value"
+              DataType=":String?">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Contact person" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="BrowseParticipations/Properties[ParticipationContactPerson]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+            <ContentItem
+              Name="ParticipationEmail"
+              Kind="Value"
+              DataType="Microsoft.LightSwitch.Extensions:EmailAddress?">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Email" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="BrowseParticipations/Properties[ParticipationEmail]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+            <ContentItem
+              Name="ParticipationPhone"
+              Kind="Value"
+              DataType=":String?">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Phone" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="BrowseParticipations/Properties[ParticipationPhone]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
@@ -444,6 +463,41 @@
                     Member="BrowseParticipations/Properties[ParticipationICO]" />
                 </ChainExpression>
               </ArgumentExpression>
+              <ArgumentExpression
+                Parameter="MinExpectedPayment">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="BrowseParticipations/Properties[ParticipationMinExpectedPayment]" />
+                </ChainExpression>
+              </ArgumentExpression>
+              <ArgumentExpression
+                Parameter="MaxExpectedPayment">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="BrowseParticipations/Properties[ParticipationMaxExpectedPayment]" />
+                </ChainExpression>
+              </ArgumentExpression>
+              <ArgumentExpression
+                Parameter="ContactPerson">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="BrowseParticipations/Properties[ParticipationContactPerson]" />
+                </ChainExpression>
+              </ArgumentExpression>
+              <ArgumentExpression
+                Parameter="Email">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="BrowseParticipations/Properties[ParticipationEmail]" />
+                </ChainExpression>
+              </ArgumentExpression>
+              <ArgumentExpression
+                Parameter="Phone">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="BrowseParticipations/Properties[ParticipationPhone]" />
+                </ChainExpression>
+              </ArgumentExpression>
             </CallExpression>
           </ChainExpression>
         </ScreenExpressionTree>
@@ -453,6 +507,21 @@
         PropertyType=":String?" />
       <ScreenProperty
         Name="ParticipationICO"
+        PropertyType=":String?" />
+      <ScreenProperty
+        Name="ParticipationMinExpectedPayment"
+        PropertyType="Microsoft.LightSwitch.Extensions:Money?" />
+      <ScreenProperty
+        Name="ParticipationMaxExpectedPayment"
+        PropertyType="Microsoft.LightSwitch.Extensions:Money?" />
+      <ScreenProperty
+        Name="ParticipationContactPerson"
+        PropertyType=":String?" />
+      <ScreenProperty
+        Name="ParticipationEmail"
+        PropertyType="Microsoft.LightSwitch.Extensions:EmailAddress?" />
+      <ScreenProperty
+        Name="ParticipationPhone"
         PropertyType=":String?" />
     </Screen.Properties>
   </Screen>

@@ -207,21 +207,26 @@
                 </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem
-                Name="SearchExceptions"
+                Name="ShowFilter"
                 Kind="Command">
                 <ContentItem.Attributes>
                   <DisplayName
-                    Value="Search" />
+                    Value="Filter" />
                 </ContentItem.Attributes>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
                     Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
                     <ScreenExpressionTree>
                       <ChainExpression>
-                        <MemberExpression
-                          Member="BrowseExceptions/Properties[Exceptions]" />
                         <CallExpression
-                          Target="showSearch" />
+                          Target="BrowseExceptions/Methods[showDialog]">
+                          <ArgumentExpression
+                            Parameter="dialogName">
+                            <ConstantExpression
+                              Value="Filter"
+                              ResultType=":String" />
+                          </ArgumentExpression>
+                        </CallExpression>
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>
@@ -230,8 +235,8 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <ConstantExpression
-                          Value="msls-search"
-                          ResultType="Microsoft.LightSwitch:String" />
+                          Value="msls-filter"
+                          ResultType=":String" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>
@@ -255,7 +260,63 @@
         <ContentItem
           Name="Popups"
           Kind="Group"
-          View="Microsoft.LightSwitch.MobileWeb:DialogPages" />
+          View="Microsoft.LightSwitch.MobileWeb:DialogPages">
+          <ContentItem
+            Name="Filter"
+            Kind="Group">
+            <ContentItem
+              Name="ExceptionCompanyName"
+              Kind="Value"
+              DataType=":String?">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Company" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="BrowseExceptions/Properties[ExceptionCompanyName]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+            <ContentItem
+              Name="ExceptionMinDueDate"
+              Kind="Value"
+              DataType=":Date?">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Minimum due date" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="BrowseExceptions/Properties[ExceptionMinDueDate]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+            <ContentItem
+              Name="ExceptionMaxDueDate"
+              Kind="Value"
+              DataType=":Date?">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Maximum due date" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="BrowseExceptions/Properties[ExceptionMaxDueDate]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+          </ContentItem>
+        </ContentItem>
       </ContentItem>
     </Screen.RootContentItem>
     <Screen.Methods>
@@ -297,7 +358,7 @@
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="ApplicationData/Members[Exceptions]" />
+                  Member="ApplicationData/Members[ExceptionsFilter]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
           </ScreenQueryDefinition>
@@ -305,10 +366,41 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="BrowseExceptions/Properties[Exceptions]/Query" />
+              Target="BrowseExceptions/Properties[Exceptions]/Query">
+              <ArgumentExpression
+                Parameter="CompanyName">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="BrowseExceptions/Properties[ExceptionCompanyName]" />
+                </ChainExpression>
+              </ArgumentExpression>
+              <ArgumentExpression
+                Parameter="MinDueDate">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="BrowseExceptions/Properties[ExceptionMinDueDate]" />
+                </ChainExpression>
+              </ArgumentExpression>
+              <ArgumentExpression
+                Parameter="MaxDueDate">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="BrowseExceptions/Properties[ExceptionMaxDueDate]" />
+                </ChainExpression>
+              </ArgumentExpression>
+            </CallExpression>
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
+      <ScreenProperty
+        Name="ExceptionCompanyName"
+        PropertyType=":String?" />
+      <ScreenProperty
+        Name="ExceptionMinDueDate"
+        PropertyType=":Date?" />
+      <ScreenProperty
+        Name="ExceptionMaxDueDate"
+        PropertyType=":Date?" />
     </Screen.Properties>
   </Screen>
   <Application.Methods>
