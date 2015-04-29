@@ -1,0 +1,81 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="public.master.cs" Inherits="LightSwitchApplication._public" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Excell@Fit</title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu%3A300%2C400%2C500%2C700&#038;subset=latin%2Clatin-ext" type="text/css" media="all" />
+    <link rel="stylesheet" href="http://excel.fit.vutbr.cz/wp-content/plugins/nextgen-gallery/products/photocrati_nextgen/modules/lightbox/static/fancybox/jquery.fancybox-1.3.4.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="http://excel.fit.vutbr.cz/wp-content/themes/Tyler/css/bootstrap.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="http://excel.fit.vutbr.cz/wp-content/themes/Tyler/css/jquery.scrollpane.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="http://excel.fit.vutbr.cz/wp-content/themes/Tyler/css/icon.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="http://excel.fit.vutbr.cz/wp-content/themes/Tyler/css/layout.css?t=1429873026" type="text/css" media="all" />
+    <link rel="stylesheet" href="http://excel.fit.vutbr.cz/wp-content/themes/Tyler/css/layout-mobile.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="http://excel.fit.vutbr.cz/wp-content/themes/Tyler/css/schemes/excel/layout.css" type="text/css" media="all" />
+    <link rel="stylesheet" type="text/css" href="Content/css/main.css" />
+</head>
+<body>
+    <div class="wrap">
+    <header class="nav transition">
+        <a href="http://excel.fit.vutbr.cz" id="logo">
+            <img src="http://excel.fit.vutbr.cz/wp-content/uploads/2014/11/excel-at-fit-logo.png" alt="Logo Excel@FIT – Studentská Konference Inovací, Technologií a Vědy v IT" title="Excel@FIT – Studentská Konference Inovací, Technologií a Vědy v IT" />
+        </a>
+        <nav class="navbar" role="navigation">
+            <!-- mobile navigation -->
+            <div class="navbar-header visible-sm visible-xs">
+                <button type="button" class="btn btn-primary navbar-toggle" data-toggle="collapse" data-target="#tyler-navigation">
+                    <span class="sr-only">Přepnout navigaci</span>
+                    <i class="icon-header"></i>
+                </button>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse text-fit" id="tyler-navigation">
+                <span class="text-fit-inner" style="display: block">
+                    <div class="menu-hlavni-menu-container">
+                        <ul id="menu-primary" class="transition">
+                            <li id="menu-item-263" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-263"><a href="http://excel.fit.vutbr.cz/">Úvodní stránka</a></li>
+                            <li id="menu-item-777" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-777"><a href="http://excel.fit.vutbr.cz/program/">Program</a></li>
+                            <li id="menu-item-809" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-809"><a href="http://excel.fit.vutbr.cz/sbornik/">Sborník</a></li>
+                            <li id="menu-item-259" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-259"><a href="http://excel.fit.vutbr.cz/pro-studenty/">Pro studenty</a></li>
+                            <li id="menu-item-269" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-269"><a href="http://excel.fit.vutbr.cz/pro-firmy/">Pro firmy</a></li>
+                            <li id="menu-item-276" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-276"><a href="http://excel.fit.vutbr.cz/galerie/">Galerie</a></li>
+                            <li id="menu-item-272" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-272"><a href="http://excel.fit.vutbr.cz/kontakt/">Kontakt</a></li>
+                            <li id="menu-item-278" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home"><a href="http://excel.fit.vutbr.cz/TODO/">Přihlášení</a></li>
+                        </ul>
+                    </div>
+                </span>
+            </div>
+        </nav>
+    </header>
+    <div>
+        <asp:ContentPlaceHolder ID="mainContent" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+        </div>
+    <footer>
+    <div class="container">
+        <div class="row row-sm">
+            <div class="col col-md-4"><div>	    
+		<!-- CONNECT -->
+		<div id="tile_connect" class="container widget">
+			<div class="connect">
+				<div class="connect-inner">
+					<span>Sociální sítě</span>
+					<div class="links">							<a href="mailto:excel@fit.vutbr.cz" title="Email"><i class="icon-envelope"></i></a>							<a href="https://www.facebook.com/events/1121818601178518/" target="_blank" title="Facebook"><i class="icon-facebook"></i></a>							<a href="https://twitter.com/FIT_VUT" target="_blank" title="Twitter"><i class="icon-twitter"></i></a>							<a href="https://plus.google.com/+FIT_VUT/posts" target="_blank" title="Google+"><i class="icon-googleplus"></i></a>	                </div>
+	            </div>
+	        </div>
+	    </div></div></div>        </div>
+    </div>
+    
+</footer>
+<script type='text/javascript' src='http://excel.fit.vutbr.cz/wp-includes/js/jquery/jquery.js'></script>
+<script type='text/javascript' src='http://excel.fit.vutbr.cz/wp-includes/js/jquery/jquery-migrate.min.js'></script>
+<script type='text/javascript' src='http://excel.fit.vutbr.cz/wp-content/themes/Tyler/js/bootstrap.min.js'></script>
+<script type='text/javascript' src='http://excel.fit.vutbr.cz/wp-content/themes/Tyler/js/jquery.mousewheel.js'></script>
+<script type='text/javascript' src='http://excel.fit.vutbr.cz/wp-content/themes/Tyler/js/jquery.jscrollpane.min.js'></script>
+<script type='text/javascript' src='http://excel.fit.vutbr.cz/wp-content/themes/Tyler/js/main.js'></script>
+<script type='text/javascript' src='http://excel.fit.vutbr.cz/wp-content/themes/Tyler/js/home.js'></script>
+<script type='text/javascript' src='http://excel.fit.vutbr.cz/wp-content/themes/Tyler/js/tweetMachine.min.js'></script>
+</body>
+</html>

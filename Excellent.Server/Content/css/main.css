@@ -1,0 +1,71 @@
+﻿body {
+    background: #15548C;
+}
+
+footer {
+    margin-top: 0rem;
+}
+
+.fullWidth {
+    width: 100%;    
+}
+
+.wrap {
+    background: white;
+}
+
+.accountInfo {
+    margin: 0 auto;
+    max-width: 23.5rem;
+    padding-top: 8rem;
+    padding-bottom: 10rem;
+}
+
+.registerForm {
+    margin: 0 auto;
+    max-width: 50rem;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+}
+
+.registerForm textarea  {
+    width: 100%;
+}
+
+#mainContent_participate {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+}
+
+.registerForm h4 {
+    text-align: right;
+}
+
+.accountInfo .submit-login .checkStyle label {
+    margin: 0.5rem;
+}
+
+input[type=password],
+input[type=text],
+input[type=tel],
+input[type=url],
+input[type=email] {
+    font-size: 18px;
+    background: #f1f1f1;
+    border: none;
+    box-sizing: border-box;
+    padding: 0.9em;
+    border-radius: 2px;
+    outline: none;
+    margin: 0 0;
+    width: 100%;
+}
+
+.btm-space {
+    margin-bottom: 0.5rem !important;
+}
+
+#mainContent_LoginUser_RecoverLink {
+    display: block;
+}
