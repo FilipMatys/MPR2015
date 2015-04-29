@@ -288,7 +288,7 @@
                 </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem
-                Name="ContractDescription"
+                Name="Conference_contractDescription"
                 Kind="Value"
                 DataType=":String"
                 View="Microsoft.LightSwitch.MobileWeb:TextArea">
@@ -300,7 +300,9 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="AddEditConference/Properties[ContractDescription]" />
+                        Member="AddEditConference/Properties[Conference]" />
+                      <MemberExpression
+                        Member="contractDescription" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -318,18 +320,20 @@
                 </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem
-                Name="ContractDate"
+                Name="Conference_contractDeadline"
                 Kind="Value"
-                DataType=":Date">
+                DataType=":DateTime">
                 <ContentItem.Attributes>
                   <DisplayName
-                    Value="Due date" />
+                    Value="Due Date" />
                 </ContentItem.Attributes>
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="AddEditConference/Properties[ContractDate]" />
+                        Member="AddEditConference/Properties[Conference]" />
+                      <MemberExpression
+                        Member="contractDeadline" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -399,7 +403,7 @@
                 </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem
-                Name="NumberOfParticipantsDescription"
+                Name="Conference_numAttendeeDescription"
                 Kind="Value"
                 DataType=":String"
                 View="Microsoft.LightSwitch.MobileWeb:TextArea">
@@ -411,51 +415,31 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="AddEditConference/Properties[NumberOfParticipantsDescription]" />
+                        Member="AddEditConference/Properties[Conference]" />
+                      <MemberExpression
+                        Member="numAttendeeDescription" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[AttachedLabelPosition]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <ConstantExpression
-                          Value="Top"
-                          ResultType=":String" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem
-                Name="NumberOfParticipantsDate"
+                Name="Conference_numAttendeeDeadline"
                 Kind="Value"
-                DataType=":Date">
+                DataType=":DateTime">
                 <ContentItem.Attributes>
                   <DisplayName
-                    Value="Due date" />
+                    Value="Due Date" />
                 </ContentItem.Attributes>
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="AddEditConference/Properties[NumberOfParticipantsDate]" />
+                        Member="AddEditConference/Properties[Conference]" />
+                      <MemberExpression
+                        Member="numAttendeeDeadline" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[AttachedLabelPosition]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <ConstantExpression
-                          Value="Top"
-                          ResultType=":String" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
               </ContentItem>
             </ContentItem>
             <ContentItem
@@ -498,9 +482,10 @@
                 </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem
-                Name="ParticipantsDescription"
+                Name="Conference_attendeeDescription"
                 Kind="Value"
-                DataType=":String">
+                DataType=":String"
+                View="Microsoft.LightSwitch.MobileWeb:TextArea">
                 <ContentItem.Attributes>
                   <DisplayName
                     Value="Description" />
@@ -509,24 +494,28 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="AddEditConference/Properties[ParticipantsDescription]" />
+                        Member="AddEditConference/Properties[Conference]" />
+                      <MemberExpression
+                        Member="attendeeDescription" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                Name="ParticipantsDate"
+                Name="Conference_attendeeDeadline"
                 Kind="Value"
-                DataType=":Date">
+                DataType=":DateTime">
                 <ContentItem.Attributes>
                   <DisplayName
-                    Value="Due date" />
+                    Value="Due Date" />
                 </ContentItem.Attributes>
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="AddEditConference/Properties[ParticipantsDate]" />
+                        Member="AddEditConference/Properties[Conference]" />
+                      <MemberExpression
+                        Member="attendeeDeadline" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -572,35 +561,40 @@
                 </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem
-                Name="LogoDescription"
+                Name="Conference_logoDesciption"
                 Kind="Value"
-                DataType=":String">
+                DataType=":String"
+                View="Microsoft.LightSwitch.MobileWeb:TextArea">
                 <ContentItem.Attributes>
                   <DisplayName
-                    Value="Description" />
+                    Value="Desciption" />
                 </ContentItem.Attributes>
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="AddEditConference/Properties[LogoDescription]" />
+                        Member="AddEditConference/Properties[Conference]" />
+                      <MemberExpression
+                        Member="logoDesciption" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                Name="LogoDate"
+                Name="Conference_logoDeadline"
                 Kind="Value"
-                DataType=":Date">
+                DataType=":DateTime">
                 <ContentItem.Attributes>
                   <DisplayName
-                    Value="Due date" />
+                    Value="Due Date" />
                 </ContentItem.Attributes>
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="AddEditConference/Properties[LogoDate]" />
+                        Member="AddEditConference/Properties[Conference]" />
+                      <MemberExpression
+                        Member="logoDeadline" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -646,9 +640,10 @@
                 </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem
-                Name="PosterDescription"
+                Name="Conference_posterDescription"
                 Kind="Value"
-                DataType=":String">
+                DataType=":String"
+                View="Microsoft.LightSwitch.MobileWeb:TextArea">
                 <ContentItem.Attributes>
                   <DisplayName
                     Value="Description" />
@@ -657,24 +652,28 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="AddEditConference/Properties[PosterDescription]" />
+                        Member="AddEditConference/Properties[Conference]" />
+                      <MemberExpression
+                        Member="posterDescription" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                Name="PosterDate"
+                Name="Conference_posterDeadline"
                 Kind="Value"
-                DataType=":Date">
+                DataType=":DateTime">
                 <ContentItem.Attributes>
                   <DisplayName
-                    Value="Due date" />
+                    Value="Due Date" />
                 </ContentItem.Attributes>
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="AddEditConference/Properties[PosterDate]" />
+                        Member="AddEditConference/Properties[Conference]" />
+                      <MemberExpression
+                        Member="posterDeadline" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -720,9 +719,10 @@
                 </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem
-                Name="VideoPresentationDescription"
+                Name="Conference_videoDescription"
                 Kind="Value"
-                DataType=":String">
+                DataType=":String"
+                View="Microsoft.LightSwitch.MobileWeb:TextArea">
                 <ContentItem.Attributes>
                   <DisplayName
                     Value="Description" />
@@ -731,24 +731,28 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="AddEditConference/Properties[VideoPresentationDescription]" />
+                        Member="AddEditConference/Properties[Conference]" />
+                      <MemberExpression
+                        Member="videoDescription" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                Name="VideoPresentationDate"
+                Name="Conference_videoDeadline"
                 Kind="Value"
-                DataType=":Date">
+                DataType=":DateTime">
                 <ContentItem.Attributes>
                   <DisplayName
-                    Value="Due date" />
+                    Value="Due Date" />
                 </ContentItem.Attributes>
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="AddEditConference/Properties[VideoPresentationDate]" />
+                        Member="AddEditConference/Properties[Conference]" />
+                      <MemberExpression
+                        Member="videoDeadline" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -794,9 +798,10 @@
                 </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem
-                Name="PresentationListDescription"
+                Name="Conference_propagPaperDescription"
                 Kind="Value"
-                DataType=":String">
+                DataType=":String"
+                View="Microsoft.LightSwitch.MobileWeb:TextArea">
                 <ContentItem.Attributes>
                   <DisplayName
                     Value="Description" />
@@ -805,15 +810,17 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="AddEditConference/Properties[PresentationListDescription]" />
+                        Member="AddEditConference/Properties[Conference]" />
+                      <MemberExpression
+                        Member="propagPaperDescription" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                Name="PresentationListDate"
+                Name="Conference_propagPaperDeadline"
                 Kind="Value"
-                DataType=":Date">
+                DataType=":DateTime">
                 <ContentItem.Attributes>
                   <DisplayName
                     Value="Due Date" />
@@ -822,149 +829,13 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="AddEditConference/Properties[PresentationListDate]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-            </ContentItem>
-          </ContentItem>
-          <ContentItem
-            Name="Deadlines"
-            Kind="Group"
-            View="Microsoft.LightSwitch.MobileWeb:RowsLayout">
-            <ContentItem
-              Name="Deadlines1"
-              Kind="Collection"
-              DataType="CollectionView$Deadline"
-              View="Microsoft.LightSwitch.MobileWeb:TileList">
-              <ContentItem.Attributes>
-                <DisplayName
-                  Value="Deadlines" />
-              </ContentItem.Attributes>
-              <ContentItem.DataSource>
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <MemberExpression
-                      Member="AddEditConference/Properties[Deadlines]" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ContentItem.DataSource>
-              <ContentItem
-                Name="rows"
-                Kind="Details"
-                DataType="Deadline"
-                View="Microsoft.LightSwitch.MobileWeb:RowsLayout">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="rows" />
-                </ContentItem.Attributes>
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression />
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem
-                  Name="Type"
-                  Kind="Value"
-                  DataType=":String">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Deadline/Properties[Type]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem.PropertySources>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <ConstantExpression
-                            Value="Large"
-                            ResultType=":String" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                  </ContentItem.PropertySources>
-                </ContentItem>
-                <ContentItem
-                  Name="DateDead"
-                  Kind="Value"
-                  DataType=":Date">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Deadline/Properties[DateDead]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem.PropertySources>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <ConstantExpression
-                            Value="Small"
-                            ResultType=":String" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                  </ContentItem.PropertySources>
-                </ContentItem>
-                <ContentItem
-                  Name="Description1"
-                  Kind="Value"
-                  DataType=":String?">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Deadline/Properties[Description]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem.PropertySources>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <ConstantExpression
-                            Value="Small"
-                            ResultType=":String" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                  </ContentItem.PropertySources>
-                </ContentItem>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[WidthSizingMode]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <ConstantExpression
-                          Value="FitToContent"
-                          ResultType=":String" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
-              </ContentItem>
-              <ContentItem.PropertySources>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.MobileWeb:RootCollectionControl/Properties[ItemTap]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
+                        Member="AddEditConference/Properties[Conference]" />
                       <MemberExpression
-                        Member="AddEditConference/Properties[Deadlines]" />
-                      <CallExpression
-                        Target="viewSelected" />
+                        Member="propagPaperDeadline" />
                     </ChainExpression>
                   </ScreenExpressionTree>
-                </ControlPropertySource>
-              </ContentItem.PropertySources>
+                </ContentItem.DataSource>
+              </ContentItem>
             </ContentItem>
           </ContentItem>
         </ContentItem>

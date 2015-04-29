@@ -28,7 +28,32 @@ myapp.AddEditConference.PresentationListLabel_postRender = function (element, co
     // Write code here.
     element.textContent = "Presentation List";
 };
-myapp.AddEditConference.ContractDescription_postRender = function (element, contentItem) {
+myapp.AddEditConference.created = function (screen) {
     // Write code here.
+    //Deadline ded; 
+    //screen.Deadlines.addNew();
+
+    //screen.getDeadlines();
+
+    //int i;
+    //for(i = 0; i < screen.Deadlin)
+
+    //screen.Deadlines.data
+    
+    
+
+    //lightSwitchApplication.Deadline;
+};
+
+myapp.AddEditConference.Deadlines1Template_render = function (element, contentItem) {
+    // Write code here.
+    var idd = $("<p>id|" + contentItem.value.Id + "|id</p>");
+    var orderDate = $("<p>" + contentItem.value.Type + "</p>");
+    if (contentItem.value.Type == "Logo") {
+        var pok = $("<textarea>This is where the user can enter text...</textarea>");
+    }
+    idd.appendTo($(element));
+    orderDate.appendTo($(element));
+    pok.appendTo($(element));
     
 };
