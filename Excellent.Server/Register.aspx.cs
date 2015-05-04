@@ -20,14 +20,12 @@ namespace LightSwitchApplication
                 user.Email = email.Text;
                 user.Phone = phoneNumber.Text;
                 user.Role = "Company";
-                user.Name = companyName.Text;
+                user.Name = contactPersonName.Text;
 
                 var company = context.DataWorkspace.ApplicationData.Companies.AddNew();
                 company.Name = companyName.Text;
                 company.ICO = identificationNumber.Text;
                 company.DIC = vatIdentificationNumber.Text;
-                company.ContactName = contactPersonName.Text;
-                company.ContactPhone = phoneNumber.Text;
                 company.Link = link.Text;
                 company.Address = address.Text;
 
