@@ -49,7 +49,10 @@
     <Content Include="Content\Images\msls-loader-light.gif" />
     <Content Include="Content\Images\msls-white-icons-18.png" />
     <Content Include="Content\Images\msls-white-icons-36.png" />
+    <Content Include="Content\Images\tile-add-company.png" />
     <Content Include="Content\Images\tile-conferences.png" />
+    <Content Include="Content\Images\tile-exceptions.png" />
+    <Content Include="Content\Images\tile-participations.png" />
     <Content Include="Content\Images\tile-users.png" />
     <Content Include="Content\jquery.mobile-1.3.0.css" />
     <Content Include="Content\jquery.mobile-1.3.0.min.css" />

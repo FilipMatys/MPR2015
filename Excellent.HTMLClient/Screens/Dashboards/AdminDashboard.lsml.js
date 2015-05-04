@@ -59,13 +59,13 @@ myapp.AdminDashboard.Sponsorships_postRender = function (element, contentItem) {
     });
 };
 myapp.AdminDashboard.Participations_postRender = function (element, contentItem) {
-    $(element).metroTile(contentItem, { imageUrl: 'Content/Images/tile-users.png' });
+    $(element).metroTile(contentItem, { imageUrl: 'Content/Images/tile-participations.png' });
 };
 myapp.AdminDashboard.AddNewCompany_postRender = function (element, contentItem) {
-    $(element).metroTile(contentItem, { imageUrl: 'Content/Images/tile-users.png' });
+    $(element).metroTile(contentItem, { imageUrl: 'Content/Images/tile-add-company.png' });
 };
 myapp.AdminDashboard.Exceptions_postRender = function (element, contentItem) {
-    $(element).metroTile(contentItem, { imageUrl: 'Content/Images/tile-users.png' });
+    $(element).metroTile(contentItem, { imageUrl: 'Content/Images/tile-exceptions.png' });
 };
 
 myapp.AdminDashboard.created = function (screen) {

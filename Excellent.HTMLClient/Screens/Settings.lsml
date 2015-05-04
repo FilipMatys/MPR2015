@@ -26,8 +26,6 @@
                 Name="ShowBrowseUsers"
                 Kind="Command">
                 <ContentItem.Attributes>
-                  <Description
-                    Value="Users management" />
                   <DisplayName
                     Value="Users" />
                 </ContentItem.Attributes>
@@ -47,8 +45,6 @@
                 Name="ShowBrowseConferences"
                 Kind="Command">
                 <ContentItem.Attributes>
-                  <Description
-                    Value="Conferences management" />
                   <DisplayName
                     Value="Conferences" />
                 </ContentItem.Attributes>
