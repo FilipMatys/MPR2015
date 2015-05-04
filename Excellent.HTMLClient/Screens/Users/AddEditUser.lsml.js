@@ -69,3 +69,7 @@ myapp.AddEditUser.saveAssign_execute = function (screen) {
     // Write code here.
 
 };
+
+myapp.AddEditUser.participations_postRender = function (element, contentItem) {
+    contentItem.isEnabled = contentItem.value.User.Role === 'Company';
+};
