@@ -747,24 +747,6 @@
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
               </ContentItem>
-              <ContentItem
-                Name="ContactName"
-                Kind="Value"
-                DataType=":String"
-                View="Microsoft.LightSwitch.MobileWeb:Text">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="AddEditParticipationFIT/Properties[Participation]" />
-                      <MemberExpression
-                        Member="Company" />
-                      <MemberExpression
-                        Member="ContactName" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
             </ContentItem>
           </ContentItem>
         </ContentItem>

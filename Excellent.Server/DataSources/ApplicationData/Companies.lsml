@@ -78,24 +78,6 @@
             Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
-      <EntityProperty
-        Name="ContactName"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Required />
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="ContactPhone"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Required />
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
       <NavigationProperty
         Name="Participations"
         Association="Participation_Company"

@@ -127,19 +127,6 @@
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
-                <ContentItem
-                  Name="ContactName"
-                  Kind="Value"
-                  DataType=":String">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Company/Properties[ContactName]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
                     Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[MinWidth]">
@@ -166,19 +153,6 @@
               <ContentItem
                 Name="right"
                 Kind="Group">
-                <ContentItem
-                  Name="ContactPhone"
-                  Kind="Value"
-                  DataType=":String">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Company/Properties[ContactPhone]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
                 <ContentItem
                   Name="User"
                   Kind="Details"
