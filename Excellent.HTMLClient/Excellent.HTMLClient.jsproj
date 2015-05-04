@@ -76,11 +76,17 @@
     <Content Include="Screens\AddEditParticipationFIT.lsml.js">
       <DependentUpon>AddEditParticipationFIT.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\AdminDashboard.lsml.js">
+      <DependentUpon>AdminDashboard.lsml</DependentUpon>
+    </Content>
     <Content Include="Screens\Companies\ViewCompany.lsml.js">
       <DependentUpon>ViewCompany.lsml</DependentUpon>
     </Content>
     <Content Include="Screens\Exceptions\ViewException.lsml.js">
       <DependentUpon>ViewException.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\Home.lsml.js">
+      <DependentUpon>Home.lsml</DependentUpon>
     </Content>
     <Content Include="Screens\Participations\ViewParticipation.lsml.js">
       <DependentUpon>ViewParticipation.lsml</DependentUpon>
@@ -125,6 +131,7 @@
     <LightSwitchModel Include="Properties\Proxies.lsml" />
     <LightSwitchModel Include="Screens\AddEditConference.lsml" />
     <LightSwitchModel Include="Screens\AddEditParticipationFIT.lsml" />
+    <LightSwitchModel Include="Screens\AdminDashboard.lsml" />
     <LightSwitchModel Include="Screens\Companies\AddEditCompany.lsml" />
     <LightSwitchModel Include="Screens\Companies\BrowseCompanies.lsml" />
     <LightSwitchModel Include="Screens\Companies\ViewCompany.lsml" />
