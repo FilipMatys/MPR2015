@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.LightSwitch;
+using System;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
-using Microsoft.LightSwitch;
-using Microsoft.LightSwitch.Server;
 
 namespace LightSwitchApplication.Reports
 {

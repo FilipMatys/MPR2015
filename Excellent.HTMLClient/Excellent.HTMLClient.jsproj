@@ -76,11 +76,14 @@
     <Content Include="Screens\AddEditParticipationFIT.lsml.js">
       <DependentUpon>AddEditParticipationFIT.lsml</DependentUpon>
     </Content>
-    <Content Include="Screens\AdminDashboard.lsml.js">
-      <DependentUpon>AdminDashboard.lsml</DependentUpon>
-    </Content>
     <Content Include="Screens\Companies\ViewCompany.lsml.js">
       <DependentUpon>ViewCompany.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\Dashboards\AdminDashboard.lsml.js">
+      <DependentUpon>AdminDashboard.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\Dashboards\ContactPersonDashboard.lsml.js">
+      <DependentUpon>ContactPersonDashboard.lsml</DependentUpon>
     </Content>
     <Content Include="Screens\Exceptions\ViewException.lsml.js">
       <DependentUpon>ViewException.lsml</DependentUpon>
@@ -109,6 +112,10 @@
     <Content Include="Scripts\jquery.mobile-1.3.0.js" />
     <Content Include="Scripts\jquery.mobile-1.3.0.min.js" />
     <Content Include="Scripts\metro-tile.js" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\msls-2.5.2-vsdoc.js" />
     <Content Include="Scripts\msls-2.5.2.js" />
     <Content Include="Scripts\msls-2.5.2.min.js" />
@@ -131,11 +138,12 @@
     <LightSwitchModel Include="Properties\Proxies.lsml" />
     <LightSwitchModel Include="Screens\AddEditConference.lsml" />
     <LightSwitchModel Include="Screens\AddEditParticipationFIT.lsml" />
-    <LightSwitchModel Include="Screens\AdminDashboard.lsml" />
     <LightSwitchModel Include="Screens\Companies\AddEditCompany.lsml" />
     <LightSwitchModel Include="Screens\Companies\BrowseCompanies.lsml" />
     <LightSwitchModel Include="Screens\Companies\ViewCompany.lsml" />
     <LightSwitchModel Include="Screens\Conferences\BrowseConferences.lsml" />
+    <LightSwitchModel Include="Screens\Dashboards\AdminDashboard.lsml" />
+    <LightSwitchModel Include="Screens\Dashboards\ContactPersonDashboard.lsml" />
     <LightSwitchModel Include="Screens\Exceptions\AddEditException.lsml" />
     <LightSwitchModel Include="Screens\Exceptions\BrowseExceptions.lsml" />
     <LightSwitchModel Include="Screens\Exceptions\ViewException.lsml" />

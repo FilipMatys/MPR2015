@@ -25,5 +25,10 @@ namespace LightSwitchApplication
         {
             Membership.CreateUser(entity.Login, entity.Password, entity.Email);
         }
+
+        partial void PastCompanyParticipations_PreprocessQuery(ref IQueryable<Participation> query)
+        {
+            query = query.Where(t => t.Company.User.Login == Application.User.Identity.Name);
+        }
     }
 }
