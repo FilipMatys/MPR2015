@@ -37,7 +37,7 @@ myapp.AdminDashboard.ActiveParticipations_postRender = function (element, conten
     });
 };
 myapp.AdminDashboard.CompaniesRegistered_postRender = function (element, contentItem) {
-    $(element).metroTile(contentItem, {});
+    $(element).metroTile(contentItem, { imageUrl: 'Content/Images/tile.png' });
 
     contentItem.screen.addEventListener('dashboard-data-changed', function (e) {
         $(element).find('.text').text(e.detail.CompaniesCount);
