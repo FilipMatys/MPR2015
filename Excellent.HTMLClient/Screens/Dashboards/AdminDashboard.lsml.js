@@ -13,7 +13,9 @@ myapp.AdminDashboard.ActualConference_postRender = function (element, contentIte
             '<div class="d-table"><div class="d-cell tile-money">Money received</div><div class="d-cell tile-money-value">' + e.detail.MoneyReceived + '</div></div>' +
             '<div class="d-table"><div class="d-cell tile-days">Days remaining</div><div class="d-cell tile-days-value">' + e.detail.DaysRemaining + '</div></div>';
 
-        $(element).find('.text').html(content);
+        setTimeout(function () {
+            $(element).find('.text').html(content);
+        }, 0);
     });
 };
 myapp.AdminDashboard.PendingParticipations_postRender = function (element, contentItem) {
@@ -23,7 +25,9 @@ myapp.AdminDashboard.PendingParticipations_postRender = function (element, conte
     contentItem.screen.addEventListener('dashboard-data-changed', function (e) {
         contentItem.isVisible = e.detail.Active;
 
-        $(element).find('.text').text(e.detail.PendingParticipations);
+        setTimeout(function () {
+            $(element).find('.text').text(e.detail.PendingParticipations);
+        }, 0);
     });
 };
 myapp.AdminDashboard.ActiveParticipations_postRender = function (element, contentItem) {
@@ -33,14 +37,18 @@ myapp.AdminDashboard.ActiveParticipations_postRender = function (element, conten
     contentItem.screen.addEventListener('dashboard-data-changed', function (e) {
         contentItem.isVisible = e.detail.Active;
 
-        $(element).find('.text').text(e.detail.ActiveParticipations);
+        setTimeout(function () {
+            $(element).find('.text').text(e.detail.ActiveParticipations);
+        }, 0);
     });
 };
 myapp.AdminDashboard.CompaniesRegistered_postRender = function (element, contentItem) {
     $(element).metroTile(contentItem, { imageUrl: 'Content/Images/tile.png' });
 
     contentItem.screen.addEventListener('dashboard-data-changed', function (e) {
-        $(element).find('.text').text(e.detail.CompaniesCount);
+        setTimeout(function () {
+            $(element).find('.text').text(e.detail.CompaniesCount);
+        }, 0);
     });
 };
 myapp.AdminDashboard.Sponsorships_postRender = function (element, contentItem) {
@@ -55,7 +63,9 @@ myapp.AdminDashboard.Sponsorships_postRender = function (element, contentItem) {
             '<div class="d-table"><div class="d-cell tile-money">Silver</div><div class="d-cell tile-money-value">' + e.detail.SilverCount + '</div></div>' +
             '<div class="d-table"><div class="d-cell tile-money">Bronze</div><div class="d-cell tile-money-value">' + e.detail.BronzeCount + '</div></div>';
 
-        $(element).find('.text').html(content);
+        setTimeout(function () {
+            $(element).find('.text').html(content);
+        }, 0);
     });
 };
 myapp.AdminDashboard.Participations_postRender = function (element, contentItem) {

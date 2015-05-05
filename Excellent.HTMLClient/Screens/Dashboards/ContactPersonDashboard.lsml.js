@@ -13,7 +13,9 @@ myapp.ContactPersonDashboard.ActualConference_postRender = function (element, co
             '<span>' + (e.detail.Status != null ? e.detail.Status : '') + '</span><br />' +
             '<span>' + e.detail.Place + '</span>';
 
-        $(element).find('.text').html(content);
+        setTimeout(function () {
+            $(element).find('.text').html(content);
+        }, 0);
     });
 };
 
