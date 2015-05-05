@@ -5,6 +5,9 @@ using System.Web.Http;
 
 namespace LightSwitchApplication.Reports
 {
+    /// <summary>
+    /// Contact person dashboard data provider.
+    /// </summary>
     public class ContactPersonDashboardController : ApiController
     {
         // GET api/<controller>
@@ -28,6 +31,9 @@ namespace LightSwitchApplication.Reports
         }
     }
 
+    /// <summary>
+    /// Contact person dashboard data.
+    /// </summary>
     public class ContactPersonDashboardData
     {
         public bool Active { get; set; }

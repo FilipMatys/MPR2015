@@ -5,9 +5,15 @@ using System.Web.Http;
 
 namespace LightSwitchApplication.Reports
 {
+    /// <summary>
+    /// Administrator dashboard data provider.
+    /// </summary>
     public class AdminDashboardController : ApiController
     {
-        // GET api/<controller>
+        /// <summary>
+        /// GET api/<controller>
+        /// </summary>
+        /// <returns>dashboard data</returns>
         public AdminDashboardData Get()
         {
             using (var context = ServerApplicationContext.CreateContext())
@@ -36,6 +42,9 @@ namespace LightSwitchApplication.Reports
         }
     }
 
+    /// <summary>
+    /// Administrator dashboard data.
+    /// </summary>
     public class AdminDashboardData
     {
         public bool Active { get; set; }
