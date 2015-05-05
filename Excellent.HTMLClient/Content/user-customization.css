@@ -26,6 +26,10 @@ div.d-cell {
     display: table-cell;
 }
 
+.ui-disabled {
+    display: none;
+}
+
 .ui-bar-a,
 .ui-bar-a input,
 .ui-bar-a select,
