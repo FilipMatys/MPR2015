@@ -13,6 +13,19 @@
     font-weight: 200;
 }
 
+/**
+    TABLE
+*/
+div.d-table {
+    display: table;
+    width: 90%;
+    margin-bottom: 1rem;
+}
+
+div.d-cell {
+    display: table-cell;
+}
+
 .ui-bar-a,
 .ui-bar-a input,
 .ui-bar-a select,
@@ -217,4 +230,24 @@ a.ui-btn div.text {
     text-align: left;
     font-size: 4rem;
     color: white;
+}
+
+a.ui-btn div.text .tile-place {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    display: block;
+    max-width: 80%;
+    margin-top: 5rem;
+}
+
+a.ui-btn div.text .tile-money,
+a.ui-btn div.text .tile-money-value,
+a.ui-btn div.text .tile-days,
+a.ui-btn div.text .tile-days-value {
+    font-size: 1.25rem;
+}
+
+a.ui-btn div.text .tile-money-value,
+a.ui-btn div.text .tile-days-value {
+    text-align: right;
 }

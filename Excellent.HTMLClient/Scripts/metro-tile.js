@@ -2,7 +2,7 @@
     $.fn.metroTile = function (contentItem, options) {
         $element = this;
         var me = $.extend({
-            width: 200,
+            width: 420,
             height: 200,
             displayName: contentItem.model.displayName,
             description: contentItem.model.description || '',
@@ -15,7 +15,8 @@
             me.element.find('a').css({
                 'background-image': 'url(' + me.imageUrl + ')',
                 'background-repeat': 'no-repeat',
-                'background-position': 'center',
+                'background-position': 'right',
+                'background-color': '#f68712',
                 'width': '' + me.width + 'px',
                 'height': '' + me.height + 'px'
             });

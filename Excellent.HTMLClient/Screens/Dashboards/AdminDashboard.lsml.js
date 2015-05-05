@@ -1,17 +1,17 @@
 ﻿/// <reference path="~/GeneratedArtifacts/viewModel.js" />
 
 myapp.AdminDashboard.ActualConference_postRender = function (element, contentItem) {
-    $(element).metroTile(contentItem, { height: 420 });
+    $(element).metroTile(contentItem, { height: 420, width: 420 });
     contentItem.isVisible = false;
 
     contentItem.screen.addEventListener('dashboard-data-changed', function (e) {
         contentItem.isVisible = e.detail.Active;
 
         var content =
-            '<span>' + e.detail.Year + '</span><br />' +
-            '<span>' + e.detail.Place + '</span><br />' +
-            '<span>Money received</span><span>' + e.detail.MoneyReceived + '</span><br />' +
-            '<span>Days remaining</span><span>' + e.detail.DaysRemaining + '</span>';
+            '<span class="tile-year">' + e.detail.Year + '</span><br />' +
+            '<span class="tile-place">' + e.detail.Place + '</span><br />' +
+            '<div class="d-table"><div class="d-cell tile-money">Money received</div><div class="d-cell tile-money-value">' + e.detail.MoneyReceived + '</div></div>' +
+            '<div class="d-table"><div class="d-cell tile-days">Days remaining</div><div class="d-cell tile-days-value">' + e.detail.DaysRemaining + '</div></div>';
 
         $(element).find('.text').html(content);
     });
@@ -51,9 +51,9 @@ myapp.AdminDashboard.Sponsorships_postRender = function (element, contentItem) {
         contentItem.isVisible = e.detail.Active;
 
         var content =
-            '<span>Gold</span><span>' + e.detail.GoldCount + '</span><br />' +
-            '<span>Silver</span><span>' + e.detail.SilverCount + '</span><br />' +
-            '<span>Bronze</span><span>' + e.detail.BronzeCount + '</span>';
+            '<div class="d-table"><div class="d-cell tile-money">Gold</div><div class="d-cell tile-money-value">' + e.detail.GoldCount + '</div></div>' +
+            '<div class="d-table"><div class="d-cell tile-money">Silver</div><div class="d-cell tile-money-value">' + e.detail.SilverCount + '</div></div>' +
+            '<div class="d-table"><div class="d-cell tile-money">Bronze</div><div class="d-cell tile-money-value">' + e.detail.BronzeCount + '</div></div>';
 
         $(element).find('.text').html(content);
     });
