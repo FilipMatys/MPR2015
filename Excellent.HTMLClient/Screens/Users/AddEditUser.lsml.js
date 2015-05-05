@@ -16,20 +16,28 @@ myapp.AddEditUser.created = function (screen) {
         screen.findContentItem('Role').isEnabled = false;
     }
 
-    screen.findContentItem('Specialization').isEnabled = screen.User.Role === 'Employee';
-
-    screen.User.addChangeListener('Role', function (e) {
-        if (screen.User.Role === 'Company') {
-            screen.User.Company = new myapp.Company();
-            screen.findContentItem('Specialization').isEnabled = false;
-        } else if (screen.User.Role === 'Administrator') {
-            screen.User.Company = null;
-            screen.findContentItem('Specialization').isEnabled = false;
-        } else if (screen.User.Role === 'Employee') {
-            screen.User.Company = null;
-            screen.findContentItem('Specialization').isEnabled = true;
+    function UpdateVisibility() {
+        switch (screen.User.Role) {
+            case 'Company':
+                screen.User.Company = new myapp.Company();
+                screen.findContentItem('Specialization').isVisible = false;
+                screen.findContentItem('company').isVisible = true;
+                break;
+            case 'Administrator':
+                screen.User.Company = null;
+                screen.findContentItem('Specialization').isVisible = false;
+                screen.findContentItem('company').isVisible = false;
+                break;
+            case 'Employee':
+                screen.User.Company = null;
+                screen.findContentItem('Specialization').isVisible = true;
+                screen.findContentItem('company').isVisible = false;
+                break;
         }
-    });
+    }
+
+    screen.User.addChangeListener('Role', UpdateVisibility);
+    UpdateVisibility();
 };
 
 myapp.AddEditUser.beforeApplyChanges = function (screen) {

@@ -202,104 +202,137 @@
               <ContentItem
                 Name="company"
                 Kind="Group"
-                View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
+                View="Microsoft.LightSwitch.MobileWeb:RowsLayout">
                 <ContentItem
-                  Name="Group3"
-                  Kind="Group">
+                  Name="Group4"
+                  Kind="Group"
+                  View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
                   <ContentItem
-                    Name="Name1"
-                    Kind="Value"
-                    DataType=":String">
-                    <ContentItem.Attributes>
-                      <DisplayName
-                        Value="Company Name" />
-                    </ContentItem.Attributes>
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="User/Properties[Company]" />
-                          <MemberExpression
-                            Member="Name" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
+                    Name="Group3"
+                    Kind="Group">
+                    <ContentItem
+                      Name="Name1"
+                      Kind="Value"
+                      DataType=":String">
+                      <ContentItem.Attributes>
+                        <DisplayName
+                          Value="Company Name" />
+                      </ContentItem.Attributes>
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="User/Properties[Company]" />
+                            <MemberExpression
+                              Member="Name" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
+                    <ContentItem
+                      Name="DIC"
+                      Kind="Value"
+                      DataType=":String">
+                      <ContentItem.Attributes>
+                        <DisplayName
+                          Value="VAT identification number" />
+                      </ContentItem.Attributes>
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="User/Properties[Company]" />
+                            <MemberExpression
+                              Member="DIC" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
+                    <ContentItem
+                      Name="Link"
+                      Kind="Value"
+                      DataType="Microsoft.LightSwitch.Extensions:WebAddress?">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="User/Properties[Company]" />
+                            <MemberExpression
+                              Member="Link" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
                   </ContentItem>
                   <ContentItem
-                    Name="DIC"
-                    Kind="Value"
-                    DataType=":String">
-                    <ContentItem.Attributes>
-                      <DisplayName
-                        Value="VAT identification number" />
-                    </ContentItem.Attributes>
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="User/Properties[Company]" />
-                          <MemberExpression
-                            Member="DIC" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="Link"
-                    Kind="Value"
-                    DataType="Microsoft.LightSwitch.Extensions:WebAddress?">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="User/Properties[Company]" />
-                          <MemberExpression
-                            Member="Link" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
+                    Name="Group2"
+                    Kind="Group">
+                    <ContentItem
+                      Name="ICO"
+                      Kind="Value"
+                      DataType=":String">
+                      <ContentItem.Attributes>
+                        <DisplayName
+                          Value="Identification number" />
+                      </ContentItem.Attributes>
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="User/Properties[Company]" />
+                            <MemberExpression
+                              Member="ICO" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
+                    <ContentItem
+                      Name="Participate"
+                      Kind="Value"
+                      DataType=":Int32"
+                      View="Microsoft.LightSwitch.MobileWeb:ValueCustomControl">
+                      <ContentItem.Attributes>
+                        <DisplayName
+                          Value="Participate in the upcoming event" />
+                      </ContentItem.Attributes>
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="User/Properties[Id]" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                      <ContentItem.PropertySources>
+                        <ControlPropertySource
+                          Property="Microsoft.LightSwitch.MobileWeb:RootCustomControl/Properties[ReadOnlyRendering]">
+                          <ScreenExpressionTree>
+                            <ChainExpression>
+                              <ConstantExpression
+                                Value="Custom"
+                                ResultType=":String" />
+                            </ChainExpression>
+                          </ScreenExpressionTree>
+                        </ControlPropertySource>
+                      </ContentItem.PropertySources>
+                    </ContentItem>
                   </ContentItem>
                 </ContentItem>
                 <ContentItem
-                  Name="Group2"
-                  Kind="Group">
-                  <ContentItem
-                    Name="ICO"
-                    Kind="Value"
-                    DataType=":String">
-                    <ContentItem.Attributes>
-                      <DisplayName
-                        Value="Identification number" />
-                    </ContentItem.Attributes>
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="User/Properties[Company]" />
-                          <MemberExpression
-                            Member="ICO" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="Participate"
-                    Kind="Value"
-                    DataType=":Int32"
-                    View="Microsoft.LightSwitch.MobileWeb:ValueCustomControl">
-                    <ContentItem.Attributes>
-                      <DisplayName
-                        Value="Participate in the upcoming event" />
-                    </ContentItem.Attributes>
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="User/Properties[Id]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
+                  Name="Address"
+                  Kind="Value"
+                  DataType=":String"
+                  View="Microsoft.LightSwitch.MobileWeb:TextArea">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="User/Properties[Company]" />
+                        <MemberExpression
+                          Member="Address" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
@@ -323,22 +356,6 @@
                     </ScreenExpressionTree>
                   </ControlPropertySource>
                 </ContentItem.PropertySources>
-              </ContentItem>
-              <ContentItem
-                Name="Address"
-                Kind="Value"
-                DataType=":String"
-                View="Microsoft.LightSwitch.MobileWeb:TextArea">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="User/Properties[Company]" />
-                      <MemberExpression
-                        Member="Address" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
               </ContentItem>
             </ContentItem>
             <ContentItem.CommandItems>
