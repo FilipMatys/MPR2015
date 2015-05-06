@@ -287,6 +287,9 @@
     <LightSwitchModel Include="DataSources\ApplicationData\setNotActive.lsml">
       <DependentUpon>Conferences.lsml</DependentUpon>
     </LightSwitchModel>
+    <LightSwitchModel Include="DataSources\ApplicationData\ContactPersons.lsml">
+      <DependentUpon>Users.lsml</DependentUpon>
+    </LightSwitchModel>
     <None Include="Scripts\jquery-2.1.3.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.3.js" />
     <Content Include="Scripts\jquery-2.1.3.min.js" />

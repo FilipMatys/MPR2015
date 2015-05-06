@@ -165,7 +165,7 @@
                 <ContentItem
                   Name="Company_User_Phone"
                   Kind="Value"
-                  DataType=":String">
+                  DataType="Microsoft.LightSwitch.Extensions:PhoneNumber">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>

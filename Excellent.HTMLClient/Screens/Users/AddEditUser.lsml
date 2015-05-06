@@ -161,7 +161,7 @@
                   <ContentItem
                     Name="Phone"
                     Kind="Value"
-                    DataType=":String">
+                    DataType="Microsoft.LightSwitch.Extensions:PhoneNumber">
                     <ContentItem.Attributes>
                       <DisplayName
                         Value="Phone number" />
