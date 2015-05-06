@@ -255,3 +255,12 @@ a.ui-btn div.text .tile-money-value,
 a.ui-btn div.text .tile-days-value {
     text-align: right;
 }
+
+a.ui-btn div.text .tile-date {
+    font-size: 1.25rem;
+    margin-left: 1rem;
+}
+
+a.ui-btn div.text .tile-status {
+    font-size: 1.5rem;
+}

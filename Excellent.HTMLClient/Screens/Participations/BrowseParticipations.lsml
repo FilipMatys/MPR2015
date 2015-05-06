@@ -328,6 +328,19 @@
               </ContentItem.DataSource>
             </ContentItem>
             <ContentItem
+              Name="ParticipationState"
+              Kind="Value"
+              DataType=":String?">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="BrowseParticipations/Properties[ParticipationState]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+            <ContentItem
               Name="ParticipationMinExpectedPayment"
               Kind="Value"
               DataType="Microsoft.LightSwitch.Extensions:Money?">
@@ -482,52 +495,24 @@
             <CallExpression
               Target="BrowseParticipations/Properties[Participations]/Query">
               <ArgumentExpression
-                Parameter="CompanyName">
-                <ChainExpression>
-                  <MemberExpression
-                    Member="BrowseParticipations/Properties[ParticipationCompanyName]" />
-                </ChainExpression>
-              </ArgumentExpression>
+                Parameter="CompanyName" />
               <ArgumentExpression
-                Parameter="ICO">
-                <ChainExpression>
-                  <MemberExpression
-                    Member="BrowseParticipations/Properties[ParticipationICO]" />
-                </ChainExpression>
-              </ArgumentExpression>
+                Parameter="ICO" />
               <ArgumentExpression
-                Parameter="MinExpectedPayment">
-                <ChainExpression>
-                  <MemberExpression
-                    Member="BrowseParticipations/Properties[ParticipationMinExpectedPayment]" />
-                </ChainExpression>
-              </ArgumentExpression>
+                Parameter="MinExpectedPayment" />
               <ArgumentExpression
-                Parameter="MaxExpectedPayment">
-                <ChainExpression>
-                  <MemberExpression
-                    Member="BrowseParticipations/Properties[ParticipationMaxExpectedPayment]" />
-                </ChainExpression>
-              </ArgumentExpression>
+                Parameter="MaxExpectedPayment" />
               <ArgumentExpression
-                Parameter="ContactPerson">
-                <ChainExpression>
-                  <MemberExpression
-                    Member="BrowseParticipations/Properties[ParticipationContactPerson]" />
-                </ChainExpression>
-              </ArgumentExpression>
+                Parameter="ContactPerson" />
               <ArgumentExpression
-                Parameter="Email">
-                <ChainExpression>
-                  <MemberExpression
-                    Member="BrowseParticipations/Properties[ParticipationEmail]" />
-                </ChainExpression>
-              </ArgumentExpression>
+                Parameter="Email" />
               <ArgumentExpression
-                Parameter="Phone">
+                Parameter="Phone" />
+              <ArgumentExpression
+                Parameter="State">
                 <ChainExpression>
                   <MemberExpression
-                    Member="BrowseParticipations/Properties[ParticipationPhone]" />
+                    Member="BrowseParticipations/Properties[ParticipationState]" />
                 </ChainExpression>
               </ArgumentExpression>
             </CallExpression>
@@ -555,6 +540,30 @@
       <ScreenProperty
         Name="ParticipationPhone"
         PropertyType=":String?" />
+      <ScreenProperty
+        Name="ParticipationState"
+        PropertyType=":String?">
+        <ScreenProperty.Attributes>
+          <SupportedValue
+            DisplayName="Registered"
+            Value="Registered" />
+          <SupportedValue
+            DisplayName="Approved"
+            Value="Approved" />
+          <SupportedValue
+            DisplayName="Contract Signed"
+            Value="ContractSigned" />
+          <SupportedValue
+            DisplayName="Paid"
+            Value="Paid" />
+          <SupportedValue
+            DisplayName="Completed"
+            Value="Completed" />
+          <SupportedValue
+            DisplayName="Cancelled"
+            Value="Cancelled" />
+        </ScreenProperty.Attributes>
+      </ScreenProperty>
     </Screen.Properties>
   </Screen>
   <Application.Methods>

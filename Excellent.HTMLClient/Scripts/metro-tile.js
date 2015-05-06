@@ -17,7 +17,7 @@
                 'background-repeat': 'no-repeat',
                 'background-position': 'right',
                 'background-color': '#f68712',
-                'width': '' + me.width + 'px',
+                'max-width': '' + me.width + 'px',
                 'height': '' + me.height + 'px'
             });
             setTimeout(function () {
