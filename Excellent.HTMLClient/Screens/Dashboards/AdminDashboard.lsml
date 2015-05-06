@@ -128,7 +128,13 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <CallExpression
-                          Target="!module/Methods[showBrowseCompanies]" />
+                          Target="!module/Methods[showAddEditUser]">
+                          <CallExpression.Attributes>
+                            <CreateNewEntity
+                              EntityType="User"
+                              TargetParameter="!module/Methods[showAddEditUser]/Parameters[User]" />
+                          </CallExpression.Attributes>
+                        </CallExpression>
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>

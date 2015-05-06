@@ -221,8 +221,8 @@
     <Compile Include="DataSources\ApplicationData\Conference.lsml.cs">
       <DependentUpon>Conferences.lsml</DependentUpon>
     </Compile>
-    <Compile Include="DataSources\ApplicationData\User.lsml.cs">
-      <DependentUpon>Users.lsml</DependentUpon>
+    <Compile Include="DataSources\ApplicationData\Participation.lsml.cs">
+      <DependentUpon>Participations.lsml</DependentUpon>
     </Compile>
     <Compile Include="DataSources\ApplicationData\_ApplicationDataService.lsml.cs" />
     <Compile Include="DynamicScripts\ScriptsController.cs" />
@@ -258,8 +258,9 @@
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Reports\AdminDashboardController.cs" />
     <Compile Include="Reports\ContactPersonDashboardController.cs" />
+    <Compile Include="Reports\AdminDashboardController.cs" />
+    <Compile Include="Reports\CompanyDashboardController.cs" />
   </ItemGroup>
   <ItemGroup>
     <LightSwitchModel Include="Properties\Service.lsml">

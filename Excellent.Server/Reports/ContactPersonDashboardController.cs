@@ -10,7 +10,10 @@ namespace LightSwitchApplication.Reports
     /// </summary>
     public class ContactPersonDashboardController : ApiController
     {
-        // GET api/<controller>
+        /// <summary>
+        /// GET api/<controller>
+        /// </summary>
+        /// <returns>dashboard data</returns>
         public ContactPersonDashboardData Get()
         {
             using (var context = ServerApplicationContext.CreateContext())
@@ -20,11 +23,19 @@ namespace LightSwitchApplication.Reports
                 var conference = context.DataWorkspace.ApplicationData.ActiveConference().SingleOrDefault();
                 if (conference != null)
                 {
+                    var currentUserUid = context.Application.User.Identity.Name;
+
                     data.Active = true;
-                    data.Date = conference.DateFrom;
+                    data.Year = conference.DateFrom.Year;
                     data.Place = conference.Place;
-                    data.Status = conference.Participations.Where(t => t.Company.User.Login == context.Application.User.Identity.Name).Select(t => t.State).SingleOrDefault();
+                    data.AssignedParticipations = conference.Participations.Count(t => t.UserParticipations.Any(s => s.User.Login == currentUserUid));
+                    data.ActiveParticipations = conference.Participations.Count(t => t.State == "Completed");
+                    data.UnassignedParticipations = conference.Participations.Count(t => !t.UserParticipations.Any());
+                    data.SignedContracts = conference.Participations.Count(t => t.State == "ContractSigned");
+                    data.PaidSponsorships = conference.Participations.Count(t => t.State == "Paid");
                 }
+
+                data.CompaniesCount = context.DataWorkspace.ApplicationData.Companies.Count();
 
                 return data;
             }
@@ -37,8 +48,14 @@ namespace LightSwitchApplication.Reports
     public class ContactPersonDashboardData
     {
         public bool Active { get; set; }
-        public DateTime Date { get; set; }
+        public int Year { get; set; }
         public string Place { get; set; }
-        public string Status { get; set; }
+        public int AssignedParticipations { get; set; }
+        public int ActiveParticipations { get; set; }
+        public int UnassignedParticipations { get; set; }
+        public int CompaniesCount { get; set; }
+        public int SignedContracts { get; set; }
+        public int PaidSponsorships { get; set; }
+
     }
 }

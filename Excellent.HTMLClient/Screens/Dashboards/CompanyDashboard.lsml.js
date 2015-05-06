@@ -39,7 +39,7 @@ myapp.CompanyDashboard.Year_render = function (element, contentItem) {
 };
 
 myapp.CompanyDashboard.created = function (screen) {
-    var reportsAPI = "../reports/ContactPersonDashboard/";
+    var reportsAPI = "../reports/CompanyDashboard/";
     $.ajax(reportsAPI, {}).done(function (data) {
         screen.dispatchEvent('dashboard-data-changed', data);
     });

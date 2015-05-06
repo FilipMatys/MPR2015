@@ -89,6 +89,9 @@
     <Content Include="Screens\Dashboards\CompanyDashboard.lsml.js">
       <DependentUpon>CompanyDashboard.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\Dashboards\ContactPersonDashboard.lsml.js">
+      <DependentUpon>ContactPersonDashboard.lsml</DependentUpon>
+    </Content>
     <Content Include="Screens\Exceptions\ViewException.lsml.js">
       <DependentUpon>ViewException.lsml</DependentUpon>
     </Content>
@@ -151,6 +154,7 @@
     <LightSwitchModel Include="Screens\Conferences\BrowseConferences.lsml" />
     <LightSwitchModel Include="Screens\Dashboards\AdminDashboard.lsml" />
     <LightSwitchModel Include="Screens\Dashboards\CompanyDashboard.lsml" />
+    <LightSwitchModel Include="Screens\Dashboards\ContactPersonDashboard.lsml" />
     <LightSwitchModel Include="Screens\Exceptions\AddEditException.lsml" />
     <LightSwitchModel Include="Screens\Exceptions\BrowseExceptions.lsml" />
     <LightSwitchModel Include="Screens\Exceptions\ViewException.lsml" />
