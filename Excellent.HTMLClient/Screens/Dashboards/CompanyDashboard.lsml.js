@@ -1,6 +1,6 @@
 ﻿/// <reference path="~/GeneratedArtifacts/viewModel.js" />
 
-myapp.ContactPersonDashboard.ActualConference_postRender = function (element, contentItem) {
+myapp.CompanyDashboard.ActualConference_postRender = function (element, contentItem) {
     $(element).metroTile(contentItem, { height: 420 });
     contentItem.isVisible = false;
 
@@ -19,7 +19,7 @@ myapp.ContactPersonDashboard.ActualConference_postRender = function (element, co
     });
 };
 
-myapp.ContactPersonDashboard.ExpectedPayment_render = function (element, contentItem) {
+myapp.CompanyDashboard.ExpectedPayment_render = function (element, contentItem) {
     var goldMin = contentItem.screen.findContentItem('GoldMin').value;
     var silverMin = contentItem.screen.findContentItem('SilverMin').value;
     var bronzeMin = contentItem.screen.findContentItem('BronzeMin').value;
@@ -34,11 +34,11 @@ myapp.ContactPersonDashboard.ExpectedPayment_render = function (element, content
     $(element).append('<span>' + payment + '</span>');
 };
 
-myapp.ContactPersonDashboard.Year_render = function (element, contentItem) {
+myapp.CompanyDashboard.Year_render = function (element, contentItem) {
     $(element).append('<span>' + moment(contentItem.value).format('YYYY') + '</span>');
 };
 
-myapp.ContactPersonDashboard.created = function (screen) {
+myapp.CompanyDashboard.created = function (screen) {
     var reportsAPI = "../reports/ContactPersonDashboard/";
     $.ajax(reportsAPI, {}).done(function (data) {
         screen.dispatchEvent('dashboard-data-changed', data);
