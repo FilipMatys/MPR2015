@@ -30,5 +30,15 @@ namespace LightSwitchApplication
         {
             query = query.Where(t => t.Company.User.Login == Application.User.Identity.Name);
         }
+
+        partial void setNotActive_PreprocessQuery(ref IQueryable<Conference> query)
+        {
+            foreach (Conference con in Conferences)
+            {
+                con.Active = false;
+                
+            }
+            this.DataWorkspace.ApplicationData.SaveChanges();
+        }
     }
 }
