@@ -82,11 +82,17 @@
       </EntityProperty>
       <EntityProperty
         Name="Phone"
-        PropertyType=":String">
+        PropertyType="Microsoft.LightSwitch.Extensions:PhoneNumber">
         <EntityProperty.Attributes>
           <Required />
           <MaxLength
             Value="255" />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@PhoneNumberValidation">
+            <Property
+              Name="Formats"
+              Value="NNNNNNNNN;CCCNNNNNNNNN" />
+          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty

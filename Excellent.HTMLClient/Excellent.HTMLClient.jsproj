@@ -77,9 +77,6 @@
     <Content Include="Screens\AddEditConference.lsml.js">
       <DependentUpon>AddEditConference.lsml</DependentUpon>
     </Content>
-    <Content Include="Screens\AddEditParticipationFIT.lsml.js">
-      <DependentUpon>AddEditParticipationFIT.lsml</DependentUpon>
-    </Content>
     <Content Include="Screens\Companies\ViewCompany.lsml.js">
       <DependentUpon>ViewCompany.lsml</DependentUpon>
     </Content>
@@ -97,6 +94,9 @@
     </Content>
     <Content Include="Screens\Home.lsml.js">
       <DependentUpon>Home.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\Participations\AddEditParticipationFIT.lsml.js">
+      <DependentUpon>AddEditParticipationFIT.lsml</DependentUpon>
     </Content>
     <Content Include="Screens\Participations\ViewParticipation.lsml.js">
       <DependentUpon>ViewParticipation.lsml</DependentUpon>
@@ -145,7 +145,6 @@
     </LightSwitchModel>
     <LightSwitchModel Include="Properties\Proxies.lsml" />
     <LightSwitchModel Include="Screens\AddEditConference.lsml" />
-    <LightSwitchModel Include="Screens\AddEditParticipationFIT.lsml" />
     <LightSwitchModel Include="Screens\Companies\AddEditCompany.lsml" />
     <LightSwitchModel Include="Screens\Companies\BrowseCompanies.lsml" />
     <LightSwitchModel Include="Screens\Companies\ViewCompany.lsml" />
@@ -156,8 +155,11 @@
     <LightSwitchModel Include="Screens\Exceptions\BrowseExceptions.lsml" />
     <LightSwitchModel Include="Screens\Exceptions\ViewException.lsml" />
     <LightSwitchModel Include="Screens\Home.lsml" />
+    <LightSwitchModel Include="Screens\Participations\AddEditNote.lsml" />
     <LightSwitchModel Include="Screens\Participations\AddEditParticipation.lsml" />
     <LightSwitchModel Include="Screens\Participations\AddEditParticipationCompany.lsml" />
+    <LightSwitchModel Include="Screens\Participations\AddEditParticipationFIT.lsml" />
+    <LightSwitchModel Include="Screens\Participations\AddEditContactPerson.lsml" />
     <LightSwitchModel Include="Screens\Participations\BrowseParticipations.lsml" />
     <LightSwitchModel Include="Screens\Participations\ViewParticipation.lsml" />
     <LightSwitchModel Include="Screens\Settings.lsml" />

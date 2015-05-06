@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using Microsoft.LightSwitch;
+using System.Linq;
 using System.Web.Security;
 
 namespace LightSwitchApplication
@@ -44,6 +45,24 @@ namespace LightSwitchApplication
                 }
             }
             this.DataWorkspace.ApplicationData.SaveChanges();
+        }
+
+        partial void Notes_Inserting(Note entity)
+        {
+            // set note user to current user
+            entity.User = CurrentUser;
+        }
+
+        /// <summary>
+        /// Gets current user.
+        /// </summary>
+        private User CurrentUser
+        {
+            get
+            {
+                var currentUserUid = Application.User.Identity.Name;
+                return Users.Where(t => t.Login == currentUserUid).SingleOrDefault();
+            }
         }
     }
 }

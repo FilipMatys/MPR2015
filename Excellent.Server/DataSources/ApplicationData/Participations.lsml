@@ -40,6 +40,8 @@
               Name="CurrencySymbol"
               Value="Kč" />
           </Attribute>
+          <Range
+            Minimum="0" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -47,6 +49,8 @@
         PropertyType=":Int32?">
         <EntityProperty.Attributes>
           <NotSearchable />
+          <Range
+            Minimum="0" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty

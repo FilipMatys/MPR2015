@@ -27,14 +27,6 @@
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty
-        Name="DateNote"
-        PropertyType=":Date">
-        <EntityProperty.Attributes>
-          <Required />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
         Name="Description"
         PropertyType=":String">
         <EntityProperty.Attributes>
