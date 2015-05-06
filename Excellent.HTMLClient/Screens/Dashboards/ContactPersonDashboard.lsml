@@ -28,14 +28,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <CallExpression
-                        Target="ContactPersonDashboard/Methods[showTab]">
-                        <ArgumentExpression
-                          Parameter="tabName">
-                          <ConstantExpression
-                            Value="Group"
-                            ResultType=":String" />
-                        </ArgumentExpression>
-                      </CallExpression>
+                        Target="ContactPersonDashboard/Methods[ActualConference_Tap]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ControlPropertySource>
@@ -210,6 +203,8 @@
           Name="dialogName"
           ParameterType=":String" />
       </ScreenMethod>
+      <ScreenMethod
+        Name="ActualConference_Tap" />
     </Screen.Methods>
   </Screen>
   <Application.Methods>
