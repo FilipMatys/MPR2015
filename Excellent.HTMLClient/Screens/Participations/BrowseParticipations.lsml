@@ -198,11 +198,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <CallExpression
-                        Target="!module/Methods[showViewParticipation]">
-                        <CallExpression.Attributes>
-                          <AssociatedCollection
-                            Collection="BrowseParticipations/Properties[Participations]" />
-                        </CallExpression.Attributes>
+                        Target="!module/Methods[showAddEditParticipationFIT]">
                         <ArgumentExpression
                           Parameter="Participation">
                           <ChainExpression>
