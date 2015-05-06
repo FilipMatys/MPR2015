@@ -2,7 +2,7 @@
     $.fn.metroTile = function (contentItem, options) {
         $element = this;
         var me = $.extend({
-            width: 420,
+            width: 260,
             height: 200,
             displayName: contentItem.model.displayName,
             description: contentItem.model.description || '',
@@ -17,7 +17,7 @@
                 'background-repeat': 'no-repeat',
                 'background-position': 'right',
                 'background-color': '#f68712',
-                'max-width': '' + me.width + 'px',
+                'width': '' + me.width + 'px',
                 'height': '' + me.height + 'px'
             });
             setTimeout(function () {

@@ -1,7 +1,7 @@
 ﻿/// <reference path="~/GeneratedArtifacts/viewModel.js" />
 
 myapp.AdminDashboard.ActualConference_postRender = function (element, contentItem) {
-    $(element).metroTile(contentItem, { height: 420, width: 420 });
+    $(element).metroTile(contentItem, { height: 420, width: 260 });
     contentItem.isVisible = false;
 
     contentItem.screen.addEventListener('dashboard-data-changed', function (e) {
