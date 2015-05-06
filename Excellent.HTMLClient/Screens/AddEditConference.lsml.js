@@ -35,26 +35,32 @@ myapp.AddEditConference.ContractDescription_postRender = function (element, cont
 myapp.AddEditConference.setClose_execute = function (screen) {
     // Write code here.
     screen.Conference.Active = false;
+    screen.findContentItem('setClose').isEnabled = false;
+    screen.findContentItem('setActive').isEnabled = true;
 
 };
 myapp.AddEditConference.setActive_execute = function (screen) {
     // Write code here.
-   // EntityCollection<Conference> con;
-  //  IDataServiceQueryable<Conference> conQuery;
-
-    
+   
     screen.details.dataWorkspace
         .ApplicationData
         .setNotActive()
         .execute();
         
-    //myapp.activeWorkspace.AplicationData.setNotActive().execute();
-
-    // screen.
-
-    //IDataServiceQueryable<Conference> orders = ( from o in this.DataWorkspace.SalesData.Orders 
-//orderby o.Discount descending selecto).Take(10); 
 
     screen.Conference.Active = true;
-    //screen.Conference.Description = "True";
+    screen.findContentItem('setClose').isEnabled = true;
+    screen.findContentItem('setActive').isEnabled = false;
+};
+
+myapp.AddEditConference.created = function (screen) {
+    // Write code here.
+    if (screen.Conference.Active == false) {
+
+        screen.findContentItem('setClose').isEnabled = false;
+    }
+    if (screen.Conference.Active == true) {
+
+        screen.findContentItem('setActive').isEnabled = false;
+    }
 };

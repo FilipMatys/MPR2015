@@ -129,6 +129,7 @@
             </ContentItem>
             <ContentItem
               Name="Active"
+              IsHidden="True"
               Kind="Value"
               DataType=":Boolean">
               <ContentItem.DataSource>
@@ -146,6 +147,10 @@
               <ContentItem
                 Name="setActive"
                 Kind="Command">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Set as active" />
+                </ContentItem.Attributes>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
                     Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
@@ -156,11 +161,25 @@
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootCommand/Properties[HiddenIfDisabled]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="False"
+                          ResultType=":Boolean" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
                 </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem
                 Name="setClose"
                 Kind="Command">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Set as closed" />
+                </ContentItem.Attributes>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
                     Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
@@ -168,6 +187,16 @@
                       <ChainExpression>
                         <CallExpression
                           Target="AddEditConference/Methods[setClose]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootCommand/Properties[HiddenIfDisabled]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="False"
+                          ResultType=":Boolean" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>

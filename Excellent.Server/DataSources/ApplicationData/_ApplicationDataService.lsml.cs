@@ -35,8 +35,13 @@ namespace LightSwitchApplication
         {
             foreach (Conference con in Conferences)
             {
-                con.Active = false;
-                
+                //con.Active = true;
+                if (con.Active)
+                {
+                    con.Active = false;
+                    
+                    break;
+                }
             }
             this.DataWorkspace.ApplicationData.SaveChanges();
         }
