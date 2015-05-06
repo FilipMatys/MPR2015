@@ -237,6 +237,9 @@
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
+      <ScreenProperty
+        Name="DashboardData"
+        PropertyType=":String?" />
     </Screen.Properties>
   </Screen>
   <Application.Methods>

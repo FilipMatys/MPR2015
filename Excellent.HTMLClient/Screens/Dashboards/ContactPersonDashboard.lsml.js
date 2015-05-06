@@ -4,73 +4,61 @@ myapp.ContactPersonDashboard.ActualConference_postRender = function (element, co
     $(element).metroTile(contentItem, { height: 420, width: 420 });
     contentItem.isVisible = false;
 
-    contentItem.screen.addEventListener('dashboard-data-changed', function (e) {
-        contentItem.isVisible = e.detail.Active;
+    contentItem.dataBind('screen.DashboardData', function (data) {
+        contentItem.isVisible = data.Active;
 
         var content =
-            '<span class="tile-year">' + e.detail.Year + '</span><br />' +
-            '<span class="tile-place">' + e.detail.Place + '</span>';
+            '<span class="tile-year">' + data.Year + '</span><br />' +
+            '<span class="tile-place">' + data.Place + '</span>';
 
-        setTimeout(function () {
-            $(element).find('.text').html(content);
-        }, 0);
+        $(element).find('.text').html(content);
     });
 };
 myapp.ContactPersonDashboard.AssignedParticipations_postRender = function (element, contentItem) {
     $(element).metroTile(contentItem, {});
     contentItem.isVisible = false;
 
-    contentItem.screen.addEventListener('dashboard-data-changed', function (e) {
-        contentItem.isVisible = e.detail.Active;
+    contentItem.dataBind('screen.DashboardData', function (data) {
+        contentItem.isVisible = data.Active;
 
-        setTimeout(function () {
-            $(element).find('.text').text(e.detail.AssignedParticipations);
-        }, 0);
+        $(element).find('.text').text(data.AssignedParticipations);
     });
 };
 myapp.ContactPersonDashboard.ActiveParticipations_postRender = function (element, contentItem) {
     $(element).metroTile(contentItem, {});
     contentItem.isVisible = false;
 
-    contentItem.screen.addEventListener('dashboard-data-changed', function (e) {
-        contentItem.isVisible = e.detail.Active;
+    contentItem.dataBind('screen.DashboardData', function (data) {
+        contentItem.isVisible = data.Active;
 
-        setTimeout(function () {
-            $(element).find('.text').text(e.detail.ActiveParticipations);
-        }, 0);
+        $(element).find('.text').text(data.ActiveParticipations);
     });
 };
 myapp.ContactPersonDashboard.RegisteredCompanies_postRender = function (element, contentItem) {
     $(element).metroTile(contentItem, { imageUrl: 'Content/Images/tile.png' });
 
-    contentItem.screen.addEventListener('dashboard-data-changed', function (e) {
-        setTimeout(function () {
-            $(element).find('.text').text(e.detail.CompaniesCount);
-        }, 0);
+    contentItem.dataBind('screen.DashboardData', function (data) {
+        $(element).find('.text').text(data.CompaniesCount);
     });
 };
 myapp.ContactPersonDashboard.SignedContracts_postRender = function (element, contentItem) {
     $(element).metroTile(contentItem, {});
     contentItem.isVisible = false;
 
-    contentItem.screen.addEventListener('dashboard-data-changed', function (e) {
-        contentItem.isVisible = e.detail.Active;
+    contentItem.dataBind('screen.DashboardData', function (data) {
+        contentItem.isVisible = data.Active;
 
-        setTimeout(function () {
-            $(element).find('.text').text(e.detail.SignedContracts);
-        }, 0);
+        $(element).find('.text').text(data.SignedContracts);
     });
 };
 myapp.ContactPersonDashboard.PaidSponsorships_postRender = function (element, contentItem) {
     $(element).metroTile(contentItem, {});
     contentItem.isVisible = false;
 
-    contentItem.screen.addEventListener('dashboard-data-changed', function (e) {
-        contentItem.isVisible = e.detail.Active;
+    contentItem.dataBind('screen.DashboardData', function (data) {
+        contentItem.isVisible = data.Active;
 
-        setTimeout(function () {
-            $(element).find('.text').text(e.detail.PaidSponsorships);
-        }, 0);
+        $(element).find('.text').text(data.PaidSponsorships);
     });
 };
 myapp.ContactPersonDashboard.Participations_postRender = function (element, contentItem) {
@@ -80,12 +68,10 @@ myapp.ContactPersonDashboard.UnassignedParticipations_postRender = function (ele
     $(element).metroTile(contentItem, {});
     contentItem.isVisible = false;
 
-    contentItem.screen.addEventListener('dashboard-data-changed', function (e) {
-        contentItem.isVisible = e.detail.Active;
+    contentItem.dataBind('screen.DashboardData', function (data) {
+        contentItem.isVisible = data.Active;
 
-        setTimeout(function () {
-            $(element).find('.text').text(e.detail.UnassignedParticipations);
-        }, 0);
+        $(element).find('.text').text(data.UnassignedParticipations);
     });
 };
 myapp.ContactPersonDashboard.AddNewCompany_postRender = function (element, contentItem) {
@@ -95,7 +81,7 @@ myapp.ContactPersonDashboard.AddNewCompany_postRender = function (element, conte
 myapp.ContactPersonDashboard.created = function (screen) {
     var reportsAPI = "../reports/ContactPersonDashboard/";
     $.ajax(reportsAPI, {}).done(function (data) {
-        screen.dispatchEvent('dashboard-data-changed', data);
+        screen.DashboardData = data;
     });
 };
 

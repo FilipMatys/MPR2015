@@ -233,6 +233,11 @@
       <ScreenMethod
         Name="ActualConference_Tap" />
     </Screen.Methods>
+    <Screen.Properties>
+      <ScreenProperty
+        Name="DashboardData"
+        PropertyType=":String?" />
+    </Screen.Properties>
   </Screen>
   <Application.Methods>
     <ApplicationMethod

@@ -4,18 +4,16 @@ myapp.CompanyDashboard.ActualConference_postRender = function (element, contentI
     $(element).metroTile(contentItem, { height: 420 });
     contentItem.isVisible = false;
 
-    contentItem.screen.addEventListener('dashboard-data-changed', function (e) {
-        contentItem.isVisible = e.detail.Active;
+    contentItem.dataBind('screen.DashboardData', function (data) {
+        contentItem.isVisible = data.Active;
 
         var content =
-            '<span class="tile-year">' + moment(e.detail.Date).format('YYYY') + '</span>' +
-            '<span class="tile-date">' + moment(e.detail.Date).format('D.M.') + '</span><br />' +
-            '<span class="tile-status">' + (e.detail.Status != null ? e.detail.Status : '') + '</span><br />' +
-            '<span class="tile-place">' + e.detail.Place + '</span>';
+            '<span class="tile-year">' + moment(data.Date).format('YYYY') + '</span>' +
+            '<span class="tile-date">' + moment(data.Date).format('D.M.') + '</span><br />' +
+            '<span class="tile-status">' + (data.Status != null ? data.Status : '') + '</span><br />' +
+            '<span class="tile-place">' + data.Place + '</span>';
 
-        setTimeout(function () {
-            $(element).find('.text').html(content);
-        }, 0);
+        $(element).find('.text').html(content);
     });
 };
 
@@ -41,6 +39,6 @@ myapp.CompanyDashboard.Year_render = function (element, contentItem) {
 myapp.CompanyDashboard.created = function (screen) {
     var reportsAPI = "../reports/CompanyDashboard/";
     $.ajax(reportsAPI, {}).done(function (data) {
-        screen.dispatchEvent('dashboard-data-changed', data);
+        screen.DashboardData = data;
     });
 };
