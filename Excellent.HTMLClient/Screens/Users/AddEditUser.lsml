@@ -289,8 +289,7 @@
                     <ContentItem
                       Name="Participate"
                       Kind="Value"
-                      DataType=":Int32"
-                      View="Microsoft.LightSwitch.MobileWeb:ValueCustomControl">
+                      DataType=":Boolean">
                       <ContentItem.Attributes>
                         <DisplayName
                           Value="Participate in the upcoming event" />
@@ -299,22 +298,10 @@
                         <ScreenExpressionTree>
                           <ChainExpression>
                             <MemberExpression
-                              Member="User/Properties[Id]" />
+                              Member="AddEditUser/Properties[ParticipateUpcomingEvent]" />
                           </ChainExpression>
                         </ScreenExpressionTree>
                       </ContentItem.DataSource>
-                      <ContentItem.PropertySources>
-                        <ControlPropertySource
-                          Property="Microsoft.LightSwitch.MobileWeb:RootCustomControl/Properties[ReadOnlyRendering]">
-                          <ScreenExpressionTree>
-                            <ChainExpression>
-                              <ConstantExpression
-                                Value="Custom"
-                                ResultType=":String" />
-                            </ChainExpression>
-                          </ScreenExpressionTree>
-                        </ControlPropertySource>
-                      </ContentItem.PropertySources>
                     </ContentItem>
                   </ContentItem>
                 </ContentItem>
@@ -493,6 +480,13 @@
         PropertyType="User">
         <ScreenProperty.Attributes>
           <IsParameter />
+        </ScreenProperty.Attributes>
+      </ScreenProperty>
+      <ScreenProperty
+        Name="ParticipateUpcomingEvent"
+        PropertyType=":Boolean">
+        <ScreenProperty.Attributes>
+          <Required />
         </ScreenProperty.Attributes>
       </ScreenProperty>
     </Screen.Properties>

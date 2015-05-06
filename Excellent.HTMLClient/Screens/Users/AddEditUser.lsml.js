@@ -12,7 +12,9 @@ myapp.AddEditUser.created = function (screen) {
     // populate defaults
     if (!screen.User.Role) {
         screen.User.Role = 'Administrator';
-    } else {
+    }
+    // disable role selection for existing users
+    if (screen.User.Id) {
         screen.findContentItem('Role').isEnabled = false;
     }
 
@@ -43,11 +45,6 @@ myapp.AddEditUser.created = function (screen) {
 myapp.AddEditUser.beforeApplyChanges = function (screen) {
     if (screen.User.Password !== screen.findContentItem('PasswordCheck').value)
         screen.findContentItem('Password').validationResults = [new msls.ValidationResult(screen.User.Password, "Passwords must match.")];
-
-};
-
-myapp.AddEditUser.Participate_render = function (element, contentItem) {
-    $(element).append('<input type="checkbox" />');
 };
 
 myapp.AddEditUser.deleteUser_canExecute = function (screen) {

@@ -148,13 +148,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <CallExpression
-                        Target="!module/Methods[showAddEditUser]">
-                        <CallExpression.Attributes>
-                          <CreateNewEntity
-                            EntityType="User"
-                            TargetParameter="!module/Methods[showAddEditUser]/Parameters[User]" />
-                        </CallExpression.Attributes>
-                      </CallExpression>
+                        Target="ContactPersonDashboard/Methods[AddNewCompany_Tap]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ControlPropertySource>
@@ -205,6 +199,8 @@
       </ScreenMethod>
       <ScreenMethod
         Name="ActualConference_Tap" />
+      <ScreenMethod
+        Name="AddNewCompany_Tap" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenProperty
