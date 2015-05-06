@@ -1,17 +1,17 @@
 ﻿/// <reference path="~/GeneratedArtifacts/viewModel.js" />
 
 myapp.ContactPersonDashboard.ActualConference_postRender = function (element, contentItem) {
-    $(element).metroTile(contentItem, { height: 300, width: 1500 });
+    $(element).metroTile(contentItem, { height: 420 });
     contentItem.isVisible = false;
 
     contentItem.screen.addEventListener('dashboard-data-changed', function (e) {
         contentItem.isVisible = e.detail.Active;
 
         var content =
-            '<span>' + moment(e.detail.Date).format('YYYY') + '</span><br />' +
-            '<span>' + moment(e.detail.Date).format('D.M.') + '</span><br />' +
-            '<span>' + (e.detail.Status != null ? e.detail.Status : '') + '</span><br />' +
-            '<span>' + e.detail.Place + '</span>';
+            '<span class="tile-year">' + moment(e.detail.Date).format('YYYY') + '</span>' +
+            '<span class="tile-date">' + moment(e.detail.Date).format('D.M.') + '</span><br />' +
+            '<span class="tile-status">' + (e.detail.Status != null ? e.detail.Status : '') + '</span><br />' +
+            '<span class="tile-place">' + e.detail.Place + '</span>';
 
         setTimeout(function () {
             $(element).find('.text').html(content);
