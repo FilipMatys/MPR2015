@@ -5,7 +5,7 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="ContactPersonDashboard">
+    Name="CompanyDashboard">
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="ApplicationData" />
@@ -35,7 +35,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <CallExpression
-                          Target="ContactPersonDashboard/Methods[showTab]">
+                          Target="CompanyDashboard/Methods[showTab]">
                           <ArgumentExpression
                             Parameter="tabName">
                             <ConstantExpression
@@ -57,7 +57,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="ContactPersonDashboard/Properties[PastCompanyParticipations]" />
+                        Member="CompanyDashboard/Properties[PastCompanyParticipations]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -233,7 +233,7 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="ContactPersonDashboard/Properties[PastCompanyParticipations]/Query" />
+              Target="CompanyDashboard/Properties[PastCompanyParticipations]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
@@ -241,10 +241,10 @@
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="showContactPersonDashboard">
+      Name="showCompanyDashboard">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="ContactPersonDashboard" />
+          TargetScreen="CompanyDashboard" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
   </Application.Methods>
