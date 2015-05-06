@@ -270,7 +270,22 @@
   <ItemGroup>
     <_ServerFile Include="LogIn.aspx" />
     <_ServerFile Include="LogOut.aspx" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\icon.css" />
+    <Content Include="Content\css\jquery.scrollpane.css" />
+    <Content Include="Content\css\layout-mobile.css" />
+    <Content Include="Content\css\layout.css" />
+    <Content Include="Content\css\layout_ex.css" />
     <Content Include="Content\css\main.css" />
+    <Content Include="Content\images\excel-at-fit-logo.png" />
+    <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Content\js\home.js" />
+    <Content Include="Content\js\jquery-migrate.min.js" />
+    <Content Include="Content\js\jquery.js" />
+    <Content Include="Content\js\jquery.jscrollpane.min.js" />
+    <Content Include="Content\js\jquery.mousewheel.js" />
+    <Content Include="Content\js\main.js" />
+    <Content Include="Content\js\tweetMachine.min.js" />
     <Content Include="Global.asax" />
     <Content Include="Recover.aspx" />
     <Content Include="RecoverFinish.aspx" />
