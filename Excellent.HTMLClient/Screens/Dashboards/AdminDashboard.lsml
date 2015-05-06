@@ -31,7 +31,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <CallExpression
-                          Target="!module/Methods[showBrowseConferences]" />
+                          Target="AdminDashboard/Methods[ActualConference_Tap]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>
@@ -230,6 +230,8 @@
           Name="dialogName"
           ParameterType=":String" />
       </ScreenMethod>
+      <ScreenMethod
+        Name="ActualConference_Tap" />
     </Screen.Methods>
   </Screen>
   <Application.Methods>
