@@ -77,6 +77,9 @@
     <Content Include="Screens\AddEditConference.lsml.js">
       <DependentUpon>AddEditConference.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\Companies\BrowseCompanies.lsml.js">
+      <DependentUpon>BrowseCompanies.lsml</DependentUpon>
+    </Content>
     <Content Include="Screens\Companies\ViewCompany.lsml.js">
       <DependentUpon>ViewCompany.lsml</DependentUpon>
     </Content>

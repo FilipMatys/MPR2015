@@ -47,8 +47,7 @@
     <WarningLevel>4</WarningLevel>
     <UseDesignTimeFeatures>true</UseDesignTimeFeatures>
     <NoWarn>1522</NoWarn>
-    <DocumentationFile>
-    </DocumentationFile>
+    <DocumentationFile>bin\Debug\Application.Server.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
