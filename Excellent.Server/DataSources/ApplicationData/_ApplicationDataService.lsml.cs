@@ -92,11 +92,6 @@ namespace LightSwitchApplication
             {
                 entity.IsPaid = "No";
             }
-
-            // year
-            var confDate = entity.Conference.DateFrom;
-            string year = confDate.ToString("yyyy");
-            entity.ConfYear = Convert.ToInt32(year);
         }
 
         partial void Participations_Updating(Participation entity)
@@ -132,9 +127,20 @@ namespace LightSwitchApplication
             {
                 entity.IsPaid = "No";
             }
+        }
 
+        partial void Conferences_Inserting(Conference entity)
+        {
             // year
-            var confDate = entity.Conference.DateFrom;
+            var confDate = entity.DateFrom;
+            string year = confDate.ToString("yyyy");
+            entity.ConfYear = Convert.ToInt32(year);
+        }
+
+        partial void Conferences_Updating(Conference entity)
+        {
+            // year
+            var confDate = entity.DateFrom;
             string year = confDate.ToString("yyyy");
             entity.ConfYear = Convert.ToInt32(year);
         }

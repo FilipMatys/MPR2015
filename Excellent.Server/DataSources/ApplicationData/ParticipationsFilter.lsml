@@ -236,6 +236,8 @@
                     <BinaryExpression.Left>
                       <ChainExpression>
                         <MemberExpression
+                          Member="Conference" />
+                        <MemberExpression
                           Member="ConfYear" />
                       </ChainExpression>
                     </BinaryExpression.Left>
@@ -252,6 +254,8 @@
                 NodeType="LessThanOrEqual">
                 <BinaryExpression.Left>
                   <ChainExpression>
+                    <MemberExpression
+                      Member="Conference" />
                     <MemberExpression
                       Member="ConfYear" />
                   </ChainExpression>

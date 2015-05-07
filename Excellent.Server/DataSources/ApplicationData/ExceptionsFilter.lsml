@@ -21,35 +21,103 @@
                 NodeType="And">
                 <BinaryExpression.Left>
                   <BinaryExpression
-                    NodeType="Contains">
+                    NodeType="And">
                     <BinaryExpression.Left>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Participation" />
-                        <MemberExpression
-                          Member="Company" />
-                        <MemberExpression
-                          Member="Name" />
-                      </ChainExpression>
+                      <BinaryExpression
+                        NodeType="And">
+                        <BinaryExpression.Left>
+                          <BinaryExpression
+                            NodeType="And">
+                            <BinaryExpression.Left>
+                              <BinaryExpression
+                                NodeType="Contains">
+                                <BinaryExpression.Left>
+                                  <ChainExpression>
+                                    <MemberExpression
+                                      Member="Participation" />
+                                    <MemberExpression
+                                      Member="Company" />
+                                    <MemberExpression
+                                      Member="Name" />
+                                  </ChainExpression>
+                                </BinaryExpression.Left>
+                                <BinaryExpression.Right>
+                                  <ParameterExpression
+                                    Parameter="CompanyName" />
+                                </BinaryExpression.Right>
+                              </BinaryExpression>
+                            </BinaryExpression.Left>
+                            <BinaryExpression.Right>
+                              <BinaryExpression
+                                NodeType="GreaterThanOrEqual">
+                                <BinaryExpression.Left>
+                                  <ChainExpression>
+                                    <MemberExpression
+                                      Member="DueDate" />
+                                  </ChainExpression>
+                                </BinaryExpression.Left>
+                                <BinaryExpression.Right>
+                                  <ParameterExpression
+                                    Parameter="MinDueDate" />
+                                </BinaryExpression.Right>
+                              </BinaryExpression>
+                            </BinaryExpression.Right>
+                          </BinaryExpression>
+                        </BinaryExpression.Left>
+                        <BinaryExpression.Right>
+                          <BinaryExpression
+                            NodeType="LessThanOrEqual">
+                            <BinaryExpression.Left>
+                              <ChainExpression>
+                                <MemberExpression
+                                  Member="DueDate" />
+                              </ChainExpression>
+                            </BinaryExpression.Left>
+                            <BinaryExpression.Right>
+                              <ParameterExpression
+                                Parameter="MaxDueDate" />
+                            </BinaryExpression.Right>
+                          </BinaryExpression>
+                        </BinaryExpression.Right>
+                      </BinaryExpression>
                     </BinaryExpression.Left>
                     <BinaryExpression.Right>
-                      <ParameterExpression
-                        Parameter="CompanyName" />
+                      <BinaryExpression
+                        NodeType="GreaterThanOrEqual">
+                        <BinaryExpression.Left>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="Participation" />
+                            <MemberExpression
+                              Member="Conference" />
+                            <MemberExpression
+                              Member="ConfYear" />
+                          </ChainExpression>
+                        </BinaryExpression.Left>
+                        <BinaryExpression.Right>
+                          <ParameterExpression
+                            Parameter="MinConfYear" />
+                        </BinaryExpression.Right>
+                      </BinaryExpression>
                     </BinaryExpression.Right>
                   </BinaryExpression>
                 </BinaryExpression.Left>
                 <BinaryExpression.Right>
                   <BinaryExpression
-                    NodeType="GreaterThanOrEqual">
+                    NodeType="LessThanOrEqual">
                     <BinaryExpression.Left>
                       <ChainExpression>
                         <MemberExpression
-                          Member="DueDate" />
+                          Member="Participation" />
+                        <MemberExpression
+                          Member="Conference" />
+                        <MemberExpression
+                          Member="ConfYear" />
                       </ChainExpression>
                     </BinaryExpression.Left>
                     <BinaryExpression.Right>
                       <ParameterExpression
-                        Parameter="MinDueDate" />
+                        Parameter="MaxConfYear" />
                     </BinaryExpression.Right>
                   </BinaryExpression>
                 </BinaryExpression.Right>
@@ -57,16 +125,16 @@
             </BinaryExpression.Left>
             <BinaryExpression.Right>
               <BinaryExpression
-                NodeType="LessThanOrEqual">
+                NodeType="Equal">
                 <BinaryExpression.Left>
                   <ChainExpression>
                     <MemberExpression
-                      Member="DueDate" />
+                      Member="Type" />
                   </ChainExpression>
                 </BinaryExpression.Left>
                 <BinaryExpression.Right>
                   <ParameterExpression
-                    Parameter="MaxDueDate" />
+                    Parameter="Type" />
                 </BinaryExpression.Right>
               </BinaryExpression>
             </BinaryExpression.Right>
@@ -91,6 +159,18 @@
         Name="MaxDueDate"
         IsOptional="True"
         ParameterType=":Date?" />
+      <QueryOperationParameter
+        Name="MinConfYear"
+        IsOptional="True"
+        ParameterType=":Int32?" />
+      <QueryOperationParameter
+        Name="MaxConfYear"
+        IsOptional="True"
+        ParameterType=":Int32?" />
+      <QueryOperationParameter
+        Name="Type"
+        IsOptional="True"
+        ParameterType=":String?" />
       <QueryOperation.SortCriteria>
         <SortCriterion>
           <ChainExpression>

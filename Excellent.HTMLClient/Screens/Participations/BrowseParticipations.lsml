@@ -75,7 +75,7 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="ConfYear"
+                  Name="Conference_ConfYear"
                   Kind="Value"
                   DataType=":Int32?">
                   <ContentItem.Attributes>
@@ -86,7 +86,9 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="Participation/Properties[ConfYear]" />
+                          Member="Participation/Properties[Conference]" />
+                        <MemberExpression
+                          Member="ConfYear" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>

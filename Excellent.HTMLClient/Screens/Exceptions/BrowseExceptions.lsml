@@ -77,6 +77,27 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
+                  Name="Participation_Conference_ConfYear"
+                  Kind="Value"
+                  DataType=":Int32?">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Year" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Exception/Properties[Participation]" />
+                        <MemberExpression
+                          Member="Conference" />
+                        <MemberExpression
+                          Member="ConfYear" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
                   Name="Type"
                   Kind="Value"
                   DataType=":String">
@@ -270,13 +291,64 @@
               DataType=":String?">
               <ContentItem.Attributes>
                 <DisplayName
-                  Value="Company" />
+                  Value="Company name" />
               </ContentItem.Attributes>
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
                       Member="BrowseExceptions/Properties[ExceptionCompanyName]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+            <ContentItem
+              Name="ExceptionMinConfYear"
+              Kind="Value"
+              DataType=":Int32?">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Minimum conference year" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="BrowseExceptions/Properties[ExceptionMinConfYear]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+            <ContentItem
+              Name="ExceptionMaxConfYear"
+              Kind="Value"
+              DataType=":Int32?">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Maximum conference year" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="BrowseExceptions/Properties[ExceptionMaxConfYear]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+            <ContentItem
+              Name="ExceptionType"
+              Kind="Value"
+              DataType=":String?">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Material" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="BrowseExceptions/Properties[ExceptionType]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
@@ -388,6 +460,27 @@
                     Member="BrowseExceptions/Properties[ExceptionMaxDueDate]" />
                 </ChainExpression>
               </ArgumentExpression>
+              <ArgumentExpression
+                Parameter="MinConfYear">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="BrowseExceptions/Properties[ExceptionMinConfYear]" />
+                </ChainExpression>
+              </ArgumentExpression>
+              <ArgumentExpression
+                Parameter="MaxConfYear">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="BrowseExceptions/Properties[ExceptionMaxConfYear]" />
+                </ChainExpression>
+              </ArgumentExpression>
+              <ArgumentExpression
+                Parameter="Type">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="BrowseExceptions/Properties[ExceptionType]" />
+                </ChainExpression>
+              </ArgumentExpression>
             </CallExpression>
           </ChainExpression>
         </ScreenExpressionTree>
@@ -401,6 +494,39 @@
       <ScreenProperty
         Name="ExceptionMaxDueDate"
         PropertyType=":Date?" />
+      <ScreenProperty
+        Name="ExceptionMinConfYear"
+        PropertyType=":Int32?" />
+      <ScreenProperty
+        Name="ExceptionMaxConfYear"
+        PropertyType=":Int32?" />
+      <ScreenProperty
+        Name="ExceptionType"
+        PropertyType=":String?">
+        <ScreenProperty.Attributes>
+          <SupportedValue
+            DisplayName="Contract"
+            Value="Contract" />
+          <SupportedValue
+            DisplayName="Logo"
+            Value="Logo" />
+          <SupportedValue
+            DisplayName="Poster"
+            Value="Poster" />
+          <SupportedValue
+            DisplayName="Number of Attendees"
+            Value="NumAttendee" />
+          <SupportedValue
+            DisplayName="Attendees"
+            Value="Attendee" />
+          <SupportedValue
+            DisplayName="Video Presentation"
+            Value="VideoPresenation" />
+          <SupportedValue
+            DisplayName="Propagational Paper"
+            Value="propagPaper" />
+        </ScreenProperty.Attributes>
+      </ScreenProperty>
     </Screen.Properties>
   </Screen>
   <Application.Methods>
