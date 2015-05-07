@@ -191,13 +191,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <CallExpression
-                          Target="!module/Methods[showAddEditUser]">
-                          <CallExpression.Attributes>
-                            <CreateNewEntity
-                              EntityType="User"
-                              TargetParameter="!module/Methods[showAddEditUser]/Parameters[User]" />
-                          </CallExpression.Attributes>
-                        </CallExpression>
+                          Target="BrowseCompanies/Methods[AddCompany_Tap]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>
@@ -383,6 +377,8 @@
           Name="dialogName"
           ParameterType=":String" />
       </ScreenMethod>
+      <ScreenMethod
+        Name="AddCompany_Tap" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty

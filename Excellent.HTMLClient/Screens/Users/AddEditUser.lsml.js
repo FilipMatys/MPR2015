@@ -35,7 +35,7 @@ myapp.AddEditUser.created = function (screen) {
     function UpdateVisibility() {
         switch (screen.User.Role) {
             case 'Company':
-                if (screen.User.Company === null) {
+                if (screen.User.Company == null) {
                     screen.User.Company = new myapp.Company();
                 }
 
