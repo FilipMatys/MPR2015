@@ -39,33 +39,101 @@
                                         NodeType="And">
                                         <BinaryExpression.Left>
                                           <BinaryExpression
+                                            NodeType="And">
+                                            <BinaryExpression.Left>
+                                              <BinaryExpression
+                                                NodeType="And">
+                                                <BinaryExpression.Left>
+                                                  <BinaryExpression
+                                                    NodeType="And">
+                                                    <BinaryExpression.Left>
+                                                      <BinaryExpression
+                                                        NodeType="Contains">
+                                                        <BinaryExpression.Left>
+                                                          <ChainExpression>
+                                                            <MemberExpression
+                                                              Member="Company" />
+                                                            <MemberExpression
+                                                              Member="Name" />
+                                                          </ChainExpression>
+                                                        </BinaryExpression.Left>
+                                                        <BinaryExpression.Right>
+                                                          <ParameterExpression
+                                                            Parameter="CompanyName" />
+                                                        </BinaryExpression.Right>
+                                                      </BinaryExpression>
+                                                    </BinaryExpression.Left>
+                                                    <BinaryExpression.Right>
+                                                      <BinaryExpression
+                                                        NodeType="GreaterThanOrEqual">
+                                                        <BinaryExpression.Left>
+                                                          <ChainExpression>
+                                                            <MemberExpression
+                                                              Member="ExpectedPayment" />
+                                                          </ChainExpression>
+                                                        </BinaryExpression.Left>
+                                                        <BinaryExpression.Right>
+                                                          <ParameterExpression
+                                                            Parameter="MinExpectedPayment" />
+                                                        </BinaryExpression.Right>
+                                                      </BinaryExpression>
+                                                    </BinaryExpression.Right>
+                                                  </BinaryExpression>
+                                                </BinaryExpression.Left>
+                                                <BinaryExpression.Right>
+                                                  <BinaryExpression
+                                                    NodeType="LessThanOrEqual">
+                                                    <BinaryExpression.Left>
+                                                      <ChainExpression>
+                                                        <MemberExpression
+                                                          Member="ExpectedPayment" />
+                                                      </ChainExpression>
+                                                    </BinaryExpression.Left>
+                                                    <BinaryExpression.Right>
+                                                      <ParameterExpression
+                                                        Parameter="MaxExpectedPayment" />
+                                                    </BinaryExpression.Right>
+                                                  </BinaryExpression>
+                                                </BinaryExpression.Right>
+                                              </BinaryExpression>
+                                            </BinaryExpression.Left>
+                                            <BinaryExpression.Right>
+                                              <BinaryExpression
+                                                NodeType="Contains">
+                                                <BinaryExpression.Left>
+                                                  <ChainExpression>
+                                                    <MemberExpression
+                                                      Member="Company" />
+                                                    <MemberExpression
+                                                      Member="User" />
+                                                    <MemberExpression
+                                                      Member="Name" />
+                                                  </ChainExpression>
+                                                </BinaryExpression.Left>
+                                                <BinaryExpression.Right>
+                                                  <ParameterExpression
+                                                    Parameter="ContactPerson" />
+                                                </BinaryExpression.Right>
+                                              </BinaryExpression>
+                                            </BinaryExpression.Right>
+                                          </BinaryExpression>
+                                        </BinaryExpression.Left>
+                                        <BinaryExpression.Right>
+                                          <BinaryExpression
                                             NodeType="Contains">
                                             <BinaryExpression.Left>
                                               <ChainExpression>
                                                 <MemberExpression
                                                   Member="Company" />
                                                 <MemberExpression
-                                                  Member="Name" />
-                                              </ChainExpression>
-                                            </BinaryExpression.Left>
-                                            <BinaryExpression.Right>
-                                              <ParameterExpression
-                                                Parameter="CompanyName" />
-                                            </BinaryExpression.Right>
-                                          </BinaryExpression>
-                                        </BinaryExpression.Left>
-                                        <BinaryExpression.Right>
-                                          <BinaryExpression
-                                            NodeType="GreaterThanOrEqual">
-                                            <BinaryExpression.Left>
-                                              <ChainExpression>
+                                                  Member="User" />
                                                 <MemberExpression
-                                                  Member="ExpectedPayment" />
+                                                  Member="Email" />
                                               </ChainExpression>
                                             </BinaryExpression.Left>
                                             <BinaryExpression.Right>
                                               <ParameterExpression
-                                                Parameter="MinExpectedPayment" />
+                                                Parameter="Email" />
                                             </BinaryExpression.Right>
                                           </BinaryExpression>
                                         </BinaryExpression.Right>
@@ -73,16 +141,20 @@
                                     </BinaryExpression.Left>
                                     <BinaryExpression.Right>
                                       <BinaryExpression
-                                        NodeType="LessThanOrEqual">
+                                        NodeType="Contains">
                                         <BinaryExpression.Left>
                                           <ChainExpression>
                                             <MemberExpression
-                                              Member="ExpectedPayment" />
+                                              Member="Company" />
+                                            <MemberExpression
+                                              Member="User" />
+                                            <MemberExpression
+                                              Member="Phone" />
                                           </ChainExpression>
                                         </BinaryExpression.Left>
                                         <BinaryExpression.Right>
                                           <ParameterExpression
-                                            Parameter="MaxExpectedPayment" />
+                                            Parameter="Phone" />
                                         </BinaryExpression.Right>
                                       </BinaryExpression>
                                     </BinaryExpression.Right>
@@ -90,20 +162,16 @@
                                 </BinaryExpression.Left>
                                 <BinaryExpression.Right>
                                   <BinaryExpression
-                                    NodeType="Contains">
+                                    NodeType="Equal">
                                     <BinaryExpression.Left>
                                       <ChainExpression>
                                         <MemberExpression
-                                          Member="Company" />
-                                        <MemberExpression
-                                          Member="User" />
-                                        <MemberExpression
-                                          Member="Name" />
+                                          Member="State" />
                                       </ChainExpression>
                                     </BinaryExpression.Left>
                                     <BinaryExpression.Right>
                                       <ParameterExpression
-                                        Parameter="ContactPerson" />
+                                        Parameter="State" />
                                     </BinaryExpression.Right>
                                   </BinaryExpression>
                                 </BinaryExpression.Right>
@@ -117,14 +185,12 @@
                                     <MemberExpression
                                       Member="Company" />
                                     <MemberExpression
-                                      Member="User" />
-                                    <MemberExpression
-                                      Member="Email" />
+                                      Member="ICO" />
                                   </ChainExpression>
                                 </BinaryExpression.Left>
                                 <BinaryExpression.Right>
                                   <ParameterExpression
-                                    Parameter="Email" />
+                                    Parameter="ICO" />
                                 </BinaryExpression.Right>
                               </BinaryExpression>
                             </BinaryExpression.Right>
@@ -132,20 +198,16 @@
                         </BinaryExpression.Left>
                         <BinaryExpression.Right>
                           <BinaryExpression
-                            NodeType="Contains">
+                            NodeType="Equal">
                             <BinaryExpression.Left>
                               <ChainExpression>
                                 <MemberExpression
-                                  Member="Company" />
-                                <MemberExpression
-                                  Member="User" />
-                                <MemberExpression
-                                  Member="Phone" />
+                                  Member="Sponsorship" />
                               </ChainExpression>
                             </BinaryExpression.Left>
                             <BinaryExpression.Right>
                               <ParameterExpression
-                                Parameter="Phone" />
+                                Parameter="Sponsorship" />
                             </BinaryExpression.Right>
                           </BinaryExpression>
                         </BinaryExpression.Right>
@@ -157,12 +219,12 @@
                         <BinaryExpression.Left>
                           <ChainExpression>
                             <MemberExpression
-                              Member="State" />
+                              Member="IsPaid" />
                           </ChainExpression>
                         </BinaryExpression.Left>
                         <BinaryExpression.Right>
                           <ParameterExpression
-                            Parameter="State" />
+                            Parameter="IsPaid" />
                         </BinaryExpression.Right>
                       </BinaryExpression>
                     </BinaryExpression.Right>
@@ -170,18 +232,16 @@
                 </BinaryExpression.Left>
                 <BinaryExpression.Right>
                   <BinaryExpression
-                    NodeType="Contains">
+                    NodeType="GreaterThanOrEqual">
                     <BinaryExpression.Left>
                       <ChainExpression>
                         <MemberExpression
-                          Member="Company" />
-                        <MemberExpression
-                          Member="ICO" />
+                          Member="ConfYear" />
                       </ChainExpression>
                     </BinaryExpression.Left>
                     <BinaryExpression.Right>
                       <ParameterExpression
-                        Parameter="ICO" />
+                        Parameter="MinConfYear" />
                     </BinaryExpression.Right>
                   </BinaryExpression>
                 </BinaryExpression.Right>
@@ -189,16 +249,16 @@
             </BinaryExpression.Left>
             <BinaryExpression.Right>
               <BinaryExpression
-                NodeType="Equal">
+                NodeType="LessThanOrEqual">
                 <BinaryExpression.Left>
                   <ChainExpression>
                     <MemberExpression
-                      Member="Sponsorship" />
+                      Member="ConfYear" />
                   </ChainExpression>
                 </BinaryExpression.Left>
                 <BinaryExpression.Right>
                   <ParameterExpression
-                    Parameter="Sponsorship" />
+                    Parameter="MaxConfYear" />
                 </BinaryExpression.Right>
               </BinaryExpression>
             </BinaryExpression.Right>
@@ -247,6 +307,18 @@
         Name="Sponsorship"
         IsOptional="True"
         ParameterType=":String?" />
+      <QueryOperationParameter
+        Name="IsPaid"
+        IsOptional="True"
+        ParameterType=":String?" />
+      <QueryOperationParameter
+        Name="MinConfYear"
+        IsOptional="True"
+        ParameterType=":Int32?" />
+      <QueryOperationParameter
+        Name="MaxConfYear"
+        IsOptional="True"
+        ParameterType=":Int32?" />
       <QueryOperation.SortCriteria>
         <SortCriterion>
           <ChainExpression>

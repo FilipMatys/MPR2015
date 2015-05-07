@@ -124,14 +124,6 @@
         FromEnd="Participation"
         ToEnd="UserParticipation" />
       <EntityProperty
-        Name="Year"
-        PropertyType=":String?">
-        <EntityProperty.Attributes>
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
         Name="Sponsorship"
         PropertyType=":String?">
         <EntityProperty.Attributes>
@@ -149,6 +141,27 @@
           <SupportedValue
             DisplayName="Without sponsorship"
             Value="Without" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="IsPaid"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+          <SupportedValue
+            DisplayName="Yes"
+            Value="Yes" />
+          <SupportedValue
+            DisplayName="No"
+            Value="No" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ConfYear"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty

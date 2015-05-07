@@ -1,6 +1,7 @@
 ﻿using Microsoft.LightSwitch;
 using System.Linq;
 using System.Web.Security;
+using System;
 
 namespace LightSwitchApplication
 {
@@ -67,6 +68,7 @@ namespace LightSwitchApplication
 
         partial void Participations_Inserting(Participation entity)
         {
+            // sponsorship level
             var payment = entity.ExpectedPayment;
 
             if (payment >= entity.Conference.GoldMin)
@@ -85,10 +87,28 @@ namespace LightSwitchApplication
             {
                 entity.Sponsorship = "Without";
             }
+
+            // is paid
+            var actState = entity.State;
+
+            if ((actState == "Paid") || (actState == "Completed"))
+            {
+                entity.IsPaid = "Yes";
+            }
+            else
+            {
+                entity.IsPaid = "No";
+            }
+
+            // year
+            var confDate = entity.Conference.DateFrom;
+            string year = confDate.ToString("yyyy");
+            entity.ConfYear = Convert.ToInt32(year);
         }
 
         partial void Participations_Updating(Participation entity)
         {
+            // sponsorship level
             var payment = entity.ExpectedPayment;
 
             if (payment >= entity.Conference.GoldMin)
@@ -107,6 +127,23 @@ namespace LightSwitchApplication
             {
                 entity.Sponsorship = "Without";
             }
+
+            // is paid
+            var actState = entity.State;
+
+            if ((actState == "Paid") || (actState == "Completed"))
+            {
+                entity.IsPaid = "Yes";
+            }
+            else
+            {
+                entity.IsPaid = "No";
+            }
+
+            // year
+            var confDate = entity.Conference.DateFrom;
+            string year = confDate.ToString("yyyy");
+            entity.ConfYear = Convert.ToInt32(year);
         }
     }
 }

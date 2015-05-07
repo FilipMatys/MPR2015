@@ -75,6 +75,23 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
+                  Name="ConfYear"
+                  Kind="Value"
+                  DataType=":Int32?">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Year" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Participation/Properties[ConfYear]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
                   Name="State"
                   Kind="Value"
                   DataType=":String">
@@ -136,6 +153,23 @@
                       </ScreenExpressionTree>
                     </ControlPropertySource>
                   </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
+                  Name="IsPaid"
+                  Kind="Value"
+                  DataType=":String?">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Paid" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Participation/Properties[IsPaid]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
                   Name="Company_User_Name"
@@ -337,6 +371,40 @@
               </ContentItem.DataSource>
             </ContentItem>
             <ContentItem
+              Name="ParticipationMinConfYear"
+              Kind="Value"
+              DataType=":Int32?">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Minimum year" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="BrowseParticipations/Properties[ParticipationMinConfYear]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+            <ContentItem
+              Name="ParticipationMaxConfYear"
+              Kind="Value"
+              DataType=":Int32?">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Maximum year" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="BrowseParticipations/Properties[ParticipationMaxConfYear]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+            <ContentItem
               Name="ParticipationState"
               Kind="Value"
               DataType=":String?">
@@ -405,6 +473,23 @@
               </ContentItem.DataSource>
             </ContentItem>
             <ContentItem
+              Name="ParticipationIsPaid"
+              Kind="Value"
+              DataType=":String?">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Paid" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="BrowseParticipations/Properties[ParticipationIsPaid]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+            <ContentItem
               Name="ParticipationContactPerson"
               Kind="Value"
               DataType=":String?">
@@ -461,7 +546,7 @@
               DataType=":String?">
               <ContentItem.Attributes>
                 <DisplayName
-                  Value="ICO" />
+                  Value="Identification number" />
               </ContentItem.Attributes>
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
@@ -587,6 +672,27 @@
                     Member="BrowseParticipations/Properties[ParticipationSponsorship]" />
                 </ChainExpression>
               </ArgumentExpression>
+              <ArgumentExpression
+                Parameter="IsPaid">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="BrowseParticipations/Properties[ParticipationIsPaid]" />
+                </ChainExpression>
+              </ArgumentExpression>
+              <ArgumentExpression
+                Parameter="MinConfYear">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="BrowseParticipations/Properties[ParticipationMinConfYear]" />
+                </ChainExpression>
+              </ArgumentExpression>
+              <ArgumentExpression
+                Parameter="MaxConfYear">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="BrowseParticipations/Properties[ParticipationMaxConfYear]" />
+                </ChainExpression>
+              </ArgumentExpression>
             </CallExpression>
           </ChainExpression>
         </ScreenExpressionTree>
@@ -654,6 +760,24 @@
             Value="Without" />
         </ScreenProperty.Attributes>
       </ScreenProperty>
+      <ScreenProperty
+        Name="ParticipationIsPaid"
+        PropertyType=":String?">
+        <ScreenProperty.Attributes>
+          <SupportedValue
+            DisplayName="Yes"
+            Value="Yes" />
+          <SupportedValue
+            DisplayName="No"
+            Value="No" />
+        </ScreenProperty.Attributes>
+      </ScreenProperty>
+      <ScreenProperty
+        Name="ParticipationMinConfYear"
+        PropertyType=":Int32?" />
+      <ScreenProperty
+        Name="ParticipationMaxConfYear"
+        PropertyType=":Int32?" />
     </Screen.Properties>
   </Screen>
   <Application.Methods>
