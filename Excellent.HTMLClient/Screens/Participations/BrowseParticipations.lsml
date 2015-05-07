@@ -100,6 +100,19 @@
                   </ContentItem.PropertySources>
                 </ContentItem>
                 <ContentItem
+                  Name="Sponsorship"
+                  Kind="Value"
+                  DataType=":String?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Participation/Properties[Sponsorship]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
                   Name="ExpectedPayment"
                   Kind="Value"
                   DataType="Microsoft.LightSwitch.Extensions:Money">
@@ -327,11 +340,32 @@
               Name="ParticipationState"
               Kind="Value"
               DataType=":String?">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="State" />
+              </ContentItem.Attributes>
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
                       Member="BrowseParticipations/Properties[ParticipationState]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+            <ContentItem
+              Name="ParticipationSponsorship"
+              Kind="Value"
+              DataType=":String?">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Sponsorship" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="BrowseParticipations/Properties[ParticipationSponsorship]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
@@ -427,7 +461,7 @@
               DataType=":String?">
               <ContentItem.Attributes>
                 <DisplayName
-                  Value="Identification number" />
+                  Value="ICO" />
               </ContentItem.Attributes>
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
@@ -491,24 +525,66 @@
             <CallExpression
               Target="BrowseParticipations/Properties[Participations]/Query">
               <ArgumentExpression
-                Parameter="CompanyName" />
+                Parameter="CompanyName">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="BrowseParticipations/Properties[ParticipationCompanyName]" />
+                </ChainExpression>
+              </ArgumentExpression>
               <ArgumentExpression
-                Parameter="ICO" />
+                Parameter="ICO">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="BrowseParticipations/Properties[ParticipationICO]" />
+                </ChainExpression>
+              </ArgumentExpression>
               <ArgumentExpression
-                Parameter="MinExpectedPayment" />
+                Parameter="MinExpectedPayment">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="BrowseParticipations/Properties[ParticipationMinExpectedPayment]" />
+                </ChainExpression>
+              </ArgumentExpression>
               <ArgumentExpression
-                Parameter="MaxExpectedPayment" />
+                Parameter="MaxExpectedPayment">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="BrowseParticipations/Properties[ParticipationMaxExpectedPayment]" />
+                </ChainExpression>
+              </ArgumentExpression>
               <ArgumentExpression
-                Parameter="ContactPerson" />
+                Parameter="ContactPerson">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="BrowseParticipations/Properties[ParticipationContactPerson]" />
+                </ChainExpression>
+              </ArgumentExpression>
               <ArgumentExpression
-                Parameter="Email" />
+                Parameter="Email">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="BrowseParticipations/Properties[ParticipationEmail]" />
+                </ChainExpression>
+              </ArgumentExpression>
               <ArgumentExpression
-                Parameter="Phone" />
+                Parameter="Phone">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="BrowseParticipations/Properties[ParticipationPhone]" />
+                </ChainExpression>
+              </ArgumentExpression>
               <ArgumentExpression
                 Parameter="State">
                 <ChainExpression>
                   <MemberExpression
                     Member="BrowseParticipations/Properties[ParticipationState]" />
+                </ChainExpression>
+              </ArgumentExpression>
+              <ArgumentExpression
+                Parameter="Sponsorship">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="BrowseParticipations/Properties[ParticipationSponsorship]" />
                 </ChainExpression>
               </ArgumentExpression>
             </CallExpression>
@@ -558,6 +634,24 @@
           <SupportedValue
             DisplayName="Cancelled"
             Value="Cancelled" />
+        </ScreenProperty.Attributes>
+      </ScreenProperty>
+      <ScreenProperty
+        Name="ParticipationSponsorship"
+        PropertyType=":String?">
+        <ScreenProperty.Attributes>
+          <SupportedValue
+            DisplayName="Gold"
+            Value="Gold" />
+          <SupportedValue
+            DisplayName="Silver"
+            Value="Silver" />
+          <SupportedValue
+            DisplayName="Bronze"
+            Value="Bronze" />
+          <SupportedValue
+            DisplayName="Without sponsorship"
+            Value="Without" />
         </ScreenProperty.Attributes>
       </ScreenProperty>
     </Screen.Properties>

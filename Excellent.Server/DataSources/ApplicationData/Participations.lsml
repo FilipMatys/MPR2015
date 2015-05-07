@@ -132,6 +132,26 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
+        Name="Sponsorship"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+          <SupportedValue
+            DisplayName="Gold"
+            Value="Gold" />
+          <SupportedValue
+            DisplayName="Silver"
+            Value="Silver" />
+          <SupportedValue
+            DisplayName="Bronze"
+            Value="Bronze" />
+          <SupportedValue
+            DisplayName="Without sponsorship"
+            Value="Without" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
         PropertyType=":Person?">

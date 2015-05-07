@@ -64,5 +64,49 @@ namespace LightSwitchApplication
                 return Users.Where(t => t.Login == currentUserUid).SingleOrDefault();
             }
         }
+
+        partial void Participations_Inserting(Participation entity)
+        {
+            var payment = entity.ExpectedPayment;
+
+            if (payment >= entity.Conference.GoldMin)
+            {
+                entity.Sponsorship = "Gold";
+            }
+            else if ((payment >= entity.Conference.SilverMin) && (payment < entity.Conference.GoldMin))
+            {
+                entity.Sponsorship = "Silver";
+            }
+            else if ((payment >= entity.Conference.BronzeMin) && (payment < entity.Conference.SilverMin))
+            {
+                entity.Sponsorship = "Bronze";
+            }
+            else
+            {
+                entity.Sponsorship = "Without";
+            }
+        }
+
+        partial void Participations_Updating(Participation entity)
+        {
+            var payment = entity.ExpectedPayment;
+
+            if (payment >= entity.Conference.GoldMin)
+            {
+                entity.Sponsorship = "Gold";
+            }
+            else if ((payment >= entity.Conference.SilverMin) && (payment < entity.Conference.GoldMin))
+            {
+                entity.Sponsorship = "Silver";
+            }
+            else if ((payment >= entity.Conference.BronzeMin) && (payment < entity.Conference.SilverMin))
+            {
+                entity.Sponsorship = "Bronze";
+            }
+            else
+            {
+                entity.Sponsorship = "Without";
+            }
+        }
     }
 }
