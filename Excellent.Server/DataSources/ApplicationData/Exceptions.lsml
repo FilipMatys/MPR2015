@@ -8,6 +8,8 @@
     Name="Exception">
     <EntityType.Attributes>
       <CreatedModifiedPropertiesEnabled />
+      <Description
+        Value="Deadline exception." />
     </EntityType.Attributes>
     <EntityType.Methods>
       <EntityMethod

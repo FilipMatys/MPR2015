@@ -12,6 +12,10 @@
     <QueryOperation
       Name="PastCompanyParticipations"
       ReturnType="Participation*">
+      <QueryOperation.Attributes>
+        <Description
+          Value="Get list of past pasrticipations of current company." />
+      </QueryOperation.Attributes>
       <QueryOperation.FilterExpression>
         <QueryFilterExpressionTree />
       </QueryOperation.FilterExpression>

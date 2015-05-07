@@ -20,7 +20,7 @@ namespace LightSwitchApplication.Reports
             {
                 var data = new AdminDashboardData();
 
-                var conference = context.DataWorkspace.ApplicationData.ActiveConference().SingleOrDefault();
+                var conference = context.DataWorkspace.ApplicationData.ActiveConference();
                 if (conference != null)
                 {
                     data.Active = true;

@@ -8,6 +8,8 @@
     Name="Attendee">
     <EntityType.Attributes>
       <CreatedModifiedPropertiesEnabled />
+      <Description
+        Value="Conference attendee for a Participation." />
     </EntityType.Attributes>
     <EntityType.Methods>
       <EntityMethod
