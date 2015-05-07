@@ -21,7 +21,10 @@ myapp.AddEditUser.created = function (screen) {
     function UpdateVisibility() {
         switch (screen.User.Role) {
             case 'Company':
-                screen.User.Company = new myapp.Company();
+                if (screen.User.Company === null) {
+                    screen.User.Company = new myapp.Company();
+                }
+
                 screen.findContentItem('Specialization').isVisible = false;
                 screen.findContentItem('company').isVisible = true;
                 break;
