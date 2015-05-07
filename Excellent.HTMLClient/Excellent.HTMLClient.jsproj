@@ -74,14 +74,14 @@
     <Content Include="Content\Images\user-splash-screen.png" />
     <Content Include="Content\Web.config" />
     <Content Include="packages.config" />
-    <Content Include="Screens\AddEditConference.lsml.js">
-      <DependentUpon>AddEditConference.lsml</DependentUpon>
-    </Content>
     <Content Include="Screens\Companies\BrowseCompanies.lsml.js">
       <DependentUpon>BrowseCompanies.lsml</DependentUpon>
     </Content>
     <Content Include="Screens\Companies\ViewCompany.lsml.js">
       <DependentUpon>ViewCompany.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\Conferences\AddEditConference.lsml.js">
+      <DependentUpon>AddEditConference.lsml</DependentUpon>
     </Content>
     <Content Include="Screens\Conferences\BrowseConferences.lsml.js">
       <DependentUpon>BrowseConferences.lsml</DependentUpon>
@@ -150,10 +150,10 @@
       <ProjectCritical>true</ProjectCritical>
     </LightSwitchModel>
     <LightSwitchModel Include="Properties\Proxies.lsml" />
-    <LightSwitchModel Include="Screens\AddEditConference.lsml" />
     <LightSwitchModel Include="Screens\Companies\AddEditCompany.lsml" />
     <LightSwitchModel Include="Screens\Companies\BrowseCompanies.lsml" />
     <LightSwitchModel Include="Screens\Companies\ViewCompany.lsml" />
+    <LightSwitchModel Include="Screens\Conferences\AddEditConference.lsml" />
     <LightSwitchModel Include="Screens\Conferences\BrowseConferences.lsml" />
     <LightSwitchModel Include="Screens\Dashboards\AdminDashboard.lsml" />
     <LightSwitchModel Include="Screens\Dashboards\CompanyDashboard.lsml" />

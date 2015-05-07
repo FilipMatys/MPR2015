@@ -26,6 +26,8 @@
         <KeyProperty.Attributes>
           <Required />
           <NotSearchable />
+          <Description
+            Value="Identifier." />
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty
@@ -34,6 +36,8 @@
         <EntityProperty.Attributes>
           <Required />
           <NotSearchable />
+          <Description
+            Value="Date from." />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -42,6 +46,8 @@
         <EntityProperty.Attributes>
           <Required />
           <NotSearchable />
+          <Description
+            Value="Date to." />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -51,6 +57,8 @@
           <Required />
           <MaxLength
             Value="255" />
+          <Description
+            Value="Place of conference." />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -59,6 +67,8 @@
         <EntityProperty.Attributes>
           <MaxLength
             Value="255" />
+          <Description
+            Value="Description." />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -76,6 +86,10 @@
               Name="CurrencySymbol"
               Value="Kč" />
           </Attribute>
+          <Range
+            Minimum="0" />
+          <Description
+            Value="Minimal amount for Gold rank." />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -93,6 +107,10 @@
               Name="CurrencySymbol"
               Value="Kč" />
           </Attribute>
+          <Range
+            Minimum="0" />
+          <Description
+            Value="Minimal amount for Silver rank." />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -110,6 +128,10 @@
               Name="CurrencySymbol"
               Value="Kč" />
           </Attribute>
+          <Range
+            Minimum="0" />
+          <Description
+            Value="Minimal amount for Bronze rank." />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -118,137 +140,30 @@
         <EntityProperty.Attributes>
           <Required />
           <NotSearchable />
+          <Description
+            Value="Is conference active?" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
         Name="Deadlines"
         Association="Deadline_Conference"
         FromEnd="Conference"
-        ToEnd="Deadline" />
+        ToEnd="Deadline">
+        <NavigationProperty.Attributes>
+          <Description
+            Value="Collection of conference deadlines." />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <NavigationProperty
         Name="Participations"
         Association="Participation_Conference"
         FromEnd="Conference"
-        ToEnd="Participation" />
-      <EntityProperty
-        Name="logoDeadline"
-        PropertyType=":DateTime">
-        <EntityProperty.Attributes>
-          <Required />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="logoDesciption"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Required />
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="posterDeadline"
-        PropertyType=":DateTime">
-        <EntityProperty.Attributes>
-          <Required />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="posterDescription"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Required />
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="videoDeadline"
-        PropertyType=":DateTime">
-        <EntityProperty.Attributes>
-          <Required />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="videoDescription"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Required />
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="propagPaperDeadline"
-        PropertyType=":DateTime">
-        <EntityProperty.Attributes>
-          <Required />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="propagPaperDescription"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Required />
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="numAttendeeDeadline"
-        PropertyType=":DateTime">
-        <EntityProperty.Attributes>
-          <Required />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="numAttendeeDescription"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Required />
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="attendeeDeadline"
-        PropertyType=":DateTime">
-        <EntityProperty.Attributes>
-          <Required />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="attendeeDescription"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Required />
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="contractDeadline"
-        PropertyType=":DateTime">
-        <EntityProperty.Attributes>
-          <Required />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="contractDescription"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Required />
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
+        ToEnd="Participation">
+        <NavigationProperty.Attributes>
+          <Description
+            Value="Collection of conference participations." />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <EntityProperty
         Name="ConfYear"
         PropertyType=":Int32?">

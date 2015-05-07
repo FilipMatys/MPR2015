@@ -129,6 +129,7 @@
             </ContentItem>
             <ContentItem
               Name="Active"
+              IsHidden="True"
               Kind="Value"
               DataType=":Boolean">
               <ContentItem.DataSource>
@@ -142,6 +143,66 @@
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
             </ContentItem>
+            <ContentItem.CommandItems>
+              <ContentItem
+                Name="setActive"
+                Kind="Command">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Set as active" />
+                </ContentItem.Attributes>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <CallExpression
+                          Target="AddEditConference/Methods[setActive]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootCommand/Properties[HiddenIfDisabled]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="False"
+                          ResultType=":Boolean" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+              <ContentItem
+                Name="setClose"
+                Kind="Command">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Set as closed" />
+                </ContentItem.Attributes>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <CallExpression
+                          Target="AddEditConference/Methods[setClose]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootCommand/Properties[HiddenIfDisabled]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="False"
+                          ResultType=":Boolean" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+            </ContentItem.CommandItems>
           </ContentItem>
           <ContentItem
             Name="Sponsorsips"
@@ -246,16 +307,11 @@
           </ContentItem>
           <ContentItem
             Name="Dates"
-            Kind="Group" />
-          <ContentItem
-            Name="Deadlines"
-            Kind="Group"
-            View="Microsoft.LightSwitch.MobileWeb:RowsLayout">
+            Kind="Group">
             <ContentItem
-              Name="Deadlines1"
+              Name="Deadlines"
               Kind="Collection"
-              DataType="CollectionView$Deadline"
-              View="Microsoft.LightSwitch.MobileWeb:List">
+              DataType="CollectionView$Deadline">
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
@@ -265,10 +321,10 @@
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
               <ContentItem
-                Name="Deadlines1Template"
+                Name="DeadlinesTemplate"
                 Kind="Details"
                 DataType="Deadline"
-                View="Microsoft.LightSwitch.MobileWeb:GroupCustomControl">
+                View="Microsoft.LightSwitch.MobileWeb:RowsLayout">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression />
@@ -277,7 +333,7 @@
                 <ContentItem
                   Name="Type"
                   Kind="Value"
-                  DataType=":String?">
+                  DataType=":String">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -290,12 +346,13 @@
                 <ContentItem
                   Name="DateDead"
                   Kind="Value"
-                  DataType=":Date?">
+                  DataType=":Date"
+                  View="Microsoft.LightSwitch.MobileWeb:DatePicker">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="Deadline/Properties[DateDead]" />
+                          Member="Deadline/Properties[DueDate]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -303,7 +360,8 @@
                 <ContentItem
                   Name="Description1"
                   Kind="Value"
-                  DataType=":String?">
+                  DataType=":String?"
+                  View="Microsoft.LightSwitch.MobileWeb:TextArea">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -358,6 +416,10 @@
           Name="dialogName"
           ParameterType=":String" />
       </ScreenMethod>
+      <ScreenMethod
+        Name="setActive" />
+      <ScreenMethod
+        Name="setClose" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenProperty

@@ -187,20 +187,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="Attachement/Properties[type]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="DateAtt1"
-                  Kind="Value"
-                  DataType=":Date">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Attachement/Properties[DateAtt]" />
+                          Member="Attachement/Properties[Type]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -208,7 +195,7 @@
                 <ContentItem
                   Name="Data1"
                   Kind="Value"
-                  DataType=":Binary">
+                  DataType=":Binary?">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>

@@ -1,59 +1,57 @@
 ﻿/// <reference path="~/GeneratedArtifacts/viewModel.js" />
 
-myapp.AddEditConference.ContractLabel_postRender = function (element, contentItem) {
-    // Write code here.
-    element.textContent = "Contract";
+myapp.AddEditConference.setClose_execute = function (screen) {
+    screen.Conference.Active = false;
+    screen.findContentItem('setClose').isEnabled = false;
+    screen.findContentItem('setActive').isEnabled = true;
 };
-myapp.AddEditConference.NumberOfParticipantsLabel_postRender = function (element, contentItem) {
-    // Write code here.
-    element.textContent = "Number Of Participants";
+myapp.AddEditConference.setActive_execute = function (screen) {
+    screen.details.dataWorkspace
+        .ApplicationData
+        .setNotActive()
+        .execute();
+        
+
+    screen.Conference.Active = true;
+    screen.findContentItem('setClose').isEnabled = true;
+    screen.findContentItem('setActive').isEnabled = false;
 };
-myapp.AddEditConference.ParticipantsLabel_postRender = function (element, contentItem) {
-    // Write code here.
-    element.textContent = "Participants";
-};
-myapp.AddEditConference.LogoLabel_postRender = function (element, contentItem) {
-    // Write code here.
-    element.textContent = "Logo";
-};
-myapp.AddEditConference.PosterLabel_postRender = function (element, contentItem) {
-    // Write code here.
-    element.textContent = "Poster";
-};
-myapp.AddEditConference.VideoPresentationLabel_postRender = function (element, contentItem) {
-    // Write code here.
-    element.textContent = "Video Presentation";
-};
-myapp.AddEditConference.PresentationListLabel_postRender = function (element, contentItem) {
-    // Write code here.
-    element.textContent = "Presentation List";
-};
+
 myapp.AddEditConference.created = function (screen) {
-    // Write code here.
-    //Deadline ded; 
-    //screen.Deadlines.addNew();
+    if (!screen.Conference.Id) {
+        var deadline = new myapp.Deadline();
+        deadline.Type = 'PropagationalPaper';
+        deadline.Conference = screen.Conference;
 
-    //screen.getDeadlines();
+        deadline = new myapp.Deadline();
+        deadline.Type = 'VideoPresenation';
+        deadline.Conference = screen.Conference;
 
-    //int i;
-    //for(i = 0; i < screen.Deadlin)
+        deadline = new myapp.Deadline();
+        deadline.Type = 'Poster';
+        deadline.Conference = screen.Conference;
 
-    //screen.Deadlines.data
-    
-    
+        deadline = new myapp.Deadline();
+        deadline.Type = 'Logo';
+        deadline.Conference = screen.Conference;
 
-    //lightSwitchApplication.Deadline;
-};
+        deadline = new myapp.Deadline();
+        deadline.Type = 'Attendee';
+        deadline.Conference = screen.Conference;
 
-myapp.AddEditConference.Deadlines1Template_render = function (element, contentItem) {
-    // Write code here.
-    var idd = $("<p>id|" + contentItem.value.Id + "|id</p>");
-    var orderDate = $("<p>" + contentItem.value.Type + "</p>");
-    if (contentItem.value.Type == "Logo") {
-        var pok = $("<textarea>This is where the user can enter text...</textarea>");
+        deadline = new myapp.Deadline();
+        deadline.Type = 'NumAttendee';
+        deadline.Conference = screen.Conference;
+
+        deadline = new myapp.Deadline();
+        deadline.Type = 'Contract';
+        deadline.Conference = screen.Conference;
     }
-    idd.appendTo($(element));
-    orderDate.appendTo($(element));
-    pok.appendTo($(element));
-    
+
+    if (screen.Conference.Active == false) {
+        screen.findContentItem('setClose').isEnabled = false;
+    }
+    if (screen.Conference.Active == true) {
+        screen.findContentItem('setActive').isEnabled = false;
+    }
 };

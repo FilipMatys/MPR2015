@@ -6,6 +6,9 @@
 
     var $preview = $('<div></div>');
     $element.append($preview);
+    contentItem.dataBind('value', function (value) {
+        previewImageAndSetContentItem(value ? 'data:png;base64,' + value : null, $preview, contentItem);
+    });
 
     $file_browse_button.bind('change', function handleFileSelect(evt) {
         var files = evt.target.files;
@@ -29,6 +32,10 @@
             contentItem.value = null;
         } else {
             $preview.append($('<img src="' + fullBinaryString + '" style="' + previewStyle + '" />'));
+            $preview.append('<a href="' + fullBinaryString + '" download="attachement">DOWNLOAD</a>');
+            $preview.find('img').error(function () {
+                $preview.find('img').remove();
+            });
             // As far as storing the data in the database, beyond previewing it,
             //     remove the preamble returned by FileReader or the server 
             //     (always of the same form: "data:jpeg;base64," with variations only on the 

@@ -29,7 +29,7 @@
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty
-        Name="type"
+        Name="Type"
         PropertyType=":String">
         <EntityProperty.Attributes>
           <Required />
@@ -46,25 +46,16 @@
             Value="Contract" />
           <SupportedValue
             DisplayName="Propagational Paper"
-            Value="PropagPaper" />
+            Value="PropagationalPaper" />
           <SupportedValue
             DisplayName="Video Presentation"
             Value="VideoPresentation" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="DateAtt"
-        PropertyType=":Date">
-        <EntityProperty.Attributes>
-          <Required />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
         Name="Data"
-        PropertyType=":Binary">
+        PropertyType=":Binary?">
         <EntityProperty.Attributes>
-          <Required />
           <NotSearchable />
         </EntityProperty.Attributes>
       </EntityProperty>

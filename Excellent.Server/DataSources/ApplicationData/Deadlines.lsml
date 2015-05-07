@@ -52,14 +52,14 @@
             Value="Attendee" />
           <SupportedValue
             DisplayName="Video Presentation"
-            Value="VideoPresenation" />
+            Value="VideoPresentation" />
           <SupportedValue
             DisplayName="Propagational Paper"
-            Value="propagPaper" />
+            Value="PropagationalPaper" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="DateDead"
+        Name="DueDate"
         PropertyType=":Date">
         <EntityProperty.Attributes>
           <Required />
