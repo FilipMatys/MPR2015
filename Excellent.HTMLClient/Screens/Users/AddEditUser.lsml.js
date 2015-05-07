@@ -23,6 +23,10 @@ myapp.AddEditUser.PasswordCheck_postRender = function (element, contentItem) {
 };
 
 myapp.AddEditUser.created = function (screen) {
+    // hide role selection if we are creating user from provided template
+    if (screen.User.Role && !screen.User.Id) {
+        screen.findContentItem('Role').isVisible = false;
+    }
     // populate defaults
     if (!screen.User.Role) {
         screen.User.Role = 'Administrator';
@@ -30,6 +34,7 @@ myapp.AddEditUser.created = function (screen) {
     // disable role selection for existing users
     if (screen.User.Id) {
         screen.findContentItem('Role').isEnabled = false;
+        screen.findContentItem('Participate').isVisible = false;
     }
 
     function UpdateVisibility() {
@@ -79,7 +84,7 @@ myapp.AddEditUser.deleteUser_execute = function (screen) {
 };
 
 myapp.AddEditUser.saveAssign_canExecute = function (screen) {
-    return screen.User.Role == 'Company';
+    return screen.User.Role == 'Company' && screen.CurrentUser && screen.CurrentUser.Role == 'Employee' && screen.ParticipateUpcomingEvent;
 };
 
 myapp.AddEditUser.saveAssign_execute = function (screen) {

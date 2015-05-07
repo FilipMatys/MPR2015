@@ -491,6 +491,16 @@
       <ScreenProperty
         Name="PasswordCheck"
         PropertyType=":String?" />
+      <ScreenProperty
+        Name="CurrentUser"
+        PropertyType="User">
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="ApplicationData/Members[CurrentUser]" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenProperty>
     </Screen.Properties>
   </Screen>
   <Application.Methods>
