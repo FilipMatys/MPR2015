@@ -1,11 +1,25 @@
 ﻿/// <reference path="~/GeneratedArtifacts/viewModel.js" />
 
+function validatePasswordMatch(passwordItem, passwordCheckItem) {
+    if (passwordItem.value !== passwordCheckItem.value) {
+        passwordCheckItem.validationResults = [new msls.ValidationResult(passwordItem.screen.details.properties.PasswordCheck, "Passwords must match.")];
+    } else {
+        passwordCheckItem.validationResults = [];
+    }
+}
+
 myapp.AddEditUser.Password_postRender = function (element, contentItem) {
     $(element).find('input').attr('type', 'password');
+    contentItem.dataBind('value', function () {
+        validatePasswordMatch(contentItem, contentItem.screen.findContentItem('PasswordCheck'));
+    });
 };
 
-myapp.AddEditUser.PasswordCheck_render = function (element, contentItem) {
-    $(element).append('<input type="password" />');
+myapp.AddEditUser.PasswordCheck_postRender = function (element, contentItem) {
+    $(element).find('input').attr('type', 'password');
+    contentItem.dataBind('value', function (value) {
+        validatePasswordMatch(contentItem.screen.findContentItem('Password'), contentItem);
+    });
 };
 
 myapp.AddEditUser.created = function (screen) {
@@ -43,11 +57,6 @@ myapp.AddEditUser.created = function (screen) {
 
     screen.User.addChangeListener('Role', UpdateVisibility);
     UpdateVisibility();
-};
-
-myapp.AddEditUser.beforeApplyChanges = function (screen) {
-    if (screen.User.Password !== screen.findContentItem('PasswordCheck').value)
-        screen.findContentItem('Password').validationResults = [new msls.ValidationResult(screen.User.Password, "Passwords must match.")];
 };
 
 myapp.AddEditUser.deleteUser_canExecute = function (screen) {

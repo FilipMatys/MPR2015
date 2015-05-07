@@ -143,8 +143,7 @@
                   <ContentItem
                     Name="PasswordCheck"
                     Kind="Value"
-                    DataType=":String"
-                    View="Microsoft.LightSwitch.MobileWeb:ValueCustomControl">
+                    DataType=":String?">
                     <ContentItem.Attributes>
                       <DisplayName
                         Value="Password check" />
@@ -153,7 +152,7 @@
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <MemberExpression
-                            Member="User/Properties[Password]" />
+                            Member="AddEditUser/Properties[PasswordCheck]" />
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
@@ -489,6 +488,9 @@
           <Required />
         </ScreenProperty.Attributes>
       </ScreenProperty>
+      <ScreenProperty
+        Name="PasswordCheck"
+        PropertyType=":String?" />
     </Screen.Properties>
   </Screen>
   <Application.Methods>
