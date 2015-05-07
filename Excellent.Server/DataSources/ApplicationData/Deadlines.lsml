@@ -8,6 +8,8 @@
     Name="Deadline">
     <EntityType.Attributes>
       <CreatedModifiedPropertiesEnabled />
+      <Description
+        Value="Attachement deadline." />
     </EntityType.Attributes>
     <EntityType.Methods>
       <EntityMethod

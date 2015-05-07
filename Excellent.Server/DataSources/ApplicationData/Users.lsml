@@ -8,6 +8,8 @@
     Name="User">
     <EntityType.Attributes>
       <CreatedModifiedPropertiesEnabled />
+      <Description
+        Value="User" />
     </EntityType.Attributes>
     <EntityType.Methods>
       <EntityMethod

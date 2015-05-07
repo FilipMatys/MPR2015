@@ -8,6 +8,8 @@
     Name="Attachement">
     <EntityType.Attributes>
       <CreatedModifiedPropertiesEnabled />
+      <Description
+        Value="Participation attachement." />
     </EntityType.Attributes>
     <EntityType.Methods>
       <EntityMethod

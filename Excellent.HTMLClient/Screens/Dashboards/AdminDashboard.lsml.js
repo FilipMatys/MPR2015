@@ -76,7 +76,7 @@ myapp.AdminDashboard.created = function (screen) {
 };
 
 myapp.AdminDashboard.ActualConference_Tap_execute = function (screen) {
-    myapp.activeDataWorkspace.ApplicationData.Conferences.filter("Active eq true").execute().done(function (response) {
+    myapp.activeDataWorkspace.ApplicationData.ActiveConference().execute().done(function (response) {
         myapp.showAddEditConference(response.results[0]);
     });
 };

@@ -20,7 +20,7 @@ namespace LightSwitchApplication.Reports
             {
                 var data = new ContactPersonDashboardData();
 
-                var conference = context.DataWorkspace.ApplicationData.ActiveConference().SingleOrDefault();
+                var conference = context.DataWorkspace.ApplicationData.ActiveConference();
                 if (conference != null)
                 {
                     var currentUserUid = context.Application.User.Identity.Name;

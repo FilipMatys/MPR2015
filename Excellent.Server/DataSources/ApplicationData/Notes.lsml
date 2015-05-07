@@ -8,6 +8,8 @@
     Name="Note">
     <EntityType.Attributes>
       <CreatedModifiedPropertiesEnabled />
+      <Description
+        Value="Participation note." />
     </EntityType.Attributes>
     <EntityType.Methods>
       <EntityMethod

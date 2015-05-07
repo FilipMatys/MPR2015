@@ -8,6 +8,8 @@
     Name="UserParticipation">
     <EntityType.Attributes>
       <CreatedModifiedPropertiesEnabled />
+      <Description
+        Value="Relation between User (Company) and Conference." />
     </EntityType.Attributes>
     <EntityType.Methods>
       <EntityMethod

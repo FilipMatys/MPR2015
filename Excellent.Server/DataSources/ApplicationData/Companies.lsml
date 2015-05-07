@@ -8,6 +8,8 @@
     Name="Company">
     <EntityType.Attributes>
       <CreatedModifiedPropertiesEnabled />
+      <Description
+        Value="Company." />
     </EntityType.Attributes>
     <EntityType.Methods>
       <EntityMethod

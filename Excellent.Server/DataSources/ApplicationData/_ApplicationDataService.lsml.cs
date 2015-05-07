@@ -1,5 +1,4 @@
-﻿using Microsoft.LightSwitch;
-using System.Linq;
+﻿using System.Linq;
 using System.Web.Security;
 
 namespace LightSwitchApplication
@@ -50,19 +49,13 @@ namespace LightSwitchApplication
         partial void Notes_Inserting(Note entity)
         {
             // set note user to current user
-            entity.User = CurrentUser;
+            entity.User = CurrentUser();
         }
 
-        /// <summary>
-        /// Gets current user.
-        /// </summary>
-        private User CurrentUser
+        partial void CurrentUser_PreprocessQuery(ref IQueryable<User> query)
         {
-            get
-            {
-                var currentUserUid = Application.User.Identity.Name;
-                return Users.Where(t => t.Login == currentUserUid).SingleOrDefault();
-            }
+            var currentUserUid = Application.User.Identity.Name;
+            query = from user in query where user.Login == currentUserUid select user;
         }
 
         partial void Participations_Inserting(Participation entity)

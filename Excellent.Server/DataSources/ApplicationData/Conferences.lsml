@@ -8,6 +8,8 @@
     Name="Conference">
     <EntityType.Attributes>
       <CreatedModifiedPropertiesEnabled />
+      <Description
+        Value="Conference." />
     </EntityType.Attributes>
     <EntityType.Methods>
       <EntityMethod
