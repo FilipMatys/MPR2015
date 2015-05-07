@@ -278,6 +278,8 @@
     <Content Include="Content\css\layout_ex.css" />
     <Content Include="Content\css\main.css" />
     <Content Include="Content\images\excel-at-fit-logo.png" />
+    <Content Include="Content\images\icons-lg.png" />
+    <Content Include="Content\images\icons.png" />
     <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\js\home.js" />
     <Content Include="Content\js\jquery-migrate.min.js" />
