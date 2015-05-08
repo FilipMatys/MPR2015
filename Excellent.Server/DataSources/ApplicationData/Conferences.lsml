@@ -65,8 +65,6 @@
         Name="Description"
         PropertyType=":String?">
         <EntityProperty.Attributes>
-          <MaxLength
-            Value="255" />
           <Description
             Value="Description." />
         </EntityProperty.Attributes>

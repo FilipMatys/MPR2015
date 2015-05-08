@@ -65,12 +65,7 @@
       </EntityProperty>
       <EntityProperty
         Name="Description"
-        PropertyType=":String?">
-        <EntityProperty.Attributes>
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
+        PropertyType=":String?" />
       <EntityProperty
         Name="Address"
         PropertyType=":String">

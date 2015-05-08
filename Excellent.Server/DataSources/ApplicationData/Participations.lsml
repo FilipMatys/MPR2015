@@ -84,12 +84,7 @@
       </EntityProperty>
       <EntityProperty
         Name="SpecialRequests"
-        PropertyType=":String?">
-        <EntityProperty.Attributes>
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
+        PropertyType=":String?" />
       <NavigationProperty
         Name="Attachements"
         Association="Attachement_Participation"
