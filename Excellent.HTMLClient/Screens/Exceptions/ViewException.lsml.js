@@ -8,3 +8,19 @@ myapp.ViewException.Details_postRender = function (element, contentItem) {
     });
 }
 
+
+myapp.ViewException.Delete_execute = function (screen) {
+    screen.Exception.deleteEntity();
+    myapp.commitChanges().then(null, function fail(e) {
+        msls.showMessageBox(e.message, {
+            title: "Error",
+            buttons: msls.MessageBoxButtons.ok
+        }).then(function (result) {
+            if (result === msls.MessageBoxResult.ok) {
+                // Discard Changes
+                screen.details.dataWorkspace.ApplicationData
+                    .details.discardChanges();
+            }
+        });
+    });
+};
