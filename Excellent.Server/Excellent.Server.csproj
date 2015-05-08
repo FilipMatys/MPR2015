@@ -223,6 +223,9 @@
     <Compile Include="DataSources\ApplicationData\Participation.lsml.cs">
       <DependentUpon>Participations.lsml</DependentUpon>
     </Compile>
+    <Compile Include="DataSources\ApplicationData\User.lsml.cs">
+      <DependentUpon>Users.lsml</DependentUpon>
+    </Compile>
     <Compile Include="DataSources\ApplicationData\_ApplicationDataService.lsml.cs" />
     <Compile Include="DynamicScripts\ScriptsController.cs" />
     <Compile Include="Global.asax.cs">
