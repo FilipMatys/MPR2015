@@ -101,6 +101,9 @@
     <Content Include="Screens\Home.lsml.js">
       <DependentUpon>Home.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\Participations\AddEditParticipationCompany.lsml.js">
+      <DependentUpon>AddEditParticipationCompany.lsml</DependentUpon>
+    </Content>
     <Content Include="Screens\Participations\AddEditParticipationFIT.lsml.js">
       <DependentUpon>AddEditParticipationFIT.lsml</DependentUpon>
     </Content>
