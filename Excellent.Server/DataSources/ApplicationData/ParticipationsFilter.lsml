@@ -115,7 +115,7 @@
                                                     </BinaryExpression.Left>
                                                     <BinaryExpression.Right>
                                                       <ParameterExpression
-                                                        Parameter="ContactPerson" />
+                                                        Parameter="CompanyContactPersonName" />
                                                     </BinaryExpression.Right>
                                                   </BinaryExpression>
                                                 </BinaryExpression.Right>
@@ -314,7 +314,7 @@
         IsOptional="True"
         ParameterType="Microsoft.LightSwitch.Extensions:Money?" />
       <QueryOperationParameter
-        Name="ContactPerson"
+        Name="CompanyContactPersonName"
         IsOptional="True"
         ParameterType=":String?" />
       <QueryOperationParameter
@@ -347,6 +347,10 @@
         ParameterType=":Int32?" />
       <QueryOperationParameter
         Name="ConferenceId"
+        IsOptional="True"
+        ParameterType=":Int32?" />
+      <QueryOperationParameter
+        Name="ContactPersonId"
         IsOptional="True"
         ParameterType=":Int32?" />
       <QueryOperation.SortCriteria>

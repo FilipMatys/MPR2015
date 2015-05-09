@@ -32,7 +32,25 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <CallExpression
-                        Target="ContactPersonDashboard/Methods[ActualConference_Tap]" />
+                        Target="!module/Methods[showAddEditConference]">
+                        <ArgumentExpression
+                          Parameter="Conference">
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="ContactPersonDashboard/Properties[ActiveConference]" />
+                          </ChainExpression>
+                        </ArgumentExpression>
+                      </CallExpression>
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.MobileWeb:RootCommand/Properties[Icon]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        Value="msls-edit"
+                        ResultType=":String" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ControlPropertySource>
@@ -47,7 +65,15 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <CallExpression
-                        Target="!module/Methods[showBrowseParticipations]" />
+                        Target="!module/Methods[showBrowseParticipations]">
+                        <ArgumentExpression
+                          Parameter="ParticipationContactPerson">
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="ContactPersonDashboard/Properties[CurrentUser]" />
+                          </ChainExpression>
+                        </ArgumentExpression>
+                      </CallExpression>
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ControlPropertySource>
@@ -62,7 +88,15 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <CallExpression
-                        Target="!module/Methods[showBrowseParticipations]" />
+                        Target="!module/Methods[showBrowseParticipations]">
+                        <ArgumentExpression
+                          Parameter="ParticipationConference">
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="ContactPersonDashboard/Properties[ActiveConference]" />
+                          </ChainExpression>
+                        </ArgumentExpression>
+                      </CallExpression>
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ControlPropertySource>
@@ -92,7 +126,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <CallExpression
-                        Target="!module/Methods[showBrowseParticipations]" />
+                        Target="ContactPersonDashboard/Methods[SignedContracts_Tap]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ControlPropertySource>
@@ -107,7 +141,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <CallExpression
-                        Target="!module/Methods[showBrowseParticipations]" />
+                        Target="ContactPersonDashboard/Methods[PaidSponsorships_Tap]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ControlPropertySource>
@@ -137,7 +171,15 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <CallExpression
-                        Target="!module/Methods[showBrowseParticipations]" />
+                        Target="!module/Methods[showBrowseParticipations]">
+                        <ArgumentExpression
+                          Parameter="ParticipationConference">
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="ContactPersonDashboard/Properties[ActiveConference]" />
+                          </ChainExpression>
+                        </ArgumentExpression>
+                      </CallExpression>
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ControlPropertySource>
@@ -237,9 +279,11 @@
           ParameterType=":String" />
       </ScreenMethod>
       <ScreenMethod
-        Name="ActualConference_Tap" />
-      <ScreenMethod
         Name="AddNewCompany_Tap" />
+      <ScreenMethod
+        Name="SignedContracts_Tap" />
+      <ScreenMethod
+        Name="PaidSponsorships_Tap" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenProperty
@@ -252,6 +296,16 @@
           <ChainExpression>
             <CallExpression
               Target="ApplicationData/Members[CurrentUser]" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenProperty>
+      <ScreenProperty
+        Name="ActiveConference"
+        PropertyType="Conference">
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="ApplicationData/Members[ActiveConference]" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenProperty>

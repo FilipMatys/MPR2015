@@ -496,7 +496,7 @@
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="BrowseParticipations/Properties[ParticipationContactPerson]" />
+                      Member="BrowseParticipations/Properties[ParticipationCompanyContactPersonName]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
@@ -635,10 +635,10 @@
                 </ChainExpression>
               </ArgumentExpression>
               <ArgumentExpression
-                Parameter="ContactPerson">
+                Parameter="CompanyContactPersonName">
                 <ChainExpression>
                   <MemberExpression
-                    Member="BrowseParticipations/Properties[ParticipationContactPerson]" />
+                    Member="BrowseParticipations/Properties[ParticipationCompanyContactPersonName]" />
                 </ChainExpression>
               </ArgumentExpression>
               <ArgumentExpression
@@ -699,6 +699,15 @@
                     Member="Id" />
                 </ChainExpression>
               </ArgumentExpression>
+              <ArgumentExpression
+                Parameter="ContactPersonId">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="BrowseParticipations/Properties[ParticipationContactPerson]" />
+                  <MemberExpression
+                    Member="Id" />
+                </ChainExpression>
+              </ArgumentExpression>
             </CallExpression>
           </ChainExpression>
         </ScreenExpressionTree>
@@ -716,7 +725,7 @@
         Name="ParticipationMaxExpectedPayment"
         PropertyType="Microsoft.LightSwitch.Extensions:Money?" />
       <ScreenProperty
-        Name="ParticipationContactPerson"
+        Name="ParticipationCompanyContactPersonName"
         PropertyType=":String?" />
       <ScreenProperty
         Name="ParticipationEmail"
@@ -746,6 +755,7 @@
           <SupportedValue
             DisplayName="Cancelled"
             Value="Cancelled" />
+          <IsParameter />
         </ScreenProperty.Attributes>
       </ScreenProperty>
       <ScreenProperty
@@ -791,6 +801,13 @@
           <IsParameter />
         </ScreenProperty.Attributes>
       </ScreenProperty>
+      <ScreenProperty
+        Name="ParticipationContactPerson"
+        PropertyType="User">
+        <ScreenProperty.Attributes>
+          <IsParameter />
+        </ScreenProperty.Attributes>
+      </ScreenProperty>
     </Screen.Properties>
   </Screen>
   <Application.Methods>
@@ -801,8 +818,14 @@
           TargetScreen="BrowseParticipations" />
       </ApplicationMethod.Attributes>
       <ApplicationMethodParameter
+        Name="ParticipationState"
+        ParameterType=":String?" />
+      <ApplicationMethodParameter
         Name="ParticipationConference"
         ParameterType="Conference" />
+      <ApplicationMethodParameter
+        Name="ParticipationContactPerson"
+        ParameterType="User" />
     </ApplicationMethod>
   </Application.Methods>
 </Application>

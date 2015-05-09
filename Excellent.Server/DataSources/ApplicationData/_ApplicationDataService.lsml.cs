@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Web.Security;
+using System;
 
 namespace LightSwitchApplication
 {
@@ -131,6 +132,14 @@ namespace LightSwitchApplication
         partial void Conferences_Updating(Conference entity)
         {
             entity.ConfYear = entity.DateFrom.Year;
+        }
+
+        partial void ParticipationsFilter_PreprocessQuery(string CompanyName, string ICO, decimal? MinExpectedPayment, decimal? MaxExpectedPayment, string CompanyContactPersonName, string Email, string Phone, string State, string Sponsorship, string IsPaid, int? MinConfYear, int? MaxConfYear, int? ConferenceId, int? ContactPersonId, ref IQueryable<Participation> query)
+        {
+            if (ContactPersonId != null)
+            {
+                query = query.Where(t => t.UserParticipations.Any(s => s.User.Id == ContactPersonId));
+            }
         }
     }
 }

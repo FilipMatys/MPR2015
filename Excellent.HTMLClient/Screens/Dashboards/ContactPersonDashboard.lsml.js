@@ -85,17 +85,19 @@ myapp.ContactPersonDashboard.created = function (screen) {
     });
 };
 
-myapp.ContactPersonDashboard.ActualConference_Tap_execute = function (screen) {
-    myapp.activeDataWorkspace.ApplicationData.ActiveConference().execute().done(function (response) {
-        myapp.showAddEditConference(response.results[0]);
-    });
-};
-
 myapp.ContactPersonDashboard.AddNewCompany_Tap_execute = function (screen) {
     myapp.showAddEditUser(null, {
         beforeShown: function (screen) {
-            screen.User = screen.details.dataWorkspace.ApplicationData.Users.addNew();
+            screen.User = new myapp.User();
             screen.User.Role = 'Company';
         }
     });
+};
+
+myapp.ContactPersonDashboard.SignedContracts_Tap_execute = function (screen) {
+    myapp.showBrowseParticipations('ContractSigned');
+};
+
+myapp.ContactPersonDashboard.PaidSponsorships_Tap_execute = function (screen) {
+    myapp.showBrowseParticipations('Paid');
 };
