@@ -1,6 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Web.Security;
-using System;
 
 namespace LightSwitchApplication
 {
@@ -30,21 +30,6 @@ namespace LightSwitchApplication
         partial void PastCompanyParticipations_PreprocessQuery(ref IQueryable<Participation> query)
         {
             query = query.Where(t => t.Company.User.Login == Application.User.Identity.Name);
-        }
-
-        partial void setNotActive_PreprocessQuery(ref IQueryable<Conference> query)
-        {
-            foreach (Conference con in Conferences)
-            {
-                //con.Active = true;
-                if (con.Active)
-                {
-                    con.Active = false;
-                    
-                    break;
-                }
-            }
-            this.DataWorkspace.ApplicationData.SaveChanges();
         }
 
         partial void Notes_Inserting(Note entity)

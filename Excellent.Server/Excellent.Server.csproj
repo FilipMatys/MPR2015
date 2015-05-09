@@ -217,9 +217,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataSources\ApplicationData\Conference.lsml.cs">
-      <DependentUpon>Conferences.lsml</DependentUpon>
-    </Compile>
     <Compile Include="DataSources\ApplicationData\Participation.lsml.cs">
       <DependentUpon>Participations.lsml</DependentUpon>
     </Compile>
@@ -303,9 +300,6 @@
     </LightSwitchModel>
     <LightSwitchModel Include="DataSources\ApplicationData\PastCompanyParticipations.lsml">
       <DependentUpon>Participations.lsml</DependentUpon>
-    </LightSwitchModel>
-    <LightSwitchModel Include="DataSources\ApplicationData\setNotActive.lsml">
-      <DependentUpon>Conferences.lsml</DependentUpon>
     </LightSwitchModel>
     <LightSwitchModel Include="DataSources\ApplicationData\ContactPersons.lsml">
       <DependentUpon>Users.lsml</DependentUpon>

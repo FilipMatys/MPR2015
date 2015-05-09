@@ -1,20 +1,28 @@
 ﻿/// <reference path="~/GeneratedArtifacts/viewModel.js" />
 
+myapp.AddEditConference.setClose_canExecute = function (screen) {
+    return screen.Conference.Active;
+};
+
 myapp.AddEditConference.setClose_execute = function (screen) {
     screen.Conference.Active = false;
-    screen.findContentItem('setClose').isEnabled = false;
-    screen.findContentItem('setActive').isEnabled = true;
-};
-myapp.AddEditConference.setActive_execute = function (screen) {
-    screen.details.dataWorkspace
-        .ApplicationData
-        .setNotActive()
-        .execute();
-        
 
-    screen.Conference.Active = true;
-    screen.findContentItem('setClose').isEnabled = true;
-    screen.findContentItem('setActive').isEnabled = false;
+    myapp.commitChanges();
+};
+
+myapp.AddEditConference.setActive_canExecute = function (screen) {
+    return !screen.Conference.Active;
+};
+
+myapp.AddEditConference.setActive_execute = function (screen) {
+    screen.getActiveConference().then(function (result) {
+        if (result != null)
+            result.Active = false;
+
+        screen.Conference.Active = true;
+
+        myapp.commitChanges();
+    });
 };
 
 myapp.AddEditConference.created = function (screen) {
