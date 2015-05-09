@@ -55,3 +55,10 @@ myapp.AddEditConference.created = function (screen) {
         screen.findContentItem('setActive').isEnabled = false;
     }
 };
+
+myapp.AddEditConference.DeadlinesTemplate_postRender = function (element, contentItem) {
+    // #102 prevent event propagation to list control
+    $(element).keydown(function (e) {
+        e.stopPropagation();
+    });
+};
