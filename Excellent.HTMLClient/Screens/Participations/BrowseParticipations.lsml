@@ -309,14 +309,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <CallExpression
-                          Target="!module/Methods[showAddEditParticipationFIT]">
-                          <CallExpression.Attributes>
-                            <AssociatedCollection
-                              Collection="BrowseParticipations/Properties[Participations]" />
-                            <CreateNewEntity
-                              TargetParameter="!module/Methods[showAddEditParticipationFIT]/Parameters[Participation]" />
-                          </CallExpression.Attributes>
-                        </CallExpression>
+                          Target="BrowseParticipations/Methods[AddParticipation_Tap]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>
@@ -586,6 +579,8 @@
           Name="dialogName"
           ParameterType=":String" />
       </ScreenMethod>
+      <ScreenMethod
+        Name="AddParticipation_Tap" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty

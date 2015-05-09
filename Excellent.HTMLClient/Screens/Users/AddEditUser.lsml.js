@@ -34,7 +34,6 @@ myapp.AddEditUser.created = function (screen) {
     // disable role selection for existing users
     if (screen.User.Id) {
         screen.findContentItem('Role').isEnabled = false;
-        screen.findContentItem('Participate').isVisible = false;
     }
 
     function UpdateVisibility() {
@@ -46,22 +45,42 @@ myapp.AddEditUser.created = function (screen) {
 
                 screen.findContentItem('Specialization').isVisible = false;
                 screen.findContentItem('company').isVisible = true;
+                if (!screen.User.Id) {
+                    screen.getActiveConference().done(function (response) {
+                        screen.findContentItem('Participate').isVisible = response != null;
+                    });
+                }
                 break;
             case 'Administrator':
-                screen.User.Company = null;
                 screen.findContentItem('Specialization').isVisible = false;
                 screen.findContentItem('company').isVisible = false;
                 break;
             case 'Employee':
-                screen.User.Company = null;
                 screen.findContentItem('Specialization').isVisible = true;
                 screen.findContentItem('company').isVisible = false;
                 break;
+        }
+
+        if (screen.User.Role != 'Company' && screen.User.Company != null) {
+            screen.User.Company.deleteEntity();
+            screen.User.Company = null;
         }
     }
 
     screen.User.addChangeListener('Role', UpdateVisibility);
     UpdateVisibility();
+};
+
+myapp.AddEditUser.beforeApplyChanges = function (screen) {
+    // create participation on active conference, if required
+    if (screen.User.Company != null &&
+        screen.ParticipateUpcomingEvent &&
+        screen.User.Company.Participations.array.length === 0) {
+        var participation = new myapp.Participation();
+        participation.Company = screen.User.Company;
+        participation.Conference = screen.ActiveConference;
+        participation.State = 'Registered';
+    }
 };
 
 myapp.AddEditUser.deleteUser_canExecute = function (screen) {
@@ -88,10 +107,27 @@ myapp.AddEditUser.saveAssign_canExecute = function (screen) {
 };
 
 myapp.AddEditUser.saveAssign_execute = function (screen) {
-    // Write code here.
+    var participation = new myapp.Participation();
+    participation.Company = screen.User.Company;
+    participation.Conference = screen.ActiveConference;
+    participation.State = 'Registered';
 
+    var relation = new myapp.UserParticipation();
+    relation.Participation = participation;
+    relation.User = screen.CurrentUser;
+
+    myapp.commitChanges().then(null, function fail(e) {
+        // If error occurs,
+        participation.deleteEntity();
+        relation.deleteEntity();
+        msls.showMessageBox(e.message, { title: e.title });
+    });
 };
 
-myapp.AddEditUser.participations_postRender = function (element, contentItem) {
-    contentItem.isEnabled = contentItem.value.User.Role === 'Company';
+myapp.AddEditUser.participations_Tap_canExecute = function (screen) {
+    return screen.CurrentUser != null && screen.CurrentUser.Role !== 'Company';
+};
+
+myapp.AddEditUser.participations_Tap_execute = function (screen) {
+    myapp.showBrowseParticipations();
 };

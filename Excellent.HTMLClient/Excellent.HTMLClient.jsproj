@@ -101,11 +101,19 @@
     <Content Include="Screens\Home.lsml.js">
       <DependentUpon>Home.lsml</DependentUpon>
     </Content>
+<<<<<<< HEAD
     <Content Include="Screens\Participations\AddEditParticipationCompany.lsml.js">
       <DependentUpon>AddEditParticipationCompany.lsml</DependentUpon>
+=======
+    <Content Include="Screens\Participations\AddEditParticipation.lsml.js">
+      <DependentUpon>AddEditParticipation.lsml</DependentUpon>
+>>>>>>> 3c7ad4533b0960fd42d0f0c3b5c38bb0260ec6c0
     </Content>
     <Content Include="Screens\Participations\AddEditParticipationFIT.lsml.js">
       <DependentUpon>AddEditParticipationFIT.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\Participations\BrowseParticipations.lsml.js">
+      <DependentUpon>BrowseParticipations.lsml</DependentUpon>
     </Content>
     <Content Include="Screens\Participations\ViewParticipation.lsml.js">
       <DependentUpon>ViewParticipation.lsml</DependentUpon>
@@ -147,6 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <LightSwitchModel Include="Properties\ApplicationData\Companies.lsml" />
+    <LightSwitchModel Include="Properties\ApplicationData\Conferences.lsml" />
     <LightSwitchModel Include="Properties\ApplicationData\Exceptions.lsml" />
     <LightSwitchModel Include="Properties\ApplicationData\Participations.lsml" />
     <LightSwitchModel Include="Properties\Client.lsml">
