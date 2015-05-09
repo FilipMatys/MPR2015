@@ -130,5 +130,5 @@ myapp.AddEditUser.participations_Tap_canExecute = function (screen) {
 };
 
 myapp.AddEditUser.participations_Tap_execute = function (screen) {
-    myapp.showBrowseParticipations();
+    myapp.showBrowseParticipations(null, null, null, screen.User.Company.Id);
 };

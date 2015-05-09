@@ -134,7 +134,7 @@ namespace LightSwitchApplication
             entity.ConfYear = entity.DateFrom.Year;
         }
 
-        partial void ParticipationsFilter_PreprocessQuery(string CompanyName, string ICO, decimal? MinExpectedPayment, decimal? MaxExpectedPayment, string CompanyContactPersonName, string Email, string Phone, string State, string Sponsorship, string IsPaid, int? MinConfYear, int? MaxConfYear, int? ConferenceId, int? ContactPersonId, ref IQueryable<Participation> query)
+        partial void ParticipationsFilter_PreprocessQuery(string CompanyName, string ICO, decimal? MinExpectedPayment, decimal? MaxExpectedPayment, string CompanyContactPersonName, string Email, string Phone, string State, string Sponsorship, string IsPaid, int? MinConfYear, int? MaxConfYear, int? ConferenceId, int? ContactPersonId, int? CompanyId, ref IQueryable<Participation> query)
         {
             if (ContactPersonId != null)
             {

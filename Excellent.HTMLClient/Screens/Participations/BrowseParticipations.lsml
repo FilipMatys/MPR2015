@@ -704,6 +704,13 @@
                     Member="BrowseParticipations/Properties[ParticipationContactPersonId]" />
                 </ChainExpression>
               </ArgumentExpression>
+              <ArgumentExpression
+                Parameter="CompanyId">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="BrowseParticipations/Properties[ParticipationCompanyId]" />
+                </ChainExpression>
+              </ArgumentExpression>
             </CallExpression>
           </ChainExpression>
         </ScreenExpressionTree>
@@ -804,6 +811,13 @@
           <IsParameter />
         </ScreenProperty.Attributes>
       </ScreenProperty>
+      <ScreenProperty
+        Name="ParticipationCompanyId"
+        PropertyType=":Int32?">
+        <ScreenProperty.Attributes>
+          <IsParameter />
+        </ScreenProperty.Attributes>
+      </ScreenProperty>
     </Screen.Properties>
   </Screen>
   <Application.Methods>
@@ -821,6 +835,9 @@
         ParameterType=":Int32?" />
       <ApplicationMethodParameter
         Name="ParticipationContactPersonId"
+        ParameterType=":Int32?" />
+      <ApplicationMethodParameter
+        Name="ParticipationCompanyId"
         ParameterType=":Int32?" />
     </ApplicationMethod>
   </Application.Methods>
