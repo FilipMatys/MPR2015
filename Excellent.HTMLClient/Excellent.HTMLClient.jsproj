@@ -160,7 +160,6 @@
       <ProjectCritical>true</ProjectCritical>
     </LightSwitchModel>
     <LightSwitchModel Include="Properties\Proxies.lsml" />
-    <LightSwitchModel Include="Screens\Companies\AddEditCompany.lsml" />
     <LightSwitchModel Include="Screens\Companies\BrowseCompanies.lsml" />
     <LightSwitchModel Include="Screens\Companies\ViewCompany.lsml" />
     <LightSwitchModel Include="Screens\Conferences\AddEditConference.lsml" />

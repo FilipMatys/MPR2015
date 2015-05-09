@@ -157,18 +157,16 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <CallExpression
-                        Target="!module/Methods[showViewCompany]">
-                        <CallExpression.Attributes>
-                          <AssociatedCollection
-                            Collection="BrowseCompanies/Properties[Companies]" />
-                        </CallExpression.Attributes>
+                        Target="!module/Methods[showAddEditUser]">
                         <ArgumentExpression
-                          Parameter="Company">
+                          Parameter="User">
                           <ChainExpression>
                             <MemberExpression
                               Member="BrowseCompanies/Properties[Companies]" />
                             <MemberExpression
                               Member="selectedItem" />
+                            <MemberExpression
+                              Member="User" />
                           </ChainExpression>
                         </ArgumentExpression>
                       </CallExpression>
