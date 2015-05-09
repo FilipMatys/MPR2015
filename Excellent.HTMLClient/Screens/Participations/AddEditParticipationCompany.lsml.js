@@ -44,6 +44,15 @@ myapp.AddEditParticipationCompany.created = function (screen) {
     } else {
         AddMissingAttachements();
     }
+
+    if (screen.Participation.State == "Cancelled") {
+        screen.findContentItem('SpecialRequests').isReadOnly = true;
+        screen.findContentItem('ExpectedPayment').isReadOnly = true;
+        screen.findContentItem('NumAttendee').isReadOnly = true;
+        screen.findContentItem('Attachements').isReadOnly = true;
+        screen.findContentItem('UserParticipations1').isReadOnly = true;
+    }
+
 };
 myapp.AddEditParticipationCompany.Type_render = function (element, contentItem) {
     // Write code here.
@@ -58,5 +67,7 @@ myapp.AddEditParticipationCompany.Type_render = function (element, contentItem) 
 };
 myapp.AddEditParticipationCompany.Data1_render = function (element, contentItem) {
     // Write code here.
-    createImageUploader(element, contentItem, "max-width: 200px; max-height: 200px");
+    if (screen.Participation.State != "Cancelled") {
+        createImageUploader(element, contentItem, "max-width: 200px; max-height: 200px");
+    }
 };

@@ -48,10 +48,26 @@ myapp.AddEditParticipationFIT.created = function (screen) {
     if (screen.Participation.State != "ContractSigned") {
         screen.findContentItem('SubmitPayment').isEnabled = false;
     }
+
+
+    if (screen.Participation.State == "Cancelled") {
+        screen.findContentItem('SpecialRequests').isReadOnly = true;
+        screen.findContentItem('ExpectedPayment').isReadOnly = true;
+        screen.findContentItem('NumAttendee').isReadOnly = true;
+        screen.findContentItem('Attachements').isReadOnly = true;
+        screen.findContentItem('AssignMyself').isEnabled = false;
+        screen.findContentItem('CancelParticipation').isEnabled = false;
+        screen.findContentItem('AddNote').isEnabled = false;
+        screen.findContentItem('AddContactPerson').isEnabled = false;
+        screen.findContentItem('UserParticipations1').isReadOnly = true;
+    }
+
 };
 
 myapp.AddEditParticipationFIT.Data_render = function (element, contentItem) {
-    createImageUploader(element, contentItem, "max-width: 200px; max-height: 200px");
+    if (screen.Participation.State != "Cancelled") {
+        createImageUploader(element, contentItem, "max-width: 200px; max-height: 200px");
+    }
 };
 
 myapp.AddEditParticipationFIT.DeadlineInfo_render = function (element, contentItem) {
@@ -75,4 +91,10 @@ myapp.AddEditParticipationFIT.SubmitPayment_execute = function (screen) {
         myapp.commitChanges();
     }
 
+};
+
+myapp.AddEditParticipationFIT.CancelParticipation_execute = function (screen) {
+    // Write code here.
+    screen.Participation.State = "Cancelled";
+    myapp.commitChanges();
 };
