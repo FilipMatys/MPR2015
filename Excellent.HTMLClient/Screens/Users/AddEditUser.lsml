@@ -417,7 +417,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <CallExpression
-                          Target="!module/Methods[showBrowseParticipations]" />
+                          Target="AddEditUser/Methods[participations_Tap]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>
@@ -473,6 +473,8 @@
         Name="saveAssign" />
       <ScreenMethod
         Name="participations" />
+      <ScreenMethod
+        Name="participations_Tap" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenProperty
