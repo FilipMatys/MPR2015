@@ -26,6 +26,8 @@
         <KeyProperty.Attributes>
           <Required />
           <NotSearchable />
+          <Description
+            Value="Identifier." />
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty
@@ -44,6 +46,8 @@
           </Attribute>
           <Range
             Minimum="0" />
+          <Description
+            Value="Expected sponsor payment." />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -53,6 +57,8 @@
           <NotSearchable />
           <Range
             Minimum="0" />
+          <Description
+            Value="Number of attendees." />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -80,46 +86,90 @@
           <SupportedValue
             DisplayName="Cancelled"
             Value="Cancelled" />
+          <Description
+            Value="State of participation." />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
         Name="SpecialRequests"
-        PropertyType=":String?" />
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Description
+            Value="Special requests." />
+        </EntityProperty.Attributes>
+      </EntityProperty>
       <NavigationProperty
         Name="Attachements"
         Association="Attachement_Participation"
         FromEnd="Participation"
-        ToEnd="Attachement" />
+        ToEnd="Attachement">
+        <NavigationProperty.Attributes>
+          <Description
+            Value="Collection of attachements." />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <NavigationProperty
         Name="Attendees"
         Association="Attendee_Participation"
         FromEnd="Participation"
-        ToEnd="Attendee" />
+        ToEnd="Attendee">
+        <NavigationProperty.Attributes>
+          <Description
+            Value="Collection of attendees." />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <NavigationProperty
         Name="Exceptions"
         Association="Exception_Participation"
         FromEnd="Participation"
-        ToEnd="Exception" />
+        ToEnd="Exception">
+        <NavigationProperty.Attributes>
+          <Description
+            Value="Collection of deadline exception." />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <NavigationProperty
         Name="Conference"
         Association="Participation_Conference"
         FromEnd="Participation"
-        ToEnd="Conference" />
+        ToEnd="Conference">
+        <NavigationProperty.Attributes>
+          <IncludeInUniqueIndex />
+          <Description
+            Value="Participation's Conference." />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <NavigationProperty
         Name="Company"
         Association="Participation_Company"
         FromEnd="Participation"
-        ToEnd="Company" />
+        ToEnd="Company">
+        <NavigationProperty.Attributes>
+          <IncludeInUniqueIndex />
+          <Description
+            Value="Participation's Company." />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <NavigationProperty
         Name="Notes"
         Association="Note_Participation"
         FromEnd="Participation"
-        ToEnd="Note" />
+        ToEnd="Note">
+        <NavigationProperty.Attributes>
+          <Description
+            Value="Collection of Notes of contact persons." />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <NavigationProperty
         Name="UserParticipations"
         Association="UserParticipation_Participation"
         FromEnd="Participation"
-        ToEnd="UserParticipation" />
+        ToEnd="UserParticipation">
+        <NavigationProperty.Attributes>
+          <Description
+            Value="Collection of contact persons." />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <EntityProperty
         Name="Sponsorship"
         PropertyType=":String?">
@@ -138,6 +188,8 @@
           <SupportedValue
             DisplayName="Without sponsorship"
             Value="Without" />
+          <Description
+            Value="Level of sponsorship." />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty

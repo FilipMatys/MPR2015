@@ -217,9 +217,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataSources\ApplicationData\Participation.lsml.cs">
-      <DependentUpon>Participations.lsml</DependentUpon>
-    </Compile>
     <Compile Include="DataSources\ApplicationData\User.lsml.cs">
       <DependentUpon>Users.lsml</DependentUpon>
     </Compile>
