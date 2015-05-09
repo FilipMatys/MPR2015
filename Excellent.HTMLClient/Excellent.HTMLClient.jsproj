@@ -101,8 +101,14 @@
     <Content Include="Screens\Home.lsml.js">
       <DependentUpon>Home.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\Participations\AddEditParticipation.lsml.js">
+      <DependentUpon>AddEditParticipation.lsml</DependentUpon>
+    </Content>
     <Content Include="Screens\Participations\AddEditParticipationFIT.lsml.js">
       <DependentUpon>AddEditParticipationFIT.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\Participations\BrowseParticipations.lsml.js">
+      <DependentUpon>BrowseParticipations.lsml</DependentUpon>
     </Content>
     <Content Include="Screens\Participations\ViewParticipation.lsml.js">
       <DependentUpon>ViewParticipation.lsml</DependentUpon>
@@ -144,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <LightSwitchModel Include="Properties\ApplicationData\Companies.lsml" />
+    <LightSwitchModel Include="Properties\ApplicationData\Conferences.lsml" />
     <LightSwitchModel Include="Properties\ApplicationData\Exceptions.lsml" />
     <LightSwitchModel Include="Properties\ApplicationData\Participations.lsml" />
     <LightSwitchModel Include="Properties\Client.lsml">
