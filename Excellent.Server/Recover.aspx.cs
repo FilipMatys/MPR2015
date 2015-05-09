@@ -10,18 +10,9 @@ namespace LightSwitchApplication
 {
     public partial class Recover : Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected void PasswordRecovery_VerifyingUser(object sender, LoginCancelEventArgs e)
         {
-
-        }
-
-        protected void RecoverButton_Click(object sender, EventArgs e)
-        {
-            var user = Membership.FindUsersByEmail(Email.Text).Cast<MembershipUser>().FirstOrDefault();
-            if (user != null)
-            {
-                //user.ResetPassword();
-            }
+            PasswordRecovery.UserName = Membership.FindUsersByEmail(PasswordRecovery.UserName).Cast<MembershipUser>().Select(t => t.UserName).FirstOrDefault();
         }
     }
 }

@@ -243,13 +243,6 @@
     <Compile Include="Recover.aspx.designer.cs">
       <DependentUpon>Recover.aspx</DependentUpon>
     </Compile>
-    <Compile Include="RecoverFinish.aspx.cs">
-      <DependentUpon>RecoverFinish.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="RecoverFinish.aspx.designer.cs">
-      <DependentUpon>RecoverFinish.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -289,7 +282,6 @@
     <Content Include="Content\js\tweetMachine.min.js" />
     <Content Include="Global.asax" />
     <Content Include="Recover.aspx" />
-    <Content Include="RecoverFinish.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="public.Master" />
     <LightSwitchModel Include="DataSources\ApplicationData\ExceptionsFilter.lsml">
