@@ -35,7 +35,15 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <CallExpression
-                          Target="AdminDashboard/Methods[ActualConference_Tap]" />
+                          Target="!module/Methods[showAddEditConference]">
+                          <ArgumentExpression
+                            Parameter="Conference">
+                            <ChainExpression>
+                              <MemberExpression
+                                Member="AdminDashboard/Properties[ActiveConference]" />
+                            </ChainExpression>
+                          </ArgumentExpression>
+                        </CallExpression>
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>
@@ -65,7 +73,15 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <CallExpression
-                          Target="!module/Methods[showBrowseParticipations]" />
+                          Target="!module/Methods[showBrowseParticipations]">
+                          <ArgumentExpression
+                            Parameter="ParticipationConference">
+                            <ChainExpression>
+                              <MemberExpression
+                                Member="AdminDashboard/Properties[ActiveConference]" />
+                            </ChainExpression>
+                          </ArgumentExpression>
+                        </CallExpression>
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>
@@ -272,8 +288,6 @@
           ParameterType=":String" />
       </ScreenMethod>
       <ScreenMethod
-        Name="ActualConference_Tap" />
-      <ScreenMethod
         Name="AddNewCompany_Tap" />
     </Screen.Methods>
     <Screen.Properties>
@@ -287,6 +301,16 @@
           <ChainExpression>
             <CallExpression
               Target="ApplicationData/Members[CurrentUser]" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenProperty>
+      <ScreenProperty
+        Name="ActiveConference"
+        PropertyType="Conference">
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="ApplicationData/Members[ActiveConference]" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenProperty>

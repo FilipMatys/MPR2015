@@ -75,16 +75,10 @@ myapp.AdminDashboard.created = function (screen) {
     });
 };
 
-myapp.AdminDashboard.ActualConference_Tap_execute = function (screen) {
-    myapp.activeDataWorkspace.ApplicationData.ActiveConference().execute().done(function (response) {
-        myapp.showAddEditConference(response.results[0]);
-    });
-};
-
 myapp.AdminDashboard.AddNewCompany_Tap_execute = function (screen) {
     myapp.showAddEditUser(null, {
         beforeShown: function (screen) {
-            screen.User = screen.details.dataWorkspace.ApplicationData.Users.addNew();
+            screen.User = new myapp.User();
             screen.User.Role = 'Company';
         }
     });

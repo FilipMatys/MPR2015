@@ -690,6 +690,15 @@
                     Member="BrowseParticipations/Properties[ParticipationMaxConfYear]" />
                 </ChainExpression>
               </ArgumentExpression>
+              <ArgumentExpression
+                Parameter="ConferenceId">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="BrowseParticipations/Properties[ParticipationConference]" />
+                  <MemberExpression
+                    Member="Id" />
+                </ChainExpression>
+              </ArgumentExpression>
             </CallExpression>
           </ChainExpression>
         </ScreenExpressionTree>
@@ -775,6 +784,13 @@
       <ScreenProperty
         Name="ParticipationMaxConfYear"
         PropertyType=":Int32?" />
+      <ScreenProperty
+        Name="ParticipationConference"
+        PropertyType="Conference">
+        <ScreenProperty.Attributes>
+          <IsParameter />
+        </ScreenProperty.Attributes>
+      </ScreenProperty>
     </Screen.Properties>
   </Screen>
   <Application.Methods>
@@ -784,6 +800,9 @@
         <ShowScreenMethod
           TargetScreen="BrowseParticipations" />
       </ApplicationMethod.Attributes>
+      <ApplicationMethodParameter
+        Name="ParticipationConference"
+        ParameterType="Conference" />
     </ApplicationMethod>
   </Application.Methods>
 </Application>
