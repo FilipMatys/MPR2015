@@ -1,11 +1,20 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Web.Security;
 
 namespace LightSwitchApplication
 {
     public partial class ApplicationDataService
     {
+        partial void Users_Updating(User entity)
+        {
+            // set back original password if not changed
+            if (string.IsNullOrEmpty(entity.Password))
+            {
+                var originalPassword = entity.Details.Properties.Password.OriginalValue;
+                entity.Password = originalPassword;
+            }
+        }
+
         partial void Users_Updated(User entity)
         {
             var membershipUser = Membership.FindUsersByName(entity.Login).Cast<MembershipUser>().SingleOrDefault();
@@ -116,18 +125,12 @@ namespace LightSwitchApplication
 
         partial void Conferences_Inserting(Conference entity)
         {
-            // year
-            var confDate = entity.DateFrom;
-            string year = confDate.ToString("yyyy");
-            entity.ConfYear = Convert.ToInt32(year);
+            entity.ConfYear = entity.DateFrom.Year;
         }
 
         partial void Conferences_Updating(Conference entity)
         {
-            // year
-            var confDate = entity.DateFrom;
-            string year = confDate.ToString("yyyy");
-            entity.ConfYear = Convert.ToInt32(year);
+            entity.ConfYear = entity.DateFrom.Year;
         }
     }
 }

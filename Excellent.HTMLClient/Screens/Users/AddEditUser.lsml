@@ -86,7 +86,7 @@
                   <ContentItem
                     Name="Password"
                     Kind="Value"
-                    DataType=":String"
+                    DataType=":String?"
                     View="Microsoft.LightSwitch.MobileWeb:TextBox">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>

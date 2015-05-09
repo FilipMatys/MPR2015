@@ -26,6 +26,8 @@
         <KeyProperty.Attributes>
           <Required />
           <NotSearchable />
+          <Description
+            Value="Identifier." />
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty
@@ -35,6 +37,8 @@
           <Required />
           <MaxLength
             Value="255" />
+          <Description
+            Value="User's name." />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -44,15 +48,18 @@
           <Required />
           <MaxLength
             Value="255" />
+          <Description
+            Value="Username." />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
         Name="Password"
-        PropertyType=":String">
+        PropertyType=":String?">
         <EntityProperty.Attributes>
-          <Required />
           <MaxLength
             Value="255" />
+          <Description
+            Value="Password." />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -62,6 +69,8 @@
           <Required />
           <MaxLength
             Value="255" />
+          <Description
+            Value="Email." />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -80,6 +89,8 @@
           <SupportedValue
             DisplayName="Company"
             Value="Company" />
+          <Description
+            Value="Role." />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -95,29 +106,48 @@
               Name="Formats"
               Value="NNNNNNNNN;CCCNNNNNNNNN" />
           </Attribute>
+          <Description
+            Value="Phone number." />
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
         Name="Notes"
         Association="Note_User"
         FromEnd="User"
-        ToEnd="Note" />
+        ToEnd="Note">
+        <NavigationProperty.Attributes>
+          <Description
+            Value="Collection of User's Notes." />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <NavigationProperty
         Name="Company"
         Association="Company_User"
         FromEnd="User"
-        ToEnd="Company" />
+        ToEnd="Company">
+        <NavigationProperty.Attributes>
+          <Description
+            Value="Company associated to this User." />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <NavigationProperty
         Name="UserParticipations"
         Association="UserParticipation_User"
         FromEnd="User"
-        ToEnd="UserParticipation" />
+        ToEnd="UserParticipation">
+        <NavigationProperty.Attributes>
+          <Description
+            Value="Collection of User's relations to conference Participations." />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <EntityProperty
         Name="Specialization"
         PropertyType=":String?">
         <EntityProperty.Attributes>
           <MaxLength
             Value="255" />
+          <Description
+            Value="User specialization." />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty

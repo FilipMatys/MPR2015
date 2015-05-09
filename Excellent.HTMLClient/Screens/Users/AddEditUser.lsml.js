@@ -1,7 +1,7 @@
 ﻿/// <reference path="~/GeneratedArtifacts/viewModel.js" />
 
 function validatePasswordMatch(passwordItem, passwordCheckItem) {
-    if (passwordItem.value !== passwordCheckItem.value) {
+    if (passwordItem.value != passwordCheckItem.value) {
         passwordCheckItem.validationResults = [new msls.ValidationResult(passwordItem.screen.details.properties.PasswordCheck, "Passwords must match.")];
     } else {
         passwordCheckItem.validationResults = [];
@@ -33,6 +33,7 @@ myapp.AddEditUser.created = function (screen) {
     }
     // disable role selection for existing users
     if (screen.User.Id) {
+        screen.User.Password = null;
         screen.findContentItem('Role').isEnabled = false;
     }
 
