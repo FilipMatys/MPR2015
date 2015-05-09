@@ -694,18 +694,14 @@
                 Parameter="ConferenceId">
                 <ChainExpression>
                   <MemberExpression
-                    Member="BrowseParticipations/Properties[ParticipationConference]" />
-                  <MemberExpression
-                    Member="Id" />
+                    Member="BrowseParticipations/Properties[ParticipationConferenceId]" />
                 </ChainExpression>
               </ArgumentExpression>
               <ArgumentExpression
                 Parameter="ContactPersonId">
                 <ChainExpression>
                   <MemberExpression
-                    Member="BrowseParticipations/Properties[ParticipationContactPerson]" />
-                  <MemberExpression
-                    Member="Id" />
+                    Member="BrowseParticipations/Properties[ParticipationContactPersonId]" />
                 </ChainExpression>
               </ArgumentExpression>
             </CallExpression>
@@ -795,15 +791,15 @@
         Name="ParticipationMaxConfYear"
         PropertyType=":Int32?" />
       <ScreenProperty
-        Name="ParticipationConference"
-        PropertyType="Conference">
+        Name="ParticipationConferenceId"
+        PropertyType=":Int32?">
         <ScreenProperty.Attributes>
           <IsParameter />
         </ScreenProperty.Attributes>
       </ScreenProperty>
       <ScreenProperty
-        Name="ParticipationContactPerson"
-        PropertyType="User">
+        Name="ParticipationContactPersonId"
+        PropertyType=":Int32?">
         <ScreenProperty.Attributes>
           <IsParameter />
         </ScreenProperty.Attributes>
@@ -821,11 +817,11 @@
         Name="ParticipationState"
         ParameterType=":String?" />
       <ApplicationMethodParameter
-        Name="ParticipationConference"
-        ParameterType="Conference" />
+        Name="ParticipationConferenceId"
+        ParameterType=":Int32?" />
       <ApplicationMethodParameter
-        Name="ParticipationContactPerson"
-        ParameterType="User" />
+        Name="ParticipationContactPersonId"
+        ParameterType=":Int32?" />
     </ApplicationMethod>
   </Application.Methods>
 </Application>

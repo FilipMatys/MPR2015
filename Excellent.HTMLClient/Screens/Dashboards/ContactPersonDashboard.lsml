@@ -67,10 +67,12 @@
                       <CallExpression
                         Target="!module/Methods[showBrowseParticipations]">
                         <ArgumentExpression
-                          Parameter="ParticipationContactPerson">
+                          Parameter="ParticipationContactPersonId">
                           <ChainExpression>
                             <MemberExpression
                               Member="ContactPersonDashboard/Properties[CurrentUser]" />
+                            <MemberExpression
+                              Member="Id" />
                           </ChainExpression>
                         </ArgumentExpression>
                       </CallExpression>
@@ -90,10 +92,12 @@
                       <CallExpression
                         Target="!module/Methods[showBrowseParticipations]">
                         <ArgumentExpression
-                          Parameter="ParticipationConference">
+                          Parameter="ParticipationConferenceId">
                           <ChainExpression>
                             <MemberExpression
                               Member="ContactPersonDashboard/Properties[ActiveConference]" />
+                            <MemberExpression
+                              Member="Id" />
                           </ChainExpression>
                         </ArgumentExpression>
                       </CallExpression>
@@ -173,10 +177,12 @@
                       <CallExpression
                         Target="!module/Methods[showBrowseParticipations]">
                         <ArgumentExpression
-                          Parameter="ParticipationConference">
+                          Parameter="ParticipationConferenceId">
                           <ChainExpression>
                             <MemberExpression
                               Member="ContactPersonDashboard/Properties[ActiveConference]" />
+                            <MemberExpression
+                              Member="Id" />
                           </ChainExpression>
                         </ArgumentExpression>
                       </CallExpression>

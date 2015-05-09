@@ -75,10 +75,12 @@
                         <CallExpression
                           Target="!module/Methods[showBrowseParticipations]">
                           <ArgumentExpression
-                            Parameter="ParticipationConference">
+                            Parameter="ParticipationConferenceId">
                             <ChainExpression>
                               <MemberExpression
                                 Member="AdminDashboard/Properties[ActiveConference]" />
+                              <MemberExpression
+                                Member="Id" />
                             </ChainExpression>
                           </ArgumentExpression>
                         </CallExpression>
