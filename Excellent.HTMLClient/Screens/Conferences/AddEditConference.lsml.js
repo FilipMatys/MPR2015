@@ -70,3 +70,4 @@ myapp.AddEditConference.DeadlinesTemplate_postRender = function (element, conten
         e.stopPropagation();
     });
 };
+

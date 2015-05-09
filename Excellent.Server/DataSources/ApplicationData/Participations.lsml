@@ -68,6 +68,8 @@
           <Required />
           <MaxLength
             Value="255" />
+          <Description
+            Value="State of participation." />
           <SupportedValue
             DisplayName="Registered"
             Value="Registered" />
@@ -86,8 +88,6 @@
           <SupportedValue
             DisplayName="Cancelled"
             Value="Cancelled" />
-          <Description
-            Value="State of participation." />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty

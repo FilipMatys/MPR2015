@@ -1,6 +1,7 @@
 ﻿/// <reference path="~/GeneratedArtifacts/viewModel.js" />
 
 myapp.AddEditParticipationFIT.created = function (screen) {
+
     function AddMissingAttachements() {
         function OfType(type) {
             return function (item) {
@@ -43,6 +44,10 @@ myapp.AddEditParticipationFIT.created = function (screen) {
     } else {
         AddMissingAttachements();
     }
+
+    if (screen.Participation.State != "ContractSigned") {
+        screen.findContentItem('SubmitPayment').isEnabled = false;
+    }
 };
 
 myapp.AddEditParticipationFIT.Data_render = function (element, contentItem) {
@@ -58,4 +63,16 @@ myapp.AddEditParticipationFIT.DeadlineInfo_render = function (element, contentIt
             $(element).html('<span>' + moment(response.results[0].DueDate).format('DD.MM.YYYY') + '</span><span>' + (response.results[0].Description || '') + '</span>');
         });
     });
+};
+
+
+myapp.AddEditParticipationFIT.SubmitPayment_execute = function (screen) {
+    // Write code here.
+    //if (screen.Participation.State == "ContractSigned") {
+    if (screen.Participation.State == "ContractSigned") {
+        screen.Participation.IsPaid = "Yes";
+        screen.Participation.State = "Paid";
+        myapp.commitChanges();
+    }
+
 };

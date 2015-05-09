@@ -82,6 +82,20 @@
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
+                <ContentItem
+                  Name="Active"
+                  Kind="Value"
+                  DataType=":Boolean"
+                  View="Microsoft.LightSwitch.MobileWeb:ValueCustomControl">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Conference/Properties[Active]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
               </ContentItem>
               <ContentItem.PropertySources>
                 <ControlPropertySource
@@ -199,6 +213,20 @@
                       </ScreenExpressionTree>
                     </ControlPropertySource>
                   </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
+                  Name="Active1"
+                  Kind="Value"
+                  DataType=":Boolean"
+                  View="Microsoft.LightSwitch.MobileWeb:ValueCustomControl">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Conference/Properties[Active]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
