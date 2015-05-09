@@ -472,8 +472,6 @@
       <ScreenMethod
         Name="saveAssign" />
       <ScreenMethod
-        Name="participations" />
-      <ScreenMethod
         Name="participations_Tap" />
     </Screen.Methods>
     <Screen.Properties>

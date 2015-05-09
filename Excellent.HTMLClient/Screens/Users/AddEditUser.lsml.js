@@ -126,7 +126,7 @@ myapp.AddEditUser.saveAssign_execute = function (screen) {
 };
 
 myapp.AddEditUser.participations_Tap_canExecute = function (screen) {
-    return screen.CurrentUser != null && screen.CurrentUser.Role !== 'Company';
+    return screen.User.Id && screen.User.Role === 'Company' && screen.CurrentUser != null && screen.CurrentUser.Role !== 'Company';
 };
 
 myapp.AddEditUser.participations_Tap_execute = function (screen) {
