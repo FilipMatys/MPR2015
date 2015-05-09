@@ -287,6 +287,7 @@
                     </ContentItem>
                     <ContentItem
                       Name="Participate"
+                      IsHidden="True"
                       Kind="Value"
                       DataType=":Boolean">
                       <ContentItem.Attributes>
@@ -498,6 +499,16 @@
           <ChainExpression>
             <CallExpression
               Target="ApplicationData/Members[CurrentUser]" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenProperty>
+      <ScreenProperty
+        Name="ActiveConference"
+        PropertyType="Conference">
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="ApplicationData/Members[ActiveConference]" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenProperty>
