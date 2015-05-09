@@ -124,6 +124,10 @@ myapp.AddEditUser.saveAssign_execute = function (screen) {
     });
 };
 
-myapp.AddEditUser.participations_postRender = function (element, contentItem) {
-    contentItem.isEnabled = contentItem.value.User.Role === 'Company';
+myapp.AddEditUser.participations_Tap_canExecute = function (screen) {
+    return screen.CurrentUser != null && screen.CurrentUser.Role !== 'Company';
+};
+
+myapp.AddEditUser.participations_Tap_execute = function (screen) {
+    myapp.showBrowseParticipations();
 };
