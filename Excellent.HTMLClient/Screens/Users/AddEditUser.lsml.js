@@ -107,8 +107,21 @@ myapp.AddEditUser.saveAssign_canExecute = function (screen) {
 };
 
 myapp.AddEditUser.saveAssign_execute = function (screen) {
-    // Write code here.
+    var participation = new myapp.Participation();
+    participation.Company = screen.User.Company;
+    participation.Conference = screen.ActiveConference;
+    participation.State = 'Registered';
 
+    var relation = new myapp.UserParticipation();
+    relation.Participation = participation;
+    relation.User = screen.CurrentUser;
+
+    myapp.commitChanges().then(null, function fail(e) {
+        // If error occurs,
+        participation.deleteEntity();
+        relation.deleteEntity();
+        msls.showMessageBox(e.message, { title: e.title });
+    });
 };
 
 myapp.AddEditUser.participations_postRender = function (element, contentItem) {
