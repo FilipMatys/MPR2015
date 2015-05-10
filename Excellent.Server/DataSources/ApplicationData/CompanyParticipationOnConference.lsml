@@ -12,6 +12,10 @@
     <QueryOperation
       Name="CompanyParticipationOnConference"
       ReturnType="Participation">
+      <QueryOperation.Attributes>
+        <Description
+          Value="Get Participation of Company on the Conference." />
+      </QueryOperation.Attributes>
       <QueryOperation.FilterExpression>
         <QueryFilterExpressionTree>
           <BinaryExpression

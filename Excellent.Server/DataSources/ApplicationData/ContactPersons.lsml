@@ -12,6 +12,10 @@
     <QueryOperation
       Name="ContactPersons"
       ReturnType="User*">
+      <QueryOperation.Attributes>
+        <Description
+          Value="Get list of contact persons." />
+      </QueryOperation.Attributes>
       <QueryOperation.FilterExpression>
         <QueryFilterExpressionTree>
           <BinaryExpression

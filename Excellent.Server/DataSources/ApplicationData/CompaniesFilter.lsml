@@ -12,6 +12,10 @@
     <QueryOperation
       Name="CompaniesFilter"
       ReturnType="Company*">
+      <QueryOperation.Attributes>
+        <Description
+          Value="Companies filter." />
+      </QueryOperation.Attributes>
       <QueryOperation.FilterExpression>
         <QueryFilterExpressionTree>
           <BinaryExpression

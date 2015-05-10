@@ -12,6 +12,10 @@
     <QueryOperation
       Name="DeadlineByConferenceAndType"
       ReturnType="Deadline">
+      <QueryOperation.Attributes>
+        <Description
+          Value="Find Deadline by Conference and deadline type." />
+      </QueryOperation.Attributes>
       <QueryOperation.FilterExpression>
         <QueryFilterExpressionTree>
           <BinaryExpression
