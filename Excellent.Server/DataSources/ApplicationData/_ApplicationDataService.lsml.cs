@@ -99,14 +99,19 @@ namespace LightSwitchApplication
             UpdateComputedAttributes(entity);
         }
 
-        partial void Conferences_Inserting(Conference entity)
+        private void UpdateComputedAttributes(Conference entity)
         {
             entity.ConfYear = entity.DateFrom.Year;
         }
 
+        partial void Conferences_Inserting(Conference entity)
+        {
+            UpdateComputedAttributes(entity);
+        }
+
         partial void Conferences_Updating(Conference entity)
         {
-            entity.ConfYear = entity.DateFrom.Year;
+            UpdateComputedAttributes(entity);
         }
 
         partial void ParticipationsFilter_PreprocessQuery(string CompanyName, string ICO, decimal? MinExpectedPayment, decimal? MaxExpectedPayment, string CompanyContactPersonName, string Email, string Phone, string State, string Sponsorship, string IsPaid, int? MinConfYear, int? MaxConfYear, int? ConferenceId, int? ContactPersonId, int? CompanyId, ref IQueryable<Participation> query)
