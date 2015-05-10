@@ -806,14 +806,16 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <CallExpression
-                          Target="!module/Methods[showViewCompany]">
+                          Target="!module/Methods[showAddEditUser]">
                           <ArgumentExpression
-                            Parameter="Company">
+                            Parameter="User">
                             <ChainExpression>
                               <MemberExpression
                                 Member="AddEditParticipationFIT/Properties[Participation]" />
                               <MemberExpression
                                 Member="Company" />
+                              <MemberExpression
+                                Member="User" />
                             </ChainExpression>
                           </ArgumentExpression>
                         </CallExpression>
