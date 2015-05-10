@@ -59,7 +59,7 @@ myapp.AddEditParticipationFIT.created = function (screen) {
 
 myapp.AddEditParticipationFIT.Data_render = function (element, contentItem) {
     if (contentItem.screen.Participation.State !== "Cancelled") {
-        createImageUploader(element, contentItem, "max-width: 200px; max-height: 200px");
+        createImageUploader(element, contentItem, contentItem.parent.findItem("Filename"), "max-width: 200px; max-height: 200px");
     }
 };
 
