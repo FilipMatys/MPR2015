@@ -1,6 +1,7 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using System.Net.Mail;
 using System.Web.Security;
-using System;
 
 namespace LightSwitchApplication
 {
@@ -35,6 +36,18 @@ namespace LightSwitchApplication
         partial void Users_Inserted(User entity)
         {
             Membership.CreateUser(entity.Login, entity.Password, entity.Email);
+
+            using (var client = new SmtpClient())
+            {
+                var mail = new MailMessage
+                {
+                    Subject = "Account created",
+                    Body = string.Format("User name: {0}\nPassword: {1}", entity.Login, entity.Password)
+                };
+                mail.To.Add(entity.Email);
+
+                client.Send(mail);
+            }
         }
 
         partial void PastCompanyParticipations_PreprocessQuery(ref IQueryable<Participation> query)
@@ -54,12 +67,15 @@ namespace LightSwitchApplication
             query = from user in query where user.Login == currentUserUid select user;
         }
 
-        partial void Participations_Inserting(Participation entity)
+        private void UpdateComputedAttributes(Participation entity)
         {
             // sponsorship level
             var payment = entity.ExpectedPayment;
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 6ddf51189aa122f24836ffa9b45a496357d629fd
             if (payment >= entity.Conference.GoldMin)
             {
                 entity.Sponsorship = "Gold";
@@ -79,7 +95,6 @@ namespace LightSwitchApplication
 
             // is paid
             var actState = entity.State;
-
             if ((actState == "Paid") || (actState == "Completed"))
             {
                 entity.IsPaid = "Yes";
@@ -88,51 +103,33 @@ namespace LightSwitchApplication
             {
                 entity.IsPaid = "No";
             }
+        }
+
+        partial void Participations_Inserting(Participation entity)
+        {
+            UpdateComputedAttributes(entity);
+
+            entity.State = "Registered";
         }
 
         partial void Participations_Updating(Participation entity)
         {
-            // sponsorship level
-            var payment = entity.ExpectedPayment;
+            UpdateComputedAttributes(entity);
+        }
 
-            if (payment >= entity.Conference.GoldMin)
-            {
-                entity.Sponsorship = "Gold";
-            }
-            else if ((payment >= entity.Conference.SilverMin) && (payment < entity.Conference.GoldMin))
-            {
-                entity.Sponsorship = "Silver";
-            }
-            else if ((payment >= entity.Conference.BronzeMin) && (payment < entity.Conference.SilverMin))
-            {
-                entity.Sponsorship = "Bronze";
-            }
-            else
-            {
-                entity.Sponsorship = "Without";
-            }
-
-            // is paid
-            var actState = entity.State;
-
-            if ((actState == "Paid") || (actState == "Completed"))
-            {
-                entity.IsPaid = "Yes";
-            }
-            else
-            {
-                entity.IsPaid = "No";
-            }
+        private void UpdateComputedAttributes(Conference entity)
+        {
+            entity.ConfYear = entity.DateFrom.Year;
         }
 
         partial void Conferences_Inserting(Conference entity)
         {
-            entity.ConfYear = entity.DateFrom.Year;
+            UpdateComputedAttributes(entity);
         }
 
         partial void Conferences_Updating(Conference entity)
         {
-            entity.ConfYear = entity.DateFrom.Year;
+            UpdateComputedAttributes(entity);
         }
 
         partial void ParticipationsFilter_PreprocessQuery(string CompanyName, string ICO, decimal? MinExpectedPayment, decimal? MaxExpectedPayment, string CompanyContactPersonName, string Email, string Phone, string State, string Sponsorship, string IsPaid, int? MinConfYear, int? MaxConfYear, int? ConferenceId, int? ContactPersonId, int? CompanyId, ref IQueryable<Participation> query)
@@ -140,6 +137,46 @@ namespace LightSwitchApplication
             if (ContactPersonId != null)
             {
                 query = query.Where(t => t.UserParticipations.Any(s => s.User.Id == ContactPersonId));
+            }
+        }
+
+        partial void Attachements_Updated(Attachement entity)
+        {
+            if (entity.Data == null)
+                return;
+
+            switch (entity.Type)
+            {
+                case "Contract":
+                    if (entity.Participation.State == "Approved")
+                        entity.Participation.State = "ContractSigned";
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        partial void UserParticipations_Inserted(UserParticipation entity)
+        {
+            if (entity.Participation.State == "Registered")
+            {
+                entity.Participation.State = "Approved";
+            }
+        }
+
+        partial void Conferences_Updated(Conference entity)
+        {
+            switch (entity.Active)
+            {
+                case "Closed":
+                    foreach (var participation in entity.Participations.Where(t => t.State != "Cancelled"))
+                    {
+                        participation.State = "Completed";
+                    }
+
+                    break;
+                default:
+                    break;
             }
         }
     }

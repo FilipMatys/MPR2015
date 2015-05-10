@@ -12,6 +12,10 @@
     <QueryOperation
       Name="ExceptionsFilter"
       ReturnType="Exception*">
+      <QueryOperation.Attributes>
+        <Description
+          Value="Exceptions filter." />
+      </QueryOperation.Attributes>
       <QueryOperation.FilterExpression>
         <QueryFilterExpressionTree>
           <BinaryExpression

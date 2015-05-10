@@ -9,6 +9,8 @@
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="ApplicationData" />
+      <DisplayName
+        Value="Dashboard" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem

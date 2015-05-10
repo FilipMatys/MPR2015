@@ -26,6 +26,8 @@
         <KeyProperty.Attributes>
           <Required />
           <NotSearchable />
+          <Description
+            Value="Identifier." />
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty
@@ -35,13 +37,20 @@
           <Required />
           <MaxLength
             Value="255" />
+          <Description
+            Value="Attenee's name." />
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
         Name="Participation"
         Association="Attendee_Participation"
         FromEnd="Attendee"
-        ToEnd="Participation" />
+        ToEnd="Participation">
+        <NavigationProperty.Attributes>
+          <Description
+            Value="Participation to attend." />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"

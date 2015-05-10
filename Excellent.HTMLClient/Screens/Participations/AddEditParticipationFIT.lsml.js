@@ -45,27 +45,20 @@ myapp.AddEditParticipationFIT.created = function (screen) {
         AddMissingAttachements();
     }
 
-    if (screen.Participation.State != "ContractSigned") {
-        screen.findContentItem('SubmitPayment').isEnabled = false;
-    }
-
-
     if (screen.Participation.State == "Cancelled") {
         screen.findContentItem('SpecialRequests').isReadOnly = true;
         screen.findContentItem('ExpectedPayment').isReadOnly = true;
         screen.findContentItem('NumAttendee').isReadOnly = true;
         screen.findContentItem('Attachements').isReadOnly = true;
-        screen.findContentItem('AssignMyself').isEnabled = false;
         screen.findContentItem('CancelParticipation').isEnabled = false;
         screen.findContentItem('AddNote').isEnabled = false;
         screen.findContentItem('AddContactPerson').isEnabled = false;
         screen.findContentItem('UserParticipations1').isReadOnly = true;
     }
-
 };
 
 myapp.AddEditParticipationFIT.Data_render = function (element, contentItem) {
-    if (screen.Participation.State != "Cancelled") {
+    if (contentItem.screen.Participation.State !== "Cancelled") {
         createImageUploader(element, contentItem, "max-width: 200px; max-height: 200px");
     }
 };
@@ -81,20 +74,37 @@ myapp.AddEditParticipationFIT.DeadlineInfo_render = function (element, contentIt
     });
 };
 
+myapp.AddEditParticipationFIT.SubmitPayment_canExecute = function (screen) {
+    return screen.Participation.State === "ContractSigned";
+};
 
 myapp.AddEditParticipationFIT.SubmitPayment_execute = function (screen) {
-    // Write code here.
-    //if (screen.Participation.State == "ContractSigned") {
-    if (screen.Participation.State == "ContractSigned") {
-        screen.Participation.IsPaid = "Yes";
-        screen.Participation.State = "Paid";
-        myapp.commitChanges();
-    }
-
+    screen.Participation.State = "Paid";
+    myapp.commitChanges();
 };
 
 myapp.AddEditParticipationFIT.CancelParticipation_execute = function (screen) {
-    // Write code here.
     screen.Participation.State = "Cancelled";
     myapp.commitChanges();
+};
+
+myapp.AddEditParticipationFIT.AssignToMe_canExecute = function (screen) {
+    return screen.Participation.State !== "Cancelled" &&
+        screen.CurrentUser &&
+        screen.CurrentUser.Role === 'Employee' &&
+        !screen.Participation.UserParticipations.any(function (assignment) {
+            return assignment.User.Id === screen.CurrentUser.Id
+        });
+};
+
+myapp.AddEditParticipationFIT.AssignToMe_execute = function (screen) {
+    var relation = new myapp.UserParticipation();
+    relation.Participation = screen.Participation;
+    relation.User = screen.CurrentUser;
+
+    myapp.commitChanges().then(null, function fail(e) {
+        // If error occurs, remove new objects
+        relation.deleteEntity();
+        msls.showMessageBox(e.message, { title: e.title });
+    });
 };

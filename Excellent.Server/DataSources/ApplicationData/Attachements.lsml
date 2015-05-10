@@ -26,6 +26,8 @@
         <KeyProperty.Attributes>
           <Required />
           <NotSearchable />
+          <Description
+            Value="Identifier." />
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty
@@ -50,6 +52,8 @@
           <SupportedValue
             DisplayName="Video Presentation"
             Value="VideoPresentation" />
+          <Description
+            Value="Attachement type." />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -57,13 +61,20 @@
         PropertyType=":Binary?">
         <EntityProperty.Attributes>
           <NotSearchable />
+          <Description
+            Value="Binary data content." />
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
         Name="Participation"
         Association="Attachement_Participation"
         FromEnd="Attachement"
-        ToEnd="Participation" />
+        ToEnd="Participation">
+        <NavigationProperty.Attributes>
+          <Description
+            Value="Participation." />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"

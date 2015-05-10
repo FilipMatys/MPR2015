@@ -26,6 +26,8 @@
         <KeyProperty.Attributes>
           <Required />
           <NotSearchable />
+          <Description
+            Value="Identifier." />
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty
@@ -33,18 +35,30 @@
         PropertyType=":String">
         <EntityProperty.Attributes>
           <Required />
+          <Description
+            Value="Note content." />
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
         Name="Participation"
         Association="Note_Participation"
         FromEnd="Note"
-        ToEnd="Participation" />
+        ToEnd="Participation">
+        <NavigationProperty.Attributes>
+          <Description
+            Value="Participation." />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <NavigationProperty
         Name="User"
         Association="Note_User"
         FromEnd="Note"
-        ToEnd="User" />
+        ToEnd="User">
+        <NavigationProperty.Attributes>
+          <Description
+            Value="Contact person." />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"

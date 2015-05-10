@@ -41,7 +41,13 @@ myapp.AddEditUser.created = function (screen) {
         switch (screen.User.Role) {
             case 'Company':
                 if (screen.User.Company == null) {
-                    screen.User.Company = new myapp.Company();
+                    if (!!screen.User.Id) {
+                        screen.details.dataWorkspace.ApplicationData.Companies.filter('User/Id eq ' + screen.User.Id).execute().then(function (response) {
+                            screen.User.Company = response.results[0];
+                        });
+                    } else {
+                        screen.User.Company = new myapp.Company();
+                    }
                 }
 
                 screen.findContentItem('Specialization').isVisible = false;

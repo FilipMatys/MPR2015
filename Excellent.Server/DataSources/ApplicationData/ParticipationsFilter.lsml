@@ -12,6 +12,10 @@
     <QueryOperation
       Name="ParticipationsFilter"
       ReturnType="Participation*">
+      <QueryOperation.Attributes>
+        <Description
+          Value="Participations filter." />
+      </QueryOperation.Attributes>
       <QueryOperation.FilterExpression>
         <QueryFilterExpressionTree>
           <BinaryExpression

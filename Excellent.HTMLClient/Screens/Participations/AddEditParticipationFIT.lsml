@@ -9,6 +9,8 @@
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="ApplicationData" />
+      <DisplayName
+        Value="Participation detail" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -230,7 +232,7 @@
                 Kind="Command">
                 <ContentItem.Attributes>
                   <DisplayName
-                    Value="Assign to myself" />
+                    Value="Assign to me" />
                 </ContentItem.Attributes>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
@@ -238,7 +240,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <CallExpression
-                          Target="AddEditParticipationFIT/Methods[AssignMyself]" />
+                          Target="AddEditParticipationFIT/Methods[AssignToMe]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>
@@ -806,14 +808,16 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <CallExpression
-                          Target="!module/Methods[showViewCompany]">
+                          Target="!module/Methods[showAddEditUser]">
                           <ArgumentExpression
-                            Parameter="Company">
+                            Parameter="User">
                             <ChainExpression>
                               <MemberExpression
                                 Member="AddEditParticipationFIT/Properties[Participation]" />
                               <MemberExpression
                                 Member="Company" />
+                              <MemberExpression
+                                Member="User" />
                             </ChainExpression>
                           </ArgumentExpression>
                         </CallExpression>
@@ -883,7 +887,7 @@
       <ScreenMethod
         Name="Call_Tap" />
       <ScreenMethod
-        Name="AssignMyself" />
+        Name="AssignToMe" />
       <ScreenMethod
         Name="CancelParticipation" />
       <ScreenMethod
@@ -1047,6 +1051,16 @@
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
+      <ScreenProperty
+        Name="CurrentUser"
+        PropertyType="User">
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="ApplicationData/Members[CurrentUser]" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenProperty>
     </Screen.Properties>
   </Screen>
   <Application.Methods>

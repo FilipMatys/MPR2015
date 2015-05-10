@@ -26,6 +26,8 @@
         <KeyProperty.Attributes>
           <Required />
           <NotSearchable />
+          <Description
+            Value="Identifier." />
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty
@@ -56,6 +58,9 @@
           <SupportedValue
             DisplayName="Propagational Paper"
             Value="PropagationalPaper" />
+          <Description
+            Value="Deadline date." />
+          <IncludeInUniqueIndex />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -64,16 +69,29 @@
         <EntityProperty.Attributes>
           <Required />
           <NotSearchable />
+          <Description
+            Value="Due date." />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
         Name="Description"
-        PropertyType=":String?" />
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Description
+            Value="Deadline description." />
+        </EntityProperty.Attributes>
+      </EntityProperty>
       <NavigationProperty
         Name="Conference"
         Association="Deadline_Conference"
         FromEnd="Deadline"
-        ToEnd="Conference" />
+        ToEnd="Conference">
+        <NavigationProperty.Attributes>
+          <Description
+            Value="Conference." />
+          <IncludeInUniqueIndex />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"

@@ -134,12 +134,22 @@
       </EntityProperty>
       <EntityProperty
         Name="Active"
-        PropertyType=":Boolean">
+        PropertyType=":String">
         <EntityProperty.Attributes>
           <Required />
-          <NotSearchable />
           <Description
             Value="Is conference active?" />
+          <MaxLength
+            Value="255" />
+          <SupportedValue
+            DisplayName="Inactive"
+            Value="Inactive" />
+          <SupportedValue
+            DisplayName="Active"
+            Value="Active" />
+          <SupportedValue
+            DisplayName="Closed"
+            Value="Closed" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty

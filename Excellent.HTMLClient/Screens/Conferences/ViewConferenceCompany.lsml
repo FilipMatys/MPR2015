@@ -5,12 +5,10 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="AddEditContactPerson">
+    Name="ViewConferenceCompany">
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="ApplicationData" />
-      <DisplayName
-        Value="Manage Contact Person" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -22,17 +20,13 @@
           Kind="Group"
           View="Microsoft.LightSwitch.MobileWeb:TabPages">
           <ContentItem
-            Name="Details"
+            Name="About"
             Kind="Group"
             View="Microsoft.LightSwitch.MobileWeb:RowsLayout">
-            <ContentItem.Attributes>
-              <DisplayName
-                Value="Details" />
-            </ContentItem.Attributes>
             <ContentItem
               Name="columns"
               Kind="Details"
-              DataType="UserParticipation"
+              DataType="Conference"
               View="Microsoft.LightSwitch.MobileWeb:RowsLayout">
               <ContentItem.Attributes>
                 <DisplayName
@@ -42,70 +36,98 @@
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="AddEditContactPerson/Properties[UserParticipation]" />
+                      Member="ViewConferenceCompany/Properties[ActiveConference]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
               <ContentItem
-                Name="User"
-                Kind="Details"
-                DataType="User">
-                <ContentItem.ChoicesSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="AddEditContactPerson/Properties[ContactPersons]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.ChoicesSource>
+                Name="DateFrom"
+                Kind="Value"
+                DataType=":Date">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="UserParticipation/Properties[User]" />
+                        Member="Conference/Properties[DateFrom]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
-                <ContentItem
-                  Name="RowTemplate"
-                  Kind="Details"
-                  DataType="User">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression />
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
+              </ContentItem>
+              <ContentItem
+                Name="DateTo"
+                Kind="Value"
+                DataType=":Date">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Conference/Properties[DateTo]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="Place"
+                Kind="Value"
+                DataType=":String">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Conference/Properties[Place]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="Description"
+                Kind="Value"
+                DataType=":String?">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Conference/Properties[Description]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
               </ContentItem>
             </ContentItem>
+            <ContentItem.CommandItems>
+              <ContentItem
+                Name="Participate"
+                Kind="Command">
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <CallExpression
+                          Target="ViewConferenceCompany/Methods[Participate_Tap]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+            </ContentItem.CommandItems>
           </ContentItem>
+          <ContentItem.PropertySources>
+            <ControlPropertySource
+              Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[BrowseOnly]">
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <ConstantExpression
+                    Value="True"
+                    ResultType=":Boolean" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ControlPropertySource>
+          </ContentItem.PropertySources>
         </ContentItem>
         <ContentItem
           Name="Popups"
           Kind="Group"
           View="Microsoft.LightSwitch.MobileWeb:DialogPages" />
-        <ContentItem.PropertySources>
-          <ControlPropertySource
-            Property="Microsoft.LightSwitch.MobileWeb:Screen/Properties[ScreenType]">
-            <ScreenExpressionTree>
-              <ChainExpression>
-                <ConstantExpression
-                  Value="Edit"
-                  ResultType=":String" />
-              </ChainExpression>
-            </ScreenExpressionTree>
-          </ControlPropertySource>
-          <ControlPropertySource
-            Property="Microsoft.LightSwitch.MobileWeb:Screen/Properties[ShowAsDialog]">
-            <ScreenExpressionTree>
-              <ChainExpression>
-                <ConstantExpression
-                  Value="True"
-                  ResultType=":Boolean" />
-              </ChainExpression>
-            </ScreenExpressionTree>
-          </ControlPropertySource>
-        </ContentItem.PropertySources>
       </ContentItem>
     </Screen.RootContentItem>
     <Screen.Methods>
@@ -131,53 +153,39 @@
           Name="dialogName"
           ParameterType=":String" />
       </ScreenMethod>
+      <ScreenMethod
+        Name="Participate_Tap" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenProperty
-        Name="UserParticipation"
-        PropertyType="UserParticipation">
+        Name="ActiveConference"
+        PropertyType="Conference">
         <ScreenProperty.Attributes>
           <IsParameter />
         </ScreenProperty.Attributes>
       </ScreenProperty>
-      <ScreenCollectionProperty
-        Name="ContactPersons"
-        PageSize="45"
-        PropertyType="CollectionView$User">
-        <ScreenCollectionProperty.Query>
-          <ScreenQueryDefinition
-            Name="ContactPersonsQuery"
-            ReturnType="User*">
-            <ScreenQueryDefinition.FilterExpression>
-              <QueryFilterExpressionTree />
-            </ScreenQueryDefinition.FilterExpression>
-            <ScreenQueryDefinition.Source>
-              <QuerySourceExpressionTree>
-                <MemberExpression
-                  Member="ApplicationData/Members[ContactPersons]" />
-              </QuerySourceExpressionTree>
-            </ScreenQueryDefinition.Source>
-          </ScreenQueryDefinition>
-        </ScreenCollectionProperty.Query>
+      <ScreenProperty
+        Name="CurrentUser"
+        PropertyType="User">
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="AddEditContactPerson/Properties[ContactPersons]/Query" />
+              Target="ApplicationData/Members[CurrentUser]" />
           </ChainExpression>
         </ScreenExpressionTree>
-      </ScreenCollectionProperty>
+      </ScreenProperty>
     </Screen.Properties>
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="showAddEditContactPerson">
+      Name="showViewConferenceCompany">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="AddEditContactPerson" />
+          TargetScreen="ViewConferenceCompany" />
       </ApplicationMethod.Attributes>
       <ApplicationMethodParameter
-        Name="UserParticipation"
-        ParameterType="UserParticipation" />
+        Name="ActiveConference"
+        ParameterType="Conference" />
     </ApplicationMethod>
   </Application.Methods>
 </Application>

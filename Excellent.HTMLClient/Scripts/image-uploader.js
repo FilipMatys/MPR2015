@@ -31,11 +31,7 @@
         if ((fullBinaryString == null) || (fullBinaryString.length == 0)) {
             contentItem.value = null;
         } else {
-            $preview.append($('<img src="' + fullBinaryString + '" style="' + previewStyle + '" />'));
             $preview.append('<a href="' + fullBinaryString + '" download="attachement">DOWNLOAD</a>');
-            $preview.find('img').error(function () {
-                $preview.find('img').remove();
-            });
             // As far as storing the data in the database, beyond previewing it,
             //     remove the preamble returned by FileReader or the server 
             //     (always of the same form: "data:jpeg;base64," with variations only on the 

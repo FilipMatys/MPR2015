@@ -1,25 +1,25 @@
 ﻿/// <reference path="~/GeneratedArtifacts/viewModel.js" />
 
 myapp.AddEditConference.setClose_canExecute = function (screen) {
-    return screen.Conference.Active;
+    return !!screen.Conference.Id && screen.Conference.Active === 'Active';
 };
 
 myapp.AddEditConference.setClose_execute = function (screen) {
-    screen.Conference.Active = false;
+    screen.Conference.Active = 'Closed';
 
     myapp.commitChanges();
 };
 
 myapp.AddEditConference.setActive_canExecute = function (screen) {
-    return !screen.Conference.Active;
+    return !!screen.Conference.Id && screen.Conference.Active === 'Inactive';
 };
 
 myapp.AddEditConference.setActive_execute = function (screen) {
     screen.getActiveConference().then(function (result) {
         if (result != null)
-            result.Active = false;
+            result.Active = 'Closed';
 
-        screen.Conference.Active = true;
+        screen.Conference.Active = 'Active';
 
         myapp.commitChanges();
     });
@@ -56,11 +56,8 @@ myapp.AddEditConference.created = function (screen) {
         deadline.Conference = screen.Conference;
     }
 
-    if (screen.Conference.Active == false) {
-        screen.findContentItem('setClose').isEnabled = false;
-    }
-    if (screen.Conference.Active == true) {
-        screen.findContentItem('setActive').isEnabled = false;
+    if (!screen.Conference.Id) {
+        screen.Conference.Active = 'Inactive';
     }
 };
 
@@ -71,3 +68,29 @@ myapp.AddEditConference.DeadlinesTemplate_postRender = function (element, conten
     });
 };
 
+myapp.AddEditConference.SaveActive_Tap_canExecute = function (screen) {
+    return !screen.Conference.Id;
+};
+
+myapp.AddEditConference.SaveActive_Tap_execute = function (screen) {
+    myapp.AddEditConference.setActive_execute(screen);
+};
+
+myapp.AddEditConference.Delete_Tap_canExecute = function (screen) {
+    return !!screen.Conference.Id && screen.Conference.Active === 'Inactive';
+};
+
+myapp.AddEditConference.Delete_Tap_execute = function (screen) {
+    screen.Conference.deleteEntity();
+
+    myapp.commitChanges().then(function success() {
+        // If success.
+        msls.showMessageBox("Delete is successfull.", { title: "Delete" });
+    }, function fail(e) {
+        // If error occurs,
+        msls.showMessageBox(e.message, { title: e.title }).then(function () {
+            // Cancel Changes
+            myapp.cancelChanges();
+        });
+    });
+};
