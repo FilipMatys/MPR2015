@@ -64,12 +64,43 @@
                   <ContentItem
                     Name="RowTemplate"
                     Kind="Details"
-                    DataType="Participation">
+                    DataType="Participation"
+                    View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression />
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
+                    <ContentItem
+                      Name="ConfYear"
+                      Kind="Value"
+                      DataType=":Int32?">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="Participation/Properties[Conference]" />
+                            <MemberExpression
+                              Member="ConfYear" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
+                    <ContentItem
+                      Name="Name"
+                      Kind="Value"
+                      DataType=":String">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="Participation/Properties[Company]" />
+                            <MemberExpression
+                              Member="Name" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
                   </ContentItem>
                 </ContentItem>
                 <ContentItem
