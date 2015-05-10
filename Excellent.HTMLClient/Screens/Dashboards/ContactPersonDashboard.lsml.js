@@ -83,6 +83,7 @@ myapp.ContactPersonDashboard.created = function (screen) {
     $.ajax(reportsAPI, {}).done(function (data) {
         screen.DashboardData = data;
     });
+    screen.stateReg = "Registered";
 };
 
 myapp.ContactPersonDashboard.AddNewCompany_Tap_execute = function (screen) {

@@ -179,6 +179,13 @@
                       <CallExpression
                         Target="!module/Methods[showBrowseParticipations]">
                         <ArgumentExpression
+                          Parameter="ParticipationState">
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="ContactPersonDashboard/Properties[stateReg]" />
+                          </ChainExpression>
+                        </ArgumentExpression>
+                        <ArgumentExpression
                           Parameter="ParticipationConferenceId">
                           <ChainExpression>
                             <MemberExpression
@@ -316,6 +323,13 @@
               Target="ApplicationData/Members[ActiveConference]" />
           </ChainExpression>
         </ScreenExpressionTree>
+      </ScreenProperty>
+      <ScreenProperty
+        Name="stateReg"
+        PropertyType=":String">
+        <ScreenProperty.Attributes>
+          <Required />
+        </ScreenProperty.Attributes>
       </ScreenProperty>
     </Screen.Properties>
   </Screen>

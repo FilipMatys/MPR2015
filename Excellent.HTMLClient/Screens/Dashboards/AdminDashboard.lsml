@@ -60,7 +60,24 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <CallExpression
-                          Target="!module/Methods[showBrowseParticipations]" />
+                          Target="!module/Methods[showBrowseParticipations]">
+                          <ArgumentExpression
+                            Parameter="ParticipationState">
+                            <ChainExpression>
+                              <MemberExpression
+                                Member="AdminDashboard/Properties[pokus]" />
+                            </ChainExpression>
+                          </ArgumentExpression>
+                          <ArgumentExpression
+                            Parameter="ParticipationConferenceId">
+                            <ChainExpression>
+                              <MemberExpression
+                                Member="AdminDashboard/Properties[ActiveConference]" />
+                              <MemberExpression
+                                Member="Id" />
+                            </ChainExpression>
+                          </ArgumentExpression>
+                        </CallExpression>
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>
@@ -317,6 +334,13 @@
               Target="ApplicationData/Members[ActiveConference]" />
           </ChainExpression>
         </ScreenExpressionTree>
+      </ScreenProperty>
+      <ScreenProperty
+        Name="pokus"
+        PropertyType=":String">
+        <ScreenProperty.Attributes>
+          <Required />
+        </ScreenProperty.Attributes>
       </ScreenProperty>
     </Screen.Properties>
   </Screen>

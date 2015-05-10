@@ -73,6 +73,10 @@ myapp.AdminDashboard.created = function (screen) {
     $.ajax(reportsAPI, {}).done(function (data) {
         screen.DashboardData = data;
     });
+
+    //screen.PartReg = new myapp.Participation();
+    screen.pokus = "Registered";
+    //screen.PartReg.State = "Registered";
 };
 
 myapp.AdminDashboard.AddNewCompany_Tap_execute = function (screen) {
