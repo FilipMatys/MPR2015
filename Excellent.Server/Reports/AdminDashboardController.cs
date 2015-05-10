@@ -29,7 +29,7 @@ namespace LightSwitchApplication.Reports
                     data.MoneyReceived = conference.Participations.Select(t => t.ExpectedPayment).DefaultIfEmpty(0).Sum();
                     data.DaysRemaining = (conference.DateFrom - DateTime.Now).Days;
                     data.PendingParticipations = conference.Participations.Where(t => t.State == "Registered").Count();
-                    data.ActiveParticipations = conference.Participations.Where(t => t.State == "Completed").Count();
+                    data.ActiveParticipations = conference.Participations.Where(t => t.State != "Completed").Count();
                     data.GoldCount = conference.Participations.Where(t => t.ExpectedPayment >= conference.GoldMin).Count();
                     data.SilverCount = conference.Participations.Where(t => t.ExpectedPayment >= conference.SilverMin && t.ExpectedPayment < conference.GoldMin).Count();
                     data.BronzeCount = conference.Participations.Where(t => t.ExpectedPayment >= conference.BronzeMin && t.ExpectedPayment < conference.SilverMin).Count();

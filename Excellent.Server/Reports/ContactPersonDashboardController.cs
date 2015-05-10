@@ -29,7 +29,7 @@ namespace LightSwitchApplication.Reports
                     data.Year = conference.DateFrom.Year;
                     data.Place = conference.Place;
                     data.AssignedParticipations = conference.Participations.Count(t => t.UserParticipations.Any(s => s.User.Login == currentUserUid));
-                    data.ActiveParticipations = conference.Participations.Count(t => t.State == "Completed");
+                    data.ActiveParticipations = conference.Participations.Count(t => t.State != "Completed");
                     data.UnassignedParticipations = conference.Participations.Count(t => !t.UserParticipations.Any());
                     data.SignedContracts = conference.Participations.Count(t => t.State == "ContractSigned");
                     data.PaidSponsorships = conference.Participations.Count(t => t.State == "Paid");
