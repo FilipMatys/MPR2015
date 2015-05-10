@@ -56,8 +56,8 @@ myapp.AddEditParticipationCompany.created = function (screen) {
     }
 
 };
+
 myapp.AddEditParticipationCompany.Type_render = function (element, contentItem) {
-    // Write code here.
     contentItem.screen.Participation.getConference().done(function () {
         myapp.activeDataWorkspace.ApplicationData.DeadlineByConferenceAndType(contentItem.screen.Participation.Id, contentItem.value).execute().done(function (response) {
             if (response.results.length === 0)
@@ -67,9 +67,9 @@ myapp.AddEditParticipationCompany.Type_render = function (element, contentItem) 
         });
     });
 };
+
 myapp.AddEditParticipationCompany.Data1_render = function (element, contentItem) {
-    // Write code here.
     //if (screen.Participation.State != "Cancelled") {
-        createImageUploader(element, contentItem, "max-width: 200px; max-height: 200px");
+        createImageUploader(element, contentItem, contentItem.parent.findItem("Filename"), "max-width: 200px; max-height: 200px");
     //}
 };

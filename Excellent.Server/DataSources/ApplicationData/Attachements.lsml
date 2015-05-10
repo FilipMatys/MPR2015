@@ -57,6 +57,16 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
+        Name="Filename"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+          <Description
+            Value="Attachment's file name." />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
         Name="Data"
         PropertyType=":Binary?">
         <EntityProperty.Attributes>
