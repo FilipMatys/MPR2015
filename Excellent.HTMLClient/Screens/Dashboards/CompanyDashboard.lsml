@@ -67,8 +67,7 @@
                   <ContentItem
                     Name="Year"
                     Kind="Value"
-                    DataType=":Date"
-                    View="Microsoft.LightSwitch.MobileWeb:ValueCustomControl">
+                    DataType=":Int32?">
                     <ContentItem.Attributes>
                       <DisplayName
                         Value="Year" />
@@ -79,16 +78,15 @@
                           <MemberExpression
                             Member="Participation/Properties[Conference]" />
                           <MemberExpression
-                            Member="DateFrom" />
+                            Member="ConfYear" />
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
                   </ContentItem>
                   <ContentItem
-                    Name="SponsorshipLevel"
+                    Name="Sponsorship"
                     Kind="Value"
-                    DataType="Microsoft.LightSwitch.Extensions:Money"
-                    View="Microsoft.LightSwitch.MobileWeb:ValueCustomControl">
+                    DataType=":String?">
                     <ContentItem.Attributes>
                       <DisplayName
                         Value="Sponsorship Level" />
@@ -97,64 +95,10 @@
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <MemberExpression
-                            Member="Participation/Properties[ExpectedPayment]" />
+                            Member="Participation/Properties[Sponsorship]" />
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="Conference1"
-                    IsHidden="True"
-                    Kind="Details"
-                    DataType="Conference"
-                    View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="Participation/Properties[Conference]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                    <ContentItem
-                      Name="GoldMin"
-                      Kind="Value"
-                      DataType="Microsoft.LightSwitch.Extensions:Money">
-                      <ContentItem.DataSource>
-                        <ScreenExpressionTree>
-                          <ChainExpression>
-                            <MemberExpression
-                              Member="Conference/Properties[GoldMin]" />
-                          </ChainExpression>
-                        </ScreenExpressionTree>
-                      </ContentItem.DataSource>
-                    </ContentItem>
-                    <ContentItem
-                      Name="SilverMin"
-                      Kind="Value"
-                      DataType="Microsoft.LightSwitch.Extensions:Money">
-                      <ContentItem.DataSource>
-                        <ScreenExpressionTree>
-                          <ChainExpression>
-                            <MemberExpression
-                              Member="Conference/Properties[SilverMin]" />
-                          </ChainExpression>
-                        </ScreenExpressionTree>
-                      </ContentItem.DataSource>
-                    </ContentItem>
-                    <ContentItem
-                      Name="BronzeMin"
-                      Kind="Value"
-                      DataType="Microsoft.LightSwitch.Extensions:Money">
-                      <ContentItem.DataSource>
-                        <ScreenExpressionTree>
-                          <ChainExpression>
-                            <MemberExpression
-                              Member="Conference/Properties[BronzeMin]" />
-                          </ChainExpression>
-                        </ScreenExpressionTree>
-                      </ContentItem.DataSource>
-                    </ContentItem>
                   </ContentItem>
                 </ContentItem>
               </ContentItem>

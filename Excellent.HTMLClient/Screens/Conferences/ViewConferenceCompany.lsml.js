@@ -1,11 +1,14 @@
 ﻿/// <reference path="~/GeneratedArtifacts/viewModel.js" />
 
 myapp.ViewConferenceCompany.Participate_Tap_execute = function (screen) {
-    var participation = new myapp.Participation();
-    participation.Conference = screen.ActiveConference;
-    participation.Company = screen.CurrentUser.Company;
+    screen.getCurrentUser().then(function () {
+        var participation = new myapp.Participation();
+        participation.Conference = screen.ActiveConference;
+        participation.Company = screen.CurrentUser.Company;
+        participation.State = 'Registered';
 
-    myapp.commitChanges().then(function success() {
+        return myapp.commitChanges();
+    }).then(function success() {
         myapp.showAddEditParticipationCompany(participation);
     }, function fail(e) {
         // If error occurs,

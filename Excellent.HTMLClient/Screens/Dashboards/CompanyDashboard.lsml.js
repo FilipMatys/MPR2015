@@ -17,25 +17,6 @@ myapp.CompanyDashboard.ActualConference_postRender = function (element, contentI
     });
 };
 
-myapp.CompanyDashboard.ExpectedPayment_render = function (element, contentItem) {
-    var goldMin = contentItem.screen.findContentItem('GoldMin').value;
-    var silverMin = contentItem.screen.findContentItem('SilverMin').value;
-    var bronzeMin = contentItem.screen.findContentItem('BronzeMin').value;
-    var payment = contentItem.value;
-    var level = '';
-    if (payment >= goldMin)
-        level = 'Gold';
-    else if (payment >= silverMin)
-        level = 'Silver';
-    else if (payment >= bronzeMin)
-        level = 'Bronze';
-    $(element).append('<span>' + payment + '</span>');
-};
-
-myapp.CompanyDashboard.Year_render = function (element, contentItem) {
-    $(element).append('<span>' + moment(contentItem.value).format('YYYY') + '</span>');
-};
-
 myapp.CompanyDashboard.created = function (screen) {
     var reportsAPI = "../reports/CompanyDashboard/";
     $.ajax(reportsAPI, {}).done(function (data) {
