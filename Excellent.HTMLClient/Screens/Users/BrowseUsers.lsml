@@ -10,7 +10,7 @@
       <SaveChangesTo
         EntityContainer="ApplicationData" />
       <DisplayName
-        Value="Users" />
+        Value="Manage Users" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem

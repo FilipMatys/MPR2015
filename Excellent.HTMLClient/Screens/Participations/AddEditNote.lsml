@@ -9,6 +9,8 @@
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="ApplicationData" />
+      <DisplayName
+        Value="Note" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
