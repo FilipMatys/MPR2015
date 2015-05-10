@@ -99,7 +99,7 @@ myapp.AddEditParticipationFIT.AssignToMe_canExecute = function (screen) {
 
 myapp.AddEditParticipationFIT.AssignToMe_execute = function (screen) {
     var relation = new myapp.UserParticipation();
-    relation.Participation = participation;
+    relation.Participation = screen.Participation;
     relation.User = screen.CurrentUser;
 
     myapp.commitChanges().then(null, function fail(e) {
