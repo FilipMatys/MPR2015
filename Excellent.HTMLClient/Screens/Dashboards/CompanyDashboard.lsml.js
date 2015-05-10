@@ -25,7 +25,9 @@ myapp.CompanyDashboard.created = function (screen) {
 };
 
 myapp.CompanyDashboard.ActualConference_Tap_execute = function (screen) {
-    WinJS.Promise.join([screen.getActiveConference(), screen.getCurrentUser()]).then(function () {
+    WinJS.Promise.join([screen.getActiveConference(), screen.getCurrentUser().then(function () {
+        return screen.CurrentUser.getCompany();
+    })]).then(function () {
         return screen.getCompanyParticipationOnConference();
     }).then(function () {
         if (screen.CompanyParticipationOnConference != null) {

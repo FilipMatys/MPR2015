@@ -1,8 +1,9 @@
 ﻿/// <reference path="~/GeneratedArtifacts/viewModel.js" />
 
 myapp.ViewConferenceCompany.Participate_Tap_execute = function (screen) {
+    var participation = null;
     screen.getCurrentUser().then(function () {
-        var participation = new myapp.Participation();
+        participation = new myapp.Participation();
         participation.Conference = screen.ActiveConference;
         participation.Company = screen.CurrentUser.Company;
         participation.State = 'Registered';
