@@ -127,22 +127,6 @@
                 </ControlPropertySource>
               </ContentItem.PropertySources>
             </ContentItem>
-            <ContentItem
-              Name="Active"
-              IsHidden="True"
-              Kind="Value"
-              DataType=":Boolean">
-              <ContentItem.DataSource>
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <MemberExpression
-                      Member="AddEditConference/Properties[Conference]" />
-                    <MemberExpression
-                      Member="Active" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ContentItem.DataSource>
-            </ContentItem>
             <ContentItem.CommandItems>
               <ContentItem
                 Name="setActive"

@@ -9,7 +9,7 @@
     <EntityType.Attributes>
       <CreatedModifiedPropertiesEnabled />
       <Description
-        Value="Relation between User (Company) and Conference." />
+        Value="Relation between User (contact person) and Conference." />
     </EntityType.Attributes>
     <EntityType.Methods>
       <EntityMethod
@@ -26,18 +26,32 @@
         <KeyProperty.Attributes>
           <Required />
           <NotSearchable />
+          <Description
+            Value="Identifier." />
         </KeyProperty.Attributes>
       </KeyProperty>
       <NavigationProperty
         Name="User"
         Association="UserParticipation_User"
         FromEnd="UserParticipation"
-        ToEnd="User" />
+        ToEnd="User">
+        <NavigationProperty.Attributes>
+          <IncludeInUniqueIndex />
+          <Description
+            Value="Contact person." />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <NavigationProperty
         Name="Participation"
         Association="UserParticipation_Participation"
         FromEnd="UserParticipation"
-        ToEnd="Participation" />
+        ToEnd="Participation">
+        <NavigationProperty.Attributes>
+          <IncludeInUniqueIndex />
+          <Description
+            Value="Participation." />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"

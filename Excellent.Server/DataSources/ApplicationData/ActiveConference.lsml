@@ -28,8 +28,8 @@
             </BinaryExpression.Left>
             <BinaryExpression.Right>
               <ConstantExpression
-                Value="True"
-                ResultType=":Boolean" />
+                Value="Active"
+                ResultType=":String" />
             </BinaryExpression.Right>
           </BinaryExpression>
         </QueryFilterExpressionTree>

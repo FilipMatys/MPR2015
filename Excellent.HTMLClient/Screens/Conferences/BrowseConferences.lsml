@@ -55,7 +55,7 @@
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="BrowseConferences/Properties[ConferencesAct]" />
+                      Member="BrowseConferences/Properties[ConferencesActive]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
@@ -82,20 +82,6 @@
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
-                <ContentItem
-                  Name="Active"
-                  Kind="Value"
-                  DataType=":Boolean"
-                  View="Microsoft.LightSwitch.MobileWeb:ValueCustomControl">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Conference/Properties[Active]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
               </ContentItem>
               <ContentItem.PropertySources>
                 <ControlPropertySource
@@ -106,13 +92,13 @@
                         Target="!module/Methods[showAddEditConference]">
                         <CallExpression.Attributes>
                           <AssociatedCollection
-                            Collection="BrowseConferences/Properties[ConferencesAct]" />
+                            Collection="BrowseConferences/Properties[ConferencesActive]" />
                         </CallExpression.Attributes>
                         <ArgumentExpression
                           Parameter="Conference">
                           <ChainExpression>
                             <MemberExpression
-                              Member="BrowseConferences/Properties[ConferencesAct]" />
+                              Member="BrowseConferences/Properties[ConferencesActive]" />
                             <MemberExpression
                               Member="selectedItem" />
                           </ChainExpression>
@@ -171,7 +157,7 @@
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="BrowseConferences/Properties[Conferences]" />
+                      Member="BrowseConferences/Properties[ConferencesNotActive]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
@@ -215,10 +201,10 @@
                   </ContentItem.PropertySources>
                 </ContentItem>
                 <ContentItem
-                  Name="Active1"
+                  Name="Active"
                   Kind="Value"
-                  DataType=":Boolean"
-                  View="Microsoft.LightSwitch.MobileWeb:ValueCustomControl">
+                  DataType=":String"
+                  View="Microsoft.LightSwitch.MobileWeb:Text">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -250,13 +236,13 @@
                         Target="!module/Methods[showAddEditConference]">
                         <CallExpression.Attributes>
                           <AssociatedCollection
-                            Collection="BrowseConferences/Properties[Conferences]" />
+                            Collection="BrowseConferences/Properties[ConferencesNotActive]" />
                         </CallExpression.Attributes>
                         <ArgumentExpression
                           Parameter="Conference">
                           <ChainExpression>
                             <MemberExpression
-                              Member="BrowseConferences/Properties[Conferences]" />
+                              Member="BrowseConferences/Properties[ConferencesNotActive]" />
                             <MemberExpression
                               Member="selectedItem" />
                           </ChainExpression>
@@ -291,7 +277,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="BrowseConferences/Properties[Conferences]" />
+                          Member="BrowseConferences/Properties[ConferencesNotActive]" />
                         <CallExpression
                           Target="showSearch" />
                       </ChainExpression>
@@ -321,7 +307,7 @@
                           Target="!module/Methods[showAddEditConference]">
                           <CallExpression.Attributes>
                             <AssociatedCollection
-                              Collection="BrowseConferences/Properties[Conferences]" />
+                              Collection="BrowseConferences/Properties[ConferencesNotActive]" />
                             <CreateNewEntity
                               TargetParameter="!module/Methods[showAddEditConference]/Parameters[Conference]" />
                           </CallExpression.Attributes>
@@ -388,17 +374,17 @@
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
-        Name="Conferences"
+        Name="ConferencesNotActive"
         PageSize="45"
         PropertyType="CollectionView$Conference">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
-            Name="ConferencesQuery"
+            Name="ConferencesNotActiveQuery"
             ReturnType="Conference*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree>
                 <BinaryExpression
-                  NodeType="Equal">
+                  NodeType="NotEqual">
                   <BinaryExpression.Left>
                     <ChainExpression>
                       <MemberExpression
@@ -407,8 +393,8 @@
                   </BinaryExpression.Left>
                   <BinaryExpression.Right>
                     <ConstantExpression
-                      Value="False"
-                      ResultType=":Boolean" />
+                      Value="Active"
+                      ResultType=":String" />
                   </BinaryExpression.Right>
                 </BinaryExpression>
               </QueryFilterExpressionTree>
@@ -424,40 +410,17 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="BrowseConferences/Properties[Conferences]/Query" />
+              Target="BrowseConferences/Properties[ConferencesNotActive]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
-      <ScreenProperty
-        Name="Conference"
-        PropertyType="Conference">
-        <ScreenExpressionTree>
-          <ChainExpression>
-            <CallExpression
-              Target="ApplicationData/Members[Conferences_SingleOrDefault]">
-              <ArgumentExpression
-                Parameter="Id">
-                <ChainExpression>
-                  <MemberExpression
-                    Member="BrowseConferences/Properties[Id]" />
-                  <MemberExpression
-                    Member="Id" />
-                </ChainExpression>
-              </ArgumentExpression>
-            </CallExpression>
-          </ChainExpression>
-        </ScreenExpressionTree>
-      </ScreenProperty>
-      <ScreenProperty
-        Name="Id"
-        PropertyType="Conference" />
       <ScreenCollectionProperty
-        Name="ConferencesAct"
+        Name="ConferencesActive"
         PageSize="45"
         PropertyType="CollectionView$Conference">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
-            Name="ConferencesActQuery"
+            Name="ConferencesActiveQuery"
             ReturnType="Conference*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree>
@@ -471,8 +434,8 @@
                   </BinaryExpression.Left>
                   <BinaryExpression.Right>
                     <ConstantExpression
-                      Value="True"
-                      ResultType=":Boolean" />
+                      Value="Active"
+                      ResultType=":String" />
                   </BinaryExpression.Right>
                 </BinaryExpression>
               </QueryFilterExpressionTree>
@@ -488,7 +451,7 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="BrowseConferences/Properties[ConferencesAct]/Query" />
+              Target="BrowseConferences/Properties[ConferencesActive]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>

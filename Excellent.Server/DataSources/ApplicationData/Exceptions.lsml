@@ -26,6 +26,8 @@
         <KeyProperty.Attributes>
           <Required />
           <NotSearchable />
+          <Description
+            Value="Identifier." />
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty
@@ -56,6 +58,8 @@
           <SupportedValue
             DisplayName="Propagational Paper"
             Value="propagPaper" />
+          <Description
+            Value="Exception type." />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -64,13 +68,20 @@
         <EntityProperty.Attributes>
           <Required />
           <NotSearchable />
+          <Description
+            Value="Modified due date." />
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
         Name="Participation"
         Association="Exception_Participation"
         FromEnd="Exception"
-        ToEnd="Participation" />
+        ToEnd="Participation">
+        <NavigationProperty.Attributes>
+          <Description
+            Value="Participation." />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"

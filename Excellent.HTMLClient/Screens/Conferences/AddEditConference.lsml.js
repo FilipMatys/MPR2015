@@ -1,25 +1,25 @@
 ﻿/// <reference path="~/GeneratedArtifacts/viewModel.js" />
 
 myapp.AddEditConference.setClose_canExecute = function (screen) {
-    return screen.Conference.Active;
+    return screen.Conference.Active === 'Active';
 };
 
 myapp.AddEditConference.setClose_execute = function (screen) {
-    screen.Conference.Active = false;
+    screen.Conference.Active = 'Closed';
 
     myapp.commitChanges();
 };
 
 myapp.AddEditConference.setActive_canExecute = function (screen) {
-    return !screen.Conference.Active;
+    return screen.Conference.Active === 'Inactive';
 };
 
 myapp.AddEditConference.setActive_execute = function (screen) {
     screen.getActiveConference().then(function (result) {
         if (result != null)
-            result.Active = false;
+            result.Active = 'Closed';
 
-        screen.Conference.Active = true;
+        screen.Conference.Active = 'Active';
 
         myapp.commitChanges();
     });
@@ -54,13 +54,6 @@ myapp.AddEditConference.created = function (screen) {
         deadline = new myapp.Deadline();
         deadline.Type = 'Contract';
         deadline.Conference = screen.Conference;
-    }
-
-    if (screen.Conference.Active == false) {
-        screen.findContentItem('setClose').isEnabled = false;
-    }
-    if (screen.Conference.Active == true) {
-        screen.findContentItem('setActive').isEnabled = false;
     }
 };
 

@@ -26,6 +26,8 @@
         <KeyProperty.Attributes>
           <Required />
           <NotSearchable />
+          <Description
+            Value="Identifier." />
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty
@@ -35,6 +37,8 @@
           <Required />
           <MaxLength
             Value="255" />
+          <Description
+            Value="Company name." />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -44,6 +48,8 @@
           <Required />
           <MaxLength
             Value="255" />
+          <Description
+            Value="Identification number." />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -53,6 +59,8 @@
           <Required />
           <MaxLength
             Value="255" />
+          <Description
+            Value="VAT identification number." />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -61,11 +69,18 @@
         <EntityProperty.Attributes>
           <MaxLength
             Value="255" />
+          <Description
+            Value="Website link." />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
         Name="Description"
-        PropertyType=":String?" />
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Description
+            Value="Description." />
+        </EntityProperty.Attributes>
+      </EntityProperty>
       <EntityProperty
         Name="Address"
         PropertyType=":String">
@@ -73,18 +88,30 @@
           <Required />
           <MaxLength
             Value="255" />
+          <Description
+            Value="Postal address." />
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
         Name="Participations"
         Association="Participation_Company"
         FromEnd="Company"
-        ToEnd="Participation" />
+        ToEnd="Participation">
+        <NavigationProperty.Attributes>
+          <Description
+            Value="Collection of company's participations." />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <NavigationProperty
         Name="User"
         Association="Company_User"
         FromEnd="Company"
-        ToEnd="User" />
+        ToEnd="User">
+        <NavigationProperty.Attributes>
+          <Description
+            Value="Associated user account." />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
