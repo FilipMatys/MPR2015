@@ -59,6 +59,7 @@ namespace LightSwitchApplication
             // sponsorship level
             var payment = entity.ExpectedPayment;
 
+
             if (payment >= entity.Conference.GoldMin)
             {
                 entity.Sponsorship = "Gold";

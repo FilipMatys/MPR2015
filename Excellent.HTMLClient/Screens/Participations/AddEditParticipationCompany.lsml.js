@@ -9,6 +9,8 @@ myapp.AddEditParticipationCompany.created = function (screen) {
             };
         }
 
+        screen.Participation.State = "Registered";
+
         if (!screen.Participation.Attachements.any(OfType('PropagationalPaper'))) {
             var attachment = new myapp.Attachement();
             attachment.Type = 'PropagationalPaper';
@@ -67,7 +69,7 @@ myapp.AddEditParticipationCompany.Type_render = function (element, contentItem) 
 };
 myapp.AddEditParticipationCompany.Data1_render = function (element, contentItem) {
     // Write code here.
-    if (screen.Participation.State != "Cancelled") {
+    //if (screen.Participation.State != "Cancelled") {
         createImageUploader(element, contentItem, "max-width: 200px; max-height: 200px");
-    }
+    //}
 };
