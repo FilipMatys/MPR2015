@@ -98,6 +98,23 @@
                     </ContentItem.DataSource>
                   </ContentItem>
                   <ContentItem
+                    Name="PasswordCheck"
+                    Kind="Value"
+                    DataType=":String?">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Password check" />
+                    </ContentItem.Attributes>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="AddEditUser/Properties[PasswordCheck]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
                     Name="Email"
                     Kind="Value"
                     DataType="Microsoft.LightSwitch.Extensions:EmailAddress">
@@ -136,23 +153,6 @@
                         <ChainExpression>
                           <MemberExpression
                             Member="User/Properties[Name]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="PasswordCheck"
-                    Kind="Value"
-                    DataType=":String?">
-                    <ContentItem.Attributes>
-                      <DisplayName
-                        Value="Password check" />
-                    </ContentItem.Attributes>
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="AddEditUser/Properties[PasswordCheck]" />
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
