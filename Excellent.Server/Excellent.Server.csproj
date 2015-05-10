@@ -299,6 +299,9 @@
     <LightSwitchModel Include="DataSources\ApplicationData\DeadlineByConferenceAndType.lsml">
       <DependentUpon>Deadlines.lsml</DependentUpon>
     </LightSwitchModel>
+    <LightSwitchModel Include="DataSources\ApplicationData\CompanyParticipationOnConference.lsml">
+      <DependentUpon>Participations.lsml</DependentUpon>
+    </LightSwitchModel>
     <None Include="Scripts\jquery-2.1.3.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.3.js" />
     <Content Include="Scripts\jquery-2.1.3.min.js" />

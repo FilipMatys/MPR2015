@@ -86,6 +86,9 @@
     <Content Include="Screens\Conferences\BrowseConferences.lsml.js">
       <DependentUpon>BrowseConferences.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\Conferences\ViewConferenceCompany.lsml.js">
+      <DependentUpon>ViewConferenceCompany.lsml</DependentUpon>
+    </Content>
     <Content Include="Screens\Dashboards\AdminDashboard.lsml.js">
       <DependentUpon>AdminDashboard.lsml</DependentUpon>
     </Content>
@@ -167,6 +170,7 @@
     <LightSwitchModel Include="Screens\Companies\ViewCompany.lsml" />
     <LightSwitchModel Include="Screens\Conferences\AddEditConference.lsml" />
     <LightSwitchModel Include="Screens\Conferences\BrowseConferences.lsml" />
+    <LightSwitchModel Include="Screens\Conferences\ViewConferenceCompany.lsml" />
     <LightSwitchModel Include="Screens\Dashboards\AdminDashboard.lsml" />
     <LightSwitchModel Include="Screens\Dashboards\CompanyDashboard.lsml" />
     <LightSwitchModel Include="Screens\Dashboards\ContactPersonDashboard.lsml" />
