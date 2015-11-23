@@ -36,18 +36,6 @@ namespace LightSwitchApplication
         partial void Users_Inserted(User entity)
         {
             Membership.CreateUser(entity.Login, entity.Password, entity.Email);
-
-            using (var client = new SmtpClient())
-            {
-                var mail = new MailMessage
-                {
-                    Subject = "Account created",
-                    Body = string.Format("User name: {0}\nPassword: {1}", entity.Login, entity.Password)
-                };
-                mail.To.Add(entity.Email);
-
-                client.Send(mail);
-            }
         }
 
         partial void PastCompanyParticipations_PreprocessQuery(ref IQueryable<Participation> query)
